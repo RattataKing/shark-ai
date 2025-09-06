@@ -72,6 +72,47 @@ class CandidateTracker:
     td_spec_str: Optional[str] = None
 
 
+@dataclass
+class CandidateRecord:
+    dispatch_id: str
+    candidate_id: int
+    op_kind: str               # contraction/conv/attention
+    device: str                # MI300X, RX7900XTX, ...
+    arch: str                  # gfx942, gfx1100, ...
+    cfg: common.SolutionVariable
+    tuner_commit: str
+    rocm_version: str
+    notes: Optional[str] = None
+
+@dataclass
+class TuningRecord:
+    dispatch_id: str
+    candidate_id: str
+    device: str                                  # MI300X, RX7900XTX, ...
+    arch: str                                    # gfx942, gfx1100, ...
+    compile_flags: str
+    compile_order_in_list: int  # Baseline=can_0=compile order 0. can compile order start=1
+    compile_status: bool
+    # compile_error_class: Optional[str]  # optional: codegen_error, verifier, etc.
+    benchmark_flags: str
+    to_benchmark: bool
+    benchmark_device_id: Optional[str]
+    benchmark_status: Optional[str]
+    baseline_benchmark_time_ms: float
+    benchmark_time_ms: Optional[float]
+    benchmark_optimal_time_ms:Optional[float]
+    # benchmark_diff: float
+    benchmark_speedup:Optional[float]
+    benchmark_order_in_list: Optional[int] # Baseline doesnt count, candidate first order start=1
+    benchmark_result_order: Optional[int] # Baseline doesnt count, candidate first order start=1
+    benchmark_start_order_vs_result:Optional[int]
+    benchmark_optimal_start_order:Optional[int]
+    
+    tuner_commit: str
+    rocm_version: str
+    notes: Optional[str] = None                  # optional extra comments
+
+
 @dataclass()
 class PathConfig:
     # Dynamic paths
@@ -110,6 +151,9 @@ class TuningClient(ABC):
     def __init__(self, tuner_context: common.TunerContext):
         self.tuner_context = tuner_context
         self.candidate_trackers: list[CandidateTracker] = []
+        self.candidate_records: list[candidate_record] = []
+        self.tuning_records: list[TuningRecord] = []
+
 
     @abstractmethod
     def get_iree_compile_flags(self) -> list[str]:
@@ -732,7 +776,8 @@ def generate_candidate_specs(
         if args.starter_td_spec:
             with open(args.starter_td_spec, "r") as f:
                 starter_td_spec = ir.Module.parse(f.read())
-        config_specs: list[ir.Module] = candidate_gen.generate_configs_and_td_specs(
+        config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+            # tuning_client=tuning_client,
             input_module=mlir_module,
             tuner_context=tuning_client.tuner_context,
             limit=args.num_candidates,
@@ -741,6 +786,8 @@ def generate_candidate_specs(
             pipeline_options_search_space=pipeline_options_search_space,
             codegen_pipeline=get_iree_codegen_pipeline(args.codegen_pipeline),
         )
+        # print(solution_variables[1])
+        # exit()
         logging.debug("candidate_gen.py ends")
         handle_error(
             condition=(len(config_specs) <= 1), msg="Failed to generate any candidates"
@@ -784,6 +831,35 @@ def generate_candidate_specs(
                 td_spec_str=td_spec_str,
             )
             tuning_client.candidate_trackers.append(new_candidate)
+
+        # print(candidates)
+
+        candidate_record = CandidateRecord(
+            dispatch_id="",
+            candidate_id=0,
+            op_kind="contraction",               # contraction/conv/attention
+            device="",               # MI300X, RX7900XTX, ...
+            arch="gfx942",                  # gfx942, gfx1100, ...
+            cfg=None,
+            tuner_commit="",
+            rocm_version="",
+            notes="",
+        )
+        tuning_client.candidate_records.append(candidate_record)
+        for i, solution_variable in enumerate(solution_variables, start=1):
+            candidate_record = CandidateRecord(
+                dispatch_id="",
+                candidate_id=i,
+                op_kind="contraction",               # contraction/conv/attention
+                device="",               # MI300X, RX7900XTX, ...
+                arch="gfx942",                  # gfx942, gfx1100, ...
+                cfg=solution_variable,
+                tuner_commit="",
+                rocm_version="",
+                notes="",
+            )
+            tuning_client.candidate_records.append(candidate_record)
+            
     except Exception as e:
         logging.error("An error occurred during candidates generation: %s", str(e))
         # Capture and log debug messages from candidate_gen.py.
@@ -1014,6 +1090,10 @@ def compile(
         logging.warning("No model candidates to compile.")
         return []
 
+    tuning_client.tuning_records[0].compile_order_in_list = 0
+    for i, can in enumerate(candidates):
+        tuning_client.tuning_records[can].compile_order_in_list = i
+
     # If `input_file` is not None, then replace the currently tracked template
     # with the passed input mlir file.
     if input_file is not None:
@@ -1057,6 +1137,8 @@ def compile(
                 candidate_tracker=tuning_client.candidate_trackers[0],
             )
         )
+    # for i in range(len(tuning_client.candidate_records)):
+    #     tuning_client.candidate_records[i].compile_status = False
     num_worker = min(args.max_cpu_workers, len(task_list))
     compiled_candidates = multiprocess_progress_wrapper(
         num_worker=num_worker, task_list=task_list, function=run_iree_compile_command
@@ -1066,6 +1148,9 @@ def compile(
         f"Successfully compiled [{len(compiled_candidates)}] candidates. Success rate: {success_rate:.2f}"
     )
     compiled_candidates = [c for c in compiled_candidates if c is not None]
+
+    for c in compiled_candidates:
+        tuning_client.tuning_records[c].compile_status = True
 
     # Remove duplicate vmfbs from the candidate list.
     compiled_candidate_hashes = []
@@ -1080,6 +1165,9 @@ def compile(
     )
     if collision_detected:
         compiled_candidates = unique_compiled_candidates
+    # print(compiled_candidates)
+    if 0 not in compiled_candidates:
+        print("BUGGGGGGGGGGGGGGGG")
 
     logging.debug(f"Produced [{len(compiled_candidates)}] unique vmfbs")
     return compiled_candidates
@@ -1096,7 +1184,11 @@ def benchmark(
     if len(compiled_candidates) == 0:
         logging.warning("No candidates to benchmark.")
         return []
-
+    for c in compiled_candidates:
+        tuning_client.tuning_records[c].to_benchmark = True
+    for i in range(len(tuning_client.tuning_records)):
+        tuning_client.tuning_records[i].benchmark_flags = tuning_client.get_iree_benchmark_module_flags()
+    
     # Benchmarking baselines on each involved device.
     baseline_tracker = tuning_client.candidate_trackers[0]
     first_baseline_result = benchmark_baseline(
@@ -1110,12 +1202,22 @@ def benchmark(
         logging.warning("Baseline run failed.")
 
     candidate_indices = [i for i in compiled_candidates if i != 0]
+    for i, can in enumerate(candidate_indices, start=1):
+        tuning_client.tuning_records[can].benchmark_order_in_list = i
     candidate_results = benchmark_candidates(
         candidate_indices=candidate_indices,
         devices=args.devices,
         tuning_client=tuning_client,
         benchmark_time=benchmark_time,  # Only candidate benchmark has time limit.
     )
+    for can_res in candidate_results:
+        tuning_client.tuning_records[can_res.candidate_id].benchmark_device_id = can_res.device_id
+        if can_res.time == math.inf:
+            continue
+        tuning_client.tuning_records[can_res.candidate_id].benchmark_status = True
+        tuning_client.tuning_records[can_res.candidate_id].benchmark_time_ms = round(can_res.time,2)
+    # print(candidate_results)
+    # exit()
 
     second_baseline_result = benchmark_baseline(
         devices=args.devices,
@@ -1133,9 +1235,31 @@ def benchmark(
     if not baseline_handler.is_valid():
         logging.warning("Baseline run failed.")
 
+    # for can_res in candidate_results:
+    #     bas = baseline_handler.get_average_result_ms(can_res.device_id)
+    #     tuning_client.tuning_records[can_res.candidate_id].baseline_benchmark_time_ms = round(bas,2)
+        # tuning_client.tuning_records[can_res.candidate_id].benchmark_diff = 
+
     all_candidates_with_speedup = baseline_handler.get_candidates_ordered_by_speedup(
         candidate_results
     )
+    # print(all_candidates_with_speedup)
+    best_ben_res, best_speedup=all_candidates_with_speedup[0]
+    best_start_order = tuning_client.tuning_records[best_ben_res.candidate_id].benchmark_order_in_list
+    for i,can in enumerate(all_candidates_with_speedup,start=1):
+        ben_res,speedup=can
+        c_id, t, d_id = ben_res
+
+        tuning_client.tuning_records[c_id].benchmark_result_order=i
+        bas = baseline_handler.get_average_result_ms(d_id)
+        tuning_client.tuning_records[c_id].baseline_benchmark_time_ms = round(bas,2)
+        tuning_client.tuning_records[c_id].benchmark_speedup=round(speedup,5)
+        tuning_client.tuning_records[c_id].benchmark_optimal_time_ms=round(best_ben_res.time,2)
+        tuning_client.tuning_records[c_id].benchmark_optimal_start_order = best_start_order
+        my_start_order = tuning_client.tuning_records[c_id].benchmark_order_in_list
+        tuning_client.tuning_records[c_id].benchmark_start_order_vs_result = abs(my_start_order-i)
+
+
     top_candidates_with_speedup = all_candidates_with_speedup[:num_candidates]
     top_candidate_ids = []
     if baseline_handler.is_valid():

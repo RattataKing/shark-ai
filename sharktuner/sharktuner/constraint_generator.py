@@ -16,6 +16,8 @@ from iree.compiler.dialects import linalg  # type: ignore
 from . import common
 from . import dispatch_constraints
 
+import json, math
+
 
 def adjust_problem_size_for_pipeline(
     contraction_dims: common.ContractionDimensions,
@@ -238,12 +240,54 @@ def generate_generic_contraction_solutions(
         solver.add(z3.simplify(z3.Not(z3.And(list(x == model[x] for x in all_vars)))))
         i += 1
 
+        # cfg_meta = {
+        #     "matmul_size": [int(math.prod(M)), int(math.prod(N)), int(math.prod(K))],
+        #     "types": {
+        #         "lhs": str(lhs_type.element_type),
+        #         "rhs": str(rhs_type.element_type),
+        #         "acc": str(res_type.element_type),
+        #     },
+        #     "num_subgroups": int(lookup(sg_m_cnt) * lookup(sg_n_cnt)),
+        #     "subgroup_size": int(lookup(subgroup_size)),
+        #     "intrinsic": str(mma_attr),  # e.g. MFMA_F32_32x32x16_F16
+        #     "workgroup": [int(lookup(wg_x)), int(lookup(wg_y)), int(lookup(wg_z))],
+        #     "sg_m_cnt": int(lookup(sg_m_cnt)),
+        #     "sg_n_cnt": int(lookup(sg_n_cnt)),
+        #     "pipeline": str(codegen_pipeline.name),
+        #     "workgroup_tiles": workgroup_tile_sizes,
+        #     "subgroup_tiles": subgroup_tile_sizes,
+        #     "reduction_tiles": reduction_tile_sizes,
+        # }
+        # tuner_ctx.logger.info("CFG_META %s", json.dumps(cfg_meta, sort_keys=True))
+        # # print(compilation_infos)
+        # print()
+
         for compilation_info in compilation_infos:
-            yield [
-                common.TuningConfiguration(
+            tuning_configuration=common.TuningConfiguration(
                     name="compilation_info", configuration=compilation_info
-                )
-            ]
+            )
+            solution_variable = common.SolutionVariable (
+                mma_attr=str(mma_attr),
+                M=int(math.prod(M)),
+                N=int(math.prod(N)),
+                K=int(math.prod(K)),
+                workgroup_tile_sizes=workgroup_tile_sizes,
+                reduction_tile_sizes=reduction_tile_sizes,
+                subgroup_tile_sizes=subgroup_tile_sizes,
+                wg_x=lookup(wg_x),
+                wg_y=lookup(wg_y),
+                wg_z=lookup(wg_z),
+                subgroup_size=lookup(subgroup_size),
+                sg_m_cnt=lookup(sg_m_cnt),
+                sg_n_cnt=lookup(sg_n_cnt),
+                promote_operands=promote_operands,
+                codegen_pipeline=codegen_pipeline,
+                pipeline_options_search_space=pipeline_options_search_space,
+                allowed_waves_per_eu=allowed_waves_per_eu,
+                padding=padding,
+            )
+            yield common.SolutionPack(solution_variable=solution_variable, tuning_configuration=tuning_configuration)
+            
 
 
 def generate_attention_solutions(

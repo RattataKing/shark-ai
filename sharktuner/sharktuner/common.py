@@ -25,6 +25,107 @@ import iree.compiler as ireec  # type: ignore
 from iree.compiler._mlir_libs._mlir import ir  # type: ignore
 
 
+# @dataclass
+# class Types:
+#     lhs: str
+#     rhs: str
+#     res: str
+
+# @dataclass
+# class Vars:
+#     m_vars: list[int]
+#     n_vars: list[int]
+#     k_vars: list[int]
+#     subgroup_m_vars: list[int]
+#     subgroup_n_vars: list[int]
+
+# @dataclass
+# class Intrinsic:
+#     family: str
+#     name: str
+#     mn: list[int]   # [m, n]
+#     k: int
+
+# @dataclass
+# class Workgroup:
+#     wg_x: int
+#     wg_y: int
+#     wg_z: int
+
+# @dataclass
+# class Pipeline:
+#     stages: int
+#     lds_bytes_wg: int
+#     prefetch: int
+
+# @dataclass
+# class Memory:
+#     vec_ld_bytes: int
+#     vec_st_bytes: int
+
+# @dataclass
+# class Regs:
+#     vgpr_per_thr: int
+#     agpr_per_thr: int
+#     occupancy_waves_per_cu: int
+
+# @dataclass
+# class Cfg:
+#     matmul_size: list[int]                      # [M,N,K]
+#     types: Types
+#     vars: Vars
+#     num_subgroups: int
+#     subgroup_size: int
+#     intrinsic: Intrinsic
+#     workgroup: Workgroup
+#     sg_m_cnt: int
+#     sg_n_cnt: int
+#     pipeline: Pipeline
+#     memory: Memory
+#     regs: Regs
+#     split_k: int
+#     mma_intrinsics: list[str]
+#     extras: dict[str, str] = field(default_factory=dict)
+
+# @dataclass
+# class CandidateRecord:
+#     dispatch_id: str
+#     candidate_id: str
+#     op_kind: str               # contraction/conv/attention
+#     device: str                # MI300X, RX7900XTX, ...
+#     arch: str                  # gfx942, gfx1100, ...
+#     cfg: Cfg
+#     is_baseline: bool
+#     tuner_commit: str
+#     rocm_version: str
+#     notes: Optional[str] = None
+
+# @dataclass
+# class TuningRecord:
+#     dispatch_id: str
+#     candidate_id: str
+#     arch: str                                    # gfx942, gfx1100, ...
+#     device: str                                  # MI300X, RX7900XTX, ...
+#     compile_flags: str
+#     dispatch_compile_order_in_list: int
+#     dispatch_compile_status: str
+#     dispatch_compile_error_class: Optional[str]  # optional: codegen_error, verifier, etc.
+#     benchmark_flags: str
+#     dispatch_benchmark_order_in_list: int
+#     dispatch_benchmark_status: str
+#     dispatch_benchmark_time_ms: float
+#     model_compile_order_in_list: int
+#     model_compile_status: str                    # fail/pass
+#     model_compile_error_class: Optional[str]     # error message
+#     model_benchmark_order_in_list: int
+#     model_benchmark_status: str                  # fail/pass
+#     model_benchmark_time_ms: float
+#     model_baseline_ms: float
+#     tuner_commit: str
+#     rocm_version: str
+#     notes: Optional[str] = None                  # optional extra comments
+
+
 class CommonTypes:
     def __init__(self, ctx: ir.Context):
         assert ctx
@@ -197,6 +298,34 @@ class AttentionOpInfo:
     n_dims: list[int]
     k1_dims: list[int]
     k2_dims: list[int]
+
+@dataclass
+class SolutionVariable:
+    mma_attr: Any
+    M: Any
+    N: Any
+    K: Any
+    workgroup_tile_sizes: Any
+    reduction_tile_sizes: Any
+    subgroup_tile_sizes: Any
+    wg_x: Any
+    wg_y: Any
+    wg_z: Any
+    subgroup_size: Any
+    sg_m_cnt: Any
+    sg_n_cnt: Any
+    promote_operands: Any
+    codegen_pipeline: Any
+    pipeline_options_search_space: Any
+    allowed_waves_per_eu: Any
+    padding: Any
+
+@dataclass
+class SolutionPack:
+    solution_variable: SolutionVariable
+    tuning_configuration: TuningConfiguration
+
+
 
 
 def get_map_result_dim_positions(map: ir.AffineMap) -> Optional[list[int]]:

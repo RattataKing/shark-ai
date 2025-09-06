@@ -147,6 +147,17 @@ def get_default_output_dir() -> str:
 
     return "tuning_" + datetime.now().strftime("%Y_%m_%d_%H_%M")
 
+# def can_gen():
+#     generate_configs_and_td_specs(
+#         tuning_client=tuning_client,
+#         input_module=mlir_module,
+#         tuner_context=tuning_client.tuner_context,
+#         limit=args.num_candidates,
+#         num_subgroups=args.num_subgroups,
+#         allowed_waves_per_eu=args.waves_per_eu_options,
+#         pipeline_options_search_space=pipeline_options_search_space,
+#         codegen_pipeline=get_iree_codegen_pipeline(args.codegen_pipeline),
+#     )
 
 def generate_configs_and_td_specs(
     input_module: ir.Module,  # Path to the mlir file to be tuned
@@ -205,8 +216,8 @@ def generate_configs_and_td_specs(
         all_intrinsics.extend(virtual_mma_intrinsics)
 
     constraint_generator = dispatch_tuner.get_constraint_generator()
-
-    for i, config in enumerate(
+    solution_variables = []
+    for i, solution_pack in enumerate(
         constraint_generator.generate_solutions(
             tuner_context,
             codegen_pipeline,
@@ -218,13 +229,16 @@ def generate_configs_and_td_specs(
     ):
         if i >= limit:
             break
+        config = [solution_pack.tuning_configuration]
+        # config = solution_pack.tuning_configurations
         tune_logger.debug(f"Solution #{i+1}: {config}")
         td_spec_module = dispatch_tuner.get_td_spec(config)
         assert td_spec_module, "Failed to generate transform dialect spec"
         config_specs.append(td_spec_module)
+        solution_variables.append(solution_pack.solution_variable)
 
     tune_logger.debug(f"Generated {len(config_specs)} tuning specs")
-    return config_specs
+    return config_specs, solution_variables
 
 
 @dataclass
