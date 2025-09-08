@@ -80,16 +80,18 @@ class CandidateRecord:
     device: str                # MI300X, RX7900XTX, ...
     arch: str                  # gfx942, gfx1100, ...
     cfg: common.SolutionVariable
-    tuner_commit: str
-    rocm_version: str
-    notes: Optional[str] = None
+    # tuner_commit: str
+    # rocm_version: str
+    # notes: Optional[str] = None
 
 @dataclass
 class TuningRecord:
     dispatch_id: str
     candidate_id: str
+    op_kind: str
     device: str                                  # MI300X, RX7900XTX, ...
-    arch: str                                    # gfx942, gfx1100, ...
+    arch: str     
+    cfg: common.SolutionVariable                               # gfx942, gfx1100, ...
     compile_flags: str
     compile_order_in_list: int  # Baseline=can_0=compile order 0. can compile order start=1
     compile_status: bool
@@ -107,10 +109,13 @@ class TuningRecord:
     benchmark_result_order: Optional[int] # Baseline doesnt count, candidate first order start=1
     benchmark_start_order_vs_result:Optional[int]
     benchmark_optimal_start_order:Optional[int]
+
+    benchmark_avg_order_diff:Optional[float]
+    benchmark_avg_top10_order_diff:Optional[float]
     
-    tuner_commit: str
-    rocm_version: str
-    notes: Optional[str] = None                  # optional extra comments
+    # tuner_commit: str
+    # rocm_version: str
+    # notes: Optional[str] = None                  # optional extra comments
 
 
 @dataclass()
@@ -569,6 +574,7 @@ def run_iree_compile_command(compile_pack: CompilePack) -> Optional[int]:
 def run_iree_benchmark_module_command(benchmark_pack: BenchmarkPack):
     candidate_tracker = benchmark_pack.candidate_tracker
     candidate_id = candidate_tracker.candidate_id
+    # print(f"Benchmarking candidate {candidate_id} on device {device_id}")
 
     # Load the candidate's vmfb and create vm_module.
     vmfb_path = candidate_tracker.compiled_vmfb_path
@@ -747,6 +753,10 @@ def get_iree_codegen_pipeline(pipeline: CodegenPipelines):
         case _:
             assert False, "unexpected codegen pipeline"
 
+def make_dummy(cls, fill=None):
+    # Build a dict with each field set to `fill`
+    kwargs = {f.name: fill for f in cls.__dataclass_fields__.values()}
+    return cls(**kwargs)
 
 def generate_candidate_specs(
     args: argparse.Namespace,
@@ -837,26 +847,26 @@ def generate_candidate_specs(
         candidate_record = CandidateRecord(
             dispatch_id="",
             candidate_id=0,
-            op_kind="contraction",               # contraction/conv/attention
+            op_kind="",               # contraction/conv/attention
             device="",               # MI300X, RX7900XTX, ...
-            arch="gfx942",                  # gfx942, gfx1100, ...
-            cfg=None,
-            tuner_commit="",
-            rocm_version="",
-            notes="",
+            arch="",                  # gfx942, gfx1100, ...
+            cfg=make_dummy(common.SolutionVariable),
+            # tuner_commit="",
+            # rocm_version="",
+            # notes="",
         )
         tuning_client.candidate_records.append(candidate_record)
         for i, solution_variable in enumerate(solution_variables, start=1):
             candidate_record = CandidateRecord(
                 dispatch_id="",
                 candidate_id=i,
-                op_kind="contraction",               # contraction/conv/attention
+                op_kind="",               # contraction/conv/attention
                 device="",               # MI300X, RX7900XTX, ...
-                arch="gfx942",                  # gfx942, gfx1100, ...
+                arch="",                  # gfx942, gfx1100, ...
                 cfg=solution_variable,
-                tuner_commit="",
-                rocm_version="",
-                notes="",
+                # tuner_commit="",
+                # rocm_version="",
+                # notes="",
             )
             tuning_client.candidate_records.append(candidate_record)
             
@@ -1186,9 +1196,7 @@ def benchmark(
         return []
     for c in compiled_candidates:
         tuning_client.tuning_records[c].to_benchmark = True
-    for i in range(len(tuning_client.tuning_records)):
-        tuning_client.tuning_records[i].benchmark_flags = tuning_client.get_iree_benchmark_module_flags()
-    
+
     # Benchmarking baselines on each involved device.
     baseline_tracker = tuning_client.candidate_trackers[0]
     first_baseline_result = benchmark_baseline(
@@ -1244,20 +1252,33 @@ def benchmark(
         candidate_results
     )
     # print(all_candidates_with_speedup)
-    best_ben_res, best_speedup=all_candidates_with_speedup[0]
-    best_start_order = tuning_client.tuning_records[best_ben_res.candidate_id].benchmark_order_in_list
-    for i,can in enumerate(all_candidates_with_speedup,start=1):
-        ben_res,speedup=can
-        c_id, t, d_id = ben_res
+    if all_candidates_with_speedup:
+        best_ben_res, best_speedup=all_candidates_with_speedup[0]
+        avg_diff=avg_top10_diff=0.0
+        best_start_order = tuning_client.tuning_records[best_ben_res.candidate_id].benchmark_order_in_list
+        for i,can in enumerate(all_candidates_with_speedup,start=1):
+            ben_res,speedup=can
+            c_id, t, d_id = ben_res
 
-        tuning_client.tuning_records[c_id].benchmark_result_order=i
-        bas = baseline_handler.get_average_result_ms(d_id)
-        tuning_client.tuning_records[c_id].baseline_benchmark_time_ms = round(bas,2)
-        tuning_client.tuning_records[c_id].benchmark_speedup=round(speedup,5)
-        tuning_client.tuning_records[c_id].benchmark_optimal_time_ms=round(best_ben_res.time,2)
-        tuning_client.tuning_records[c_id].benchmark_optimal_start_order = best_start_order
-        my_start_order = tuning_client.tuning_records[c_id].benchmark_order_in_list
-        tuning_client.tuning_records[c_id].benchmark_start_order_vs_result = abs(my_start_order-i)
+            tuning_client.tuning_records[c_id].benchmark_result_order=i
+            bas = baseline_handler.get_average_result_ms(d_id)
+            tuning_client.tuning_records[c_id].baseline_benchmark_time_ms = round(bas,2)
+            tuning_client.tuning_records[c_id].benchmark_speedup=round(speedup,5)
+            tuning_client.tuning_records[c_id].benchmark_optimal_time_ms=round(best_ben_res.time,2)
+            tuning_client.tuning_records[c_id].benchmark_optimal_start_order = best_start_order
+            my_start_order = tuning_client.tuning_records[c_id].benchmark_order_in_list
+            avg_diff += abs(my_start_order-i)
+            avg_top10_diff += abs(my_start_order-i) if i <= 10 else avg_top10_diff
+            tuning_client.tuning_records[c_id].benchmark_start_order_vs_result = abs(my_start_order-i)
+
+
+        avg_diff /= float(len(all_candidates_with_speedup))
+        avg_top10_diff /= 10.0
+        for i in tuning_client.tuning_records:
+            if i.benchmark_status == True:
+                i.benchmark_avg_order_diff = avg_diff
+                if i.benchmark_result_order <= 10:
+                    i.benchmark_avg_order_diff = avg_top10_diff
 
 
     top_candidates_with_speedup = all_candidates_with_speedup[:num_candidates]

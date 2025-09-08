@@ -79,26 +79,36 @@ def read_flags_file(flags_file: str) -> list[str]:
         return file.read().splitlines()
 
 
-import csv, os
+import csv
 
 def export_to_csv(objects, filename="export.csv"):
     if not objects:
         return None
 
     rows = []
+    headers = []
+
     for obj in objects:
         row = {}
         for k, v in vars(obj).items():
             if hasattr(v, "__dict__"):  # nested object → flatten one level
-                for nk, nv in vars(v).items():
-                    row[f"{k}.{nk}"] = nv
+                nested = vars(v)
+                if nested:  # only if it has attrs
+                    for nk, nv in nested.items():
+                        key = f"{k}.{nk}"
+                        row[key] = nv
+                        if key not in headers:
+                            headers.append(key)
+                else:
+                    # skip empty nested object entirely
+                    continue
             else:
                 row[k] = v
+                if k not in headers:
+                    headers.append(k)
         rows.append(row)
 
-    headers = sorted({key for row in rows for key in row})
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
-
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
         writer.writeheader()
@@ -143,6 +153,8 @@ def arg_parse() -> argparse.Namespace:
     args = libtuner.parse_arguments(parser)
     return args
 
+import re
+import subprocess
 
 def main() -> None:
     args = arg_parse()
@@ -168,6 +180,15 @@ def main() -> None:
     summary_handler.setFormatter(
         logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     )
+
+    try:
+        arch = subprocess.check_output("rocminfo | grep gfx", shell=True, text=True)
+        match = re.search(r"gfx[0-9a-z]+", arch)
+        if match:
+            arch = match.group(0)
+    except:
+        arch = "gfx unknown"
+
     print("Generating candidate tuning specs...")
     with common.TunerContext(logger=root_logger) as tuner_context:
         tuner_context.logger.addHandler(summary_handler)
@@ -176,49 +197,44 @@ def main() -> None:
         # print(dispatch_tuner.candidate_records)
         print(f"Stored candidate tuning specs in {path_config.specs_dir}\n")
 
+        print("Compiling dispatch candidates...")
+        dispatch_tuner.compile_flags = compile_flags + [
+            "--compile-from=executable-sources"
+        ]
+
         for i in range(len(candidates)):
             dispatch_tuner.tuning_records.append(libtuner.TuningRecord(
                 dispatch_id=args.dispatch_file.stem,
                 candidate_id=i,
-                device = f"sharkmi300x-4::{args.devices}",
-                arch = "gfx942",                                    # gfx942, gfx1100, ...
-                compile_flags="",
+                op_kind="contraction",
+                device = f"{os.uname().nodename}",
+                arch = f"{arch}",                                    # gfx942, gfx1100, ...
+                cfg=dispatch_tuner.candidate_records[i].cfg,
+                compile_flags=dispatch_tuner.compile_flags,
                 compile_order_in_list = -1,
                 compile_status=False,
                 # dispatch_compile_error_class: Optional[str]  # optional: codegen_error, verifier, etc.
-                benchmark_flags="",
+                benchmark_flags=dispatch_tuner.get_iree_benchmark_module_flags(),
                 to_benchmark = False,
                 benchmark_order_in_list=None,
                 benchmark_device_id=None,
                 benchmark_status=False,
                 baseline_benchmark_time_ms=None,
                 benchmark_time_ms=None,
-                # benchmark_diff=0,
                 benchmark_result_order=None,
                 benchmark_speedup=None,
                 benchmark_optimal_time_ms=None,
                 benchmark_optimal_start_order=None,
                 benchmark_start_order_vs_result=None,
-                tuner_commit="",
-                rocm_version="",
-                notes="",
+                benchmark_avg_order_diff=None,
+                benchmark_avg_top10_order_diff=None,
             ))
 
-        print("Compiling dispatch candidates...")
-        dispatch_tuner.compile_flags = compile_flags + [
-            "--compile-from=executable-sources"
-        ]
-
         
-        for i in dispatch_tuner.candidate_records:
-            i.dispatch_id = args.dispatch_file.stem,
-            i.device = f"sharkmi300x-4::{args.devices}"
-            i.arch = "gfx942",
-            i.tuner_commit="",
-            i.rocm_version="",
-            i.notes="",
-        for j in dispatch_tuner.tuning_records:
-            j.compile_flags = dispatch_tuner.compile_flags
+        # for i in dispatch_tuner.candidate_records:
+        #     i.dispatch_id = args.dispatch_file.stem,
+        #     i.device = f"sharkmi300x-4::{args.devices}"
+        #     i.arch = "gfx942",
         
         compiled_candidates = libtuner.compile(
             args, path_config, candidates, dispatch_tuner
@@ -245,8 +261,11 @@ def main() -> None:
         print("Check the summary in:")
         print(summary_log_file.resolve())
 
-        write_parquet(dispatch_tuner.candidate_records, "candidates.parquet")
-        write_parquet(dispatch_tuner.tuning_records, "tuning.parquet")
-        export_to_csv(dispatch_tuner.candidate_records, "candidates.csv")
-        export_to_csv(dispatch_tuner.tuning_records, "tuning.csv")
+        # write_parquet(dispatch_tuner.candidate_records, "candidates.parquet")
+        # write_parquet(dispatch_tuner.tuning_records, "tuning.parquet")
+        # export_to_csv(dispatch_tuner.candidate_records, "candidates.csv")
+        # export_to_csv(dispatch_tuner.tuning_records, "tuning.csv")
+
+        export_to_csv(dispatch_tuner.tuning_records, "combined.csv")
+
         # exit()
