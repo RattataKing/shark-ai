@@ -228,6 +228,7 @@ def main() -> None:
                 benchmark_start_order_vs_result=None,
                 benchmark_avg_order_diff=None,
                 benchmark_avg_top10_order_diff=None,
+                candidate_spec_mlir=dispatch_tuner.candidate_trackers[i].spec_path,
             ))
 
         

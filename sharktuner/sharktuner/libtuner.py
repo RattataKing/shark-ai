@@ -113,6 +113,7 @@ class TuningRecord:
     benchmark_avg_order_diff:Optional[float]
     benchmark_avg_top10_order_diff:Optional[float]
     
+    candidate_spec_mlir:Optional[str]
     # tuner_commit: str
     # rocm_version: str
     # notes: Optional[str] = None                  # optional extra comments
