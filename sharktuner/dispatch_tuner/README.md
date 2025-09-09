@@ -22,5 +22,6 @@ cfg.mma_attr_#iree_gpu.mma_layout<MFMA_F32_16x16x16_F16>    0.069226
 Name: winners, dtype: float64
 ```
 > Notes: if constant column values -> variance = 0 -> correlation will be defined as `NaN`
+
 Correlation Heatmap (Top 10 Features vs Winners)
 ![Correlation Heatmap (Top 10 Features vs Winners)](https://github.com/RattataKing/shark-ai/blob/dispatch_tuner/sharktuner/dispatch_tuner/single_gemm/compute_gemm_4096_4096_8192_f16_f32_tA/correlation_heatmap.png)
