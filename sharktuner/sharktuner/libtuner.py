@@ -1269,7 +1269,7 @@ def benchmark(
             tuning_client.tuning_records[c_id].benchmark_optimal_start_order = best_start_order
             my_start_order = tuning_client.tuning_records[c_id].benchmark_order_in_list
             avg_diff += abs(my_start_order-i)
-            avg_top10_diff += abs(my_start_order-i) if i <= 10 else avg_top10_diff
+            avg_top10_diff = avg_top10_diff+abs(my_start_order-i) if i <= 10 else avg_top10_diff
             tuning_client.tuning_records[c_id].benchmark_start_order_vs_result = abs(my_start_order-i)
 
 
@@ -1277,9 +1277,9 @@ def benchmark(
         avg_top10_diff /= 10.0
         for i in tuning_client.tuning_records:
             if i.benchmark_status == True:
-                i.benchmark_avg_order_diff = avg_diff
+                i.benchmark_avg_order_diff = round(avg_diff,2)
                 if i.benchmark_result_order <= 10:
-                    i.benchmark_avg_order_diff = avg_top10_diff
+                    i.benchmark_avg_top10_order_diff = round(avg_top10_diff,2)
 
 
     top_candidates_with_speedup = all_candidates_with_speedup[:num_candidates]
