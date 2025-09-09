@@ -1,6 +1,6 @@
 **GEMM `compute_gemm_4096_4096_8192_f16_f32_tA.mlir` with 1024 candidates**
 
-From `tuning_compute_gemm_4096_4096_8192_f16_f32_tA.csv`:
+From [`tuning_compute_gemm_4096_4096_8192_f16_f32_tA.csv`](https://github.com/RattataKing/shark-ai/blob/dispatch_tuner/sharktuner/dispatch_tuner/single_gemm/compute_gemm_4096_4096_8192_f16_f32_tA/tuning_compute_gemm_4096_4096_8192_f16_f32_tA.csv):
 
 `winners` is defined as:
 ```python
