@@ -25,3 +25,18 @@ Name: winners, dtype: float64
 
 Correlation Heatmap (Top 10 Features vs Winners)
 ![Correlation Heatmap (Top 10 Features vs Winners)](https://github.com/RattataKing/shark-ai/blob/dispatch_tuner/sharktuner/dispatch_tuner/single_gemm/compute_gemm_4096_4096_8192_f16_f32_tA/correlation_heatmap.png)
+
+Random Forest Feature Importances:
+```
+cfg.workgroup_tile_sizes_[256, 128, 0]                      0.106924
+cfg.workgroup_tile_sizes_[128, 512, 0]                      0.096629
+cfg.wg_x                                                    0.090417
+cfg.sg_n_cnt                                                0.087827
+cfg.workgroup_tile_sizes_[128, 256, 0]                      0.075350
+cfg.mma_attr_#iree_gpu.mma_layout<MFMA_F32_16x16x32_F16>    0.055926
+cfg.mma_attr_#iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>     0.045343
+cfg.mma_attr_#iree_gpu.mma_layout<MFMA_F32_16x16x16_F16>    0.045273
+cfg.wg_y                                                    0.041385
+cfg.sg_m_cnt                                                0.040507
+dtype: float64
+```
