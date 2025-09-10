@@ -108,7 +108,8 @@ def export_to_csv(objects, filename="export.csv"):
                     headers.append(k)
         rows.append(row)
 
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "single_gemm")
+    path = os.path.join(path, filename)
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
         writer.writeheader()
@@ -204,7 +205,7 @@ def main() -> None:
 
         for i in range(len(candidates)):
             dispatch_tuner.tuning_records.append(libtuner.TuningRecord(
-                dispatch_id=args.dispatch_file.stem,
+                dispatch_id=args.dispatch_file.stem.removesuffix('_benchmark'),
                 candidate_id=i,
                 op_kind="contraction",
                 device = f"{os.uname().nodename}",
@@ -267,6 +268,11 @@ def main() -> None:
         # export_to_csv(dispatch_tuner.candidate_records, "candidates.csv")
         # export_to_csv(dispatch_tuner.tuning_records, "tuning.csv")
 
-        export_to_csv(dispatch_tuner.tuning_records, "tuning_try.csv")
+        # export_to_csv(dispatch_tuner.tuning_records, f"tuning_{args.dispatch_file.stem}.csv")
+
+        # Name CSV by the input file: tuning_<mlir-name>.csv
+        output_csv_name = f"tuning_{args.dispatch_file.stem.removesuffix('_benchmark')}.csv"
+        csv_path = export_to_csv(dispatch_tuner.tuning_records, output_csv_name)
+        print(f"Wrote CSV: {csv_path}")
 
         # exit()

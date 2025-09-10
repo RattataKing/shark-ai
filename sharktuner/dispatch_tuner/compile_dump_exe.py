@@ -37,7 +37,7 @@ def run_iree_compile(mlir_file, dump_dir):
 def copy_benchmark_file(input_name, src_dir, dst_dir):
     """Copy the benchmark file with renamed output."""
     source_file = src_dir / "module_main_dispatch_0_rocm_hsaco_fb_benchmark.mlir"
-    dest_file = dst_dir / f"{input_name}.mlir"
+    dest_file = dst_dir / f"{input_name}_benchmark.mlir"
     
     if source_file.exists():
         try:

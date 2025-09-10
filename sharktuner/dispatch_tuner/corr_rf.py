@@ -3,7 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('./dispatch_tuner/tuning_compute_gemm_4096_4096_8192_f16_f32_tA.csv')
+df = pd.read_csv('./dispatch_tuner/single_gemm/compute_gemm_4096_4096_8192_f16_f32_tA/tuning_compute_gemm_4096_4096_8192_f16_f32_tA.csv')
 
 df["winners"] = (df["benchmark_result_order"] <= 20) & (df["benchmark_speedup"] < 1)
 
@@ -29,7 +29,9 @@ X_all = pd.concat([X_num, X_cat], axis=1)
 # print(corr["winners"].sort_values(ascending=False))
 corr = pd.concat([X_all, df["winners"]], axis=1).corr()
 print("Correlation Matrix:")
-print(corr["winners"].sort_values(ascending=False).head(10))
+print(corr["winners"].sort_values(ascending=False).head(20))
+
+exit()
 
 # Pick top-N features most correlated with winners (absolute value)
 head=10
@@ -50,9 +52,9 @@ plt.title(f"Correlation Heatmap (Top {head} Features vs Winners)", fontsize=14)
 plt.tight_layout()
 
 # Save directly to file
-plt.savefig("./dispatch_tuner/correlation_heatmap.png", dpi=300)
+plt.savefig("./dispatch_tuner/single_gemm/compute_gemm_4096_4096_8192_f16_f32_tA/correlation_heatmap.png", dpi=300)
 plt.close()
-print("Correlation heatmap saved to ./dispatch_tuner/correlation_heatmap.png")
+print("Correlation heatmap saved to ./dispatch_tuner/single_gemm/compute_gemm_4096_4096_8192_f16_f32_tA/correlation_heatmap.png")
 
 
 
