@@ -17,7 +17,12 @@ def main():
     failed_files = []
     ok = fail = 0
 
+    csv_dir = Path("./dispatch_tuner/single_gemm")
     for mlir, bench in zip(mlir_files, mlir_benchmark_files):
+        if ((csv_dir / f"tuning_{mlir.stem}.csv").exists()):
+            print(f"{mlir.stem} already tuned, skipping...")
+            ok += 1
+            continue
         print("\n" + "=" * 80)
         print(f"[INFO] Tuning: {mlir.name} with {bench.name}")
         print("=" * 80)

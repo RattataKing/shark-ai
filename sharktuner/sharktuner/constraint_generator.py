@@ -18,6 +18,8 @@ from . import dispatch_constraints
 
 import json, math
 
+from dataclasses import fields
+
 
 def adjust_problem_size_for_pipeline(
     contraction_dims: common.ContractionDimensions,
@@ -286,6 +288,39 @@ def generate_generic_contraction_solutions(
                 allowed_waves_per_eu=allowed_waves_per_eu,
                 padding=padding,
             )
+            # workgroup: x,y,z
+            for name, val in zip(["x", "y", "z"], workgroup_tile_sizes):
+                setattr(solution_variable, f"workgroup_tile_size_{name}", val)
+
+            # subgroup: x,y,z
+            for name, val in zip(["x", "y", "z"], subgroup_tile_sizes):
+                setattr(solution_variable, f"subgroup_tile_size_{name}", val)
+
+            # reduction: numbered
+            for i, val in enumerate(reduction_tile_sizes, start=1):
+                setattr(solution_variable, f"reduction_tile_size_{i}", val)
+            
+            # promote_operands: numbered
+            for i, val in enumerate(promote_operands, start=1):
+                setattr(solution_variable, f"promote_operand_{i}", val)
+            
+            # allowed_waves_per_eu: numbered
+            if len(allowed_waves_per_eu) > 1:
+                for i, val in enumerate(allowed_waves_per_eu, start=1):
+                    setattr(solution_variable, f"allowed_waves_per_eu_{i}", val)
+            
+            # padding: numbered
+            if padding and len(padding) > 1:
+                for i, val in enumerate(padding, start=1):
+                    setattr(solution_variable, f"padding_{i}", val)
+
+            # pipeline_options_search_space: attrs
+            for f in fields(pipeline_options_search_space):
+                name = f.name   # e.g. "prefetch_shared_memory"
+                value = getattr(pipeline_options_search_space, name)   # e.g. [True] or [None]
+                setattr(solution_variable, f"pipeline_{name}", value)
+
+
             yield common.SolutionPack(solution_variable=solution_variable, tuning_configuration=tuning_configuration)
             
 

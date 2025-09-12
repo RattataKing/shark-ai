@@ -203,6 +203,9 @@ def main() -> None:
             "--compile-from=executable-sources"
         ]
 
+        dispatch_tuner.benchmark_flags = ["--input=1", "--benchmark_repetitions=3"]
+        
+
         for i in range(len(candidates)):
             dispatch_tuner.tuning_records.append(libtuner.TuningRecord(
                 dispatch_id=args.dispatch_file.stem.removesuffix('_benchmark'),
@@ -246,7 +249,7 @@ def main() -> None:
         message = "Benchmarking compiled dispatch candidates..."
         print(message)
         logging.info(message)
-        dispatch_tuner.benchmark_flags = ["--input=1", "--benchmark_repetitions=3"]
+        # dispatch_tuner.benchmark_flags = ["--input=1", "--benchmark_repetitions=3"]
         top_candidates = libtuner.benchmark(
             args,
             compiled_candidates,

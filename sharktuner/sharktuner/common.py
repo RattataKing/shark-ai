@@ -200,24 +200,24 @@ class AttentionOpInfo:
 
 @dataclass
 class SolutionVariable:
-    mma_attr: Any
-    M: Any
-    N: Any
-    K: Any
-    workgroup_tile_sizes: Any
-    reduction_tile_sizes: Any
-    subgroup_tile_sizes: Any
-    wg_x: Any
-    wg_y: Any
-    wg_z: Any
-    subgroup_size: Any
-    sg_m_cnt: Any
-    sg_n_cnt: Any
-    promote_operands: Any
-    codegen_pipeline: Any
+    mma_attr: str
+    M: int
+    N: int
+    K: int
+    workgroup_tile_sizes: list
+    reduction_tile_sizes: list
+    subgroup_tile_sizes: list
+    wg_x: int
+    wg_y: int
+    wg_z: int
+    subgroup_size: int
+    sg_m_cnt: int
+    sg_n_cnt: int
+    promote_operands: list
+    codegen_pipeline: str
     pipeline_options_search_space: Any
-    allowed_waves_per_eu: Any
-    padding: Any
+    allowed_waves_per_eu: list
+    padding: list
 
 @dataclass
 class SolutionPack:
