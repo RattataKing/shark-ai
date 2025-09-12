@@ -31,7 +31,7 @@ def main():
             "python3", "-m", "dispatch_tuner",
             str(mlir),
             str(bench),
-            "--compile-flags-file=model_tuner/compile_flags.txt",
+            "--compile-flags-file=dispatch_tuner/compile_flags.txt",
             "--devices=hip://6,hip://7",
             "--num-candidates=1024",
             "--dispatch-tuner-num-dispatch-candidates=1024",
