@@ -1,5 +1,6 @@
 import subprocess
 from pathlib import Path
+import os
 
 def main():
     mlir_folder_path = Path("/home/amily/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump")
@@ -17,7 +18,9 @@ def main():
     failed_files = []
     ok = fail = 0
 
-    csv_dir = Path("./dispatch_tuner/single_gemm")
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    csv_dir = Path(base_path) / "tuning_database"
+    csv_dir.mkdir(exist_ok=True)
     for mlir, bench in zip(mlir_files, mlir_benchmark_files):
         if ((csv_dir / f"tuning_{mlir.stem}.csv").exists()):
             print(f"{mlir.stem} already tuned, skipping...")

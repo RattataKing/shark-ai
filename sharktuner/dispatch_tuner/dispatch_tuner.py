@@ -108,8 +108,11 @@ def export_to_csv(objects, filename="export.csv"):
                     headers.append(k)
         rows.append(row)
 
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "single_gemm")
-    path = os.path.join(path, filename)
+    base_path = os.path.dirname(os.path.abspath(__file__))
+    csv_dir = Path(base_path) / "tuning_database"
+    csv_dir.mkdir(exist_ok=True)
+    # path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tunning_database")
+    path = os.path.join(csv_dir, filename)
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
         writer.writeheader()
