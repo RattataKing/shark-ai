@@ -7,91 +7,99 @@ Dir Hierarchy:
 
 **Get Tuning Database**
 1. Get problem mlir dispatches, details see [LINK](https://github.com/RattataKing/iree-kernel-benchmark/blob/dump_gemm/dump_dispatch/README.md):
-```bash
-cd ~/iree-kernel-benchmark
-source ~/iree-build/.env && export PYTHONPATH
-export PATH="$(realpath ~/iree-build/tools):$PATH"
-python -m dump_dispatch.dump_problem_mlir
-```
-Env:
-```
---iree-kernel-benchmark
-    |__dump_dispatch
-        |__problem_mlir_dump
-            |__<dispatch 1>.mlir
-            |__<dispatch 2>.mlir
-            |__...
-```
+    ```bash
+    cd ~/iree-kernel-benchmark
+    source ~/iree-build/.env && export PYTHONPATH
+    export PATH="$(realpath ~/iree-build/tools):$PATH"
+    python -m dump_dispatch.dump_problem_mlir
+    ```
+    Env:
+    ```
+    --iree-kernel-benchmark
+        |__dump_dispatch
+            |__problem_mlir_dump
+                |__<dispatch 1>.mlir
+                |__<dispatch 2>.mlir
+                |__...
+    ```
 
 2. Get exe-benchmark mlir for each dispatch:
-```bash
-cd ~/shark-ai/sharktuner
-python dispatch_tuner/compile_dump_exe.py # Before run, double check command flags (ex. gfx device) in run_iree_compile()
-```
-Env:
-```
---iree-kernel-benchmark
-    |__dump_dispatch
-        |__problem_mlir_dump
-            |__<dispatch 1>.mlir
-            |__<dispatch 2>.mlir
-            |__...
---shark-ai
-    |__sharktuner
-        |__dispatch_tuner
-            |__dump
-                |__<dispatch 1>_benchmark.mlir
-                |__<dispatch 2>_benchmark.mlir
+    ```bash
+    cd ~/shark-ai/sharktuner
+    python dispatch_tuner/compile_dump_exe.py # Before run, double check command flags (ex. gfx device) in run_iree_compile()
+    ```
+    Env:
+    ```
+    --iree-kernel-benchmark
+        |__dump_dispatch
+            |__problem_mlir_dump
+                |__<dispatch 1>.mlir
+                |__<dispatch 2>.mlir
                 |__...
-```
+    --shark-ai
+        |__sharktuner
+            |__dispatch_tuner
+                |__dump
+                    |__<dispatch 1>_benchmark.mlir
+                    |__<dispatch 2>_benchmark.mlir
+                    |__...
+    ```
 
 3. Try single dispatch tuner:
-```bash
-cd ~/shark-ai/sharktuner
-source ~/iree-build/.env && export PYTHONPATH
-export PATH="$(realpath ~/iree-build/tools):$PATH"
+    ```bash
+    cd ~/shark-ai/sharktuner
+    source ~/iree-build/.env && export PYTHONPATH
+    export PATH="$(realpath ~/iree-build/tools):$PATH"
 
-python3 -m dispatch_tuner ~/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump/compute_gemm_4096_4096_8192_f16_f32_tB_benchmark.mlir \
-~/shark-ai/sharktuner/dispatch_tuner/dump/compute_gemm_4096_4096_8192_f16_f32_tB_benchmark.mlir \
-    --compile-flags-file=dispatch_tuner/compile_flags.txt \
-    --devices=hip://6 --num-candidates=30 \
-    --dispatch-tuner-num-dispatch-candidates=30
-```
+    python3 -m dispatch_tuner ~/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump/compute_gemm_4096_4096_8192_f16_f32_tB_benchmark.mlir \
+    ~/shark-ai/sharktuner/dispatch_tuner/dump/compute_gemm_4096_4096_8192_f16_f32_tB_benchmark.mlir \
+        --compile-flags-file=dispatch_tuner/compile_flags.txt \
+        --devices=hip://6 --num-candidates=30 \
+        --dispatch-tuner-num-dispatch-candidates=30
+    ```
 
 4. Run dipatches tuner and get complete tuning database:
-```bash
-cd ~/shark-ai/sharktuner
-python ./dispatch_tuner/dipatches_tuner.py # Before run, modify flags in cmd[] in main() to use target device
-```
-Env:
-```
---iree-kernel-benchmark
-    |__dump_dispatch
-        |__problem_mlir_dump
-            |__<dispatch 1>.mlir
-            |__<dispatch 2>.mlir
-            |__...
---shark-ai
-    |__sharktuner
-        |__dispatch_tuner
-            |__dump
-            |    |__<dispatch 1>_benchmark.mlir
-            |    |__<dispatch 2>_benchmark.mlir
-            |    |__...
-            |__tuning_database
-                |__tuning_<dispatch 1>.csv
-                |__tuning_<dispatch 2>.csv
+    ```bash
+    cd ~/shark-ai/sharktuner
+    python ./dispatch_tuner/dipatches_tuner.py # Before run, modify flags in cmd[] in main() to use target device
+    ```
+    Env:
+    ```
+    --iree-kernel-benchmark
+        |__dump_dispatch
+            |__problem_mlir_dump
+                |__<dispatch 1>.mlir
+                |__<dispatch 2>.mlir
                 |__...
-```
+    --shark-ai
+        |__sharktuner
+            |__dispatch_tuner
+                |__dump
+                |    |__<dispatch 1>_benchmark.mlir
+                |    |__<dispatch 2>_benchmark.mlir
+                |    |__...
+                |__tuning_database
+                    |__tuning_<dispatch 1>.csv
+                    |__tuning_<dispatch 2>.csv
+                    |__...
+    ```
 
 
 **To experiment with `sort()`**
+- Without Tuner:
+Example usage:
+    ```bash
+    cd ~/shark-ai/sharktuner
+    python ./dispatch_tuner/test_sort.py ./dispatch_tuner/tuning_database/tuning_compute_gemm_4096_4096_8192_f16_f32_tB.csv
+    ```
+
+- With Tuner
 1. Run `dispatch_tuner.py` as in step 3 above for wanted dispatch mlir, but with 1024 candidates
 2. In `libtuner.py`, inside of `benchmark()` function, add lines before calling `benchmark_candidates()`, there is also an exmaple shuffle sort() written in the comments there.
 3. Run `dispatch_tuner.py` again for wanted dispatch mlir, remember to change default output file name!!:
-```python
-output_csv_name = f"tuning_{args.dispatch_file.stem.removesuffix('_benchmark')}_shuffle.csv" # Naming example
-```
+    ```python
+    output_csv_name = f"tuning_{args.dispatch_file.stem.removesuffix('_benchmark')}_shuffle.csv" # Naming example
+    ```
 
 
 **Tuning Database Analysis**

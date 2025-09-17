@@ -1,10 +1,17 @@
-import os
+import os, sys
 import pandas as pd
 import glob
 from pathlib import Path
 import random
 
-input_csv = Path('./dispatch_tuner/tuning_database/tuning_compute_gemm_4096_4096_8192_f16_f32_tB.csv')
+
+if len(sys.argv) < 2:
+    print(f"Usage: {sys.argv[0]} <input_csv>")
+    sys.exit(1)
+
+input_csv = Path(sys.argv[1])
+# input_csv = Path('./dispatch_tuner/tuning_database/tuning_compute_gemm_4096_4096_8192_f16_f32_tB.csv')
+
 df = pd.read_csv(input_csv)
 df = df.copy().iloc[1:] # Skip candidate 0, the baseline
 
