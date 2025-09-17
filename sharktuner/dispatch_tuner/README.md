@@ -11,7 +11,6 @@ Dir Hierarchy:
 cd ~/iree-kernel-benchmark
 source ~/iree-build/.env && export PYTHONPATH
 export PATH="$(realpath ~/iree-build/tools):$PATH"
-cd ~/iree-kernel-benchmark
 python -m dump_dispatch.dump_problem_mlir
 ```
 Env:
