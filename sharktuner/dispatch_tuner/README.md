@@ -26,7 +26,7 @@ Env:
 
 2. Get exe-benchmark mlir for each dispatch:
 ```bash
-~/shark-ai/sharktuner
+cd ~/shark-ai/sharktuner
 python dispatch_tuner/compile_dump_exe.py # Before run, double check command flags (ex. gfx device) in run_iree_compile()
 ```
 Env:
