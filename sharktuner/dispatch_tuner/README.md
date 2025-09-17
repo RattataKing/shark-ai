@@ -6,7 +6,23 @@ Dir Hierarchy:
 ```
 
 **Get Tuning Database**
-1. Get problem mlir dispatches, see [LINK](https://github.com/RattataKing/iree-kernel-benchmark/blob/dump_gemm/dump_dispatch/README.md)
+1. Get problem mlir dispatches, details see [LINK](https://github.com/RattataKing/iree-kernel-benchmark/blob/dump_gemm/dump_dispatch/README.md):
+```bash
+cd ~/iree-kernel-benchmark
+source ~/iree-build/.env && export PYTHONPATH
+export PATH="$(realpath ~/iree-build/tools):$PATH"
+cd ~/iree-kernel-benchmark
+python -m dump_dispatch.dump_problem_mlir
+```
+Env:
+```
+--iree-kernel-benchmark
+    |__dump_dispatch
+        |__problem_mlir_dump
+            |__<dispatch 1>.mlir
+            |__<dispatch 2>.mlir
+            |__...
+```
 
 2. Get exe-benchmark mlir for each dispatch:
 ```bash
