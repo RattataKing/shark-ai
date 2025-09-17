@@ -44,6 +44,7 @@ from . import candidate_gen
 from . import dispatch_parser
 from . import common
 from . import dispatch_constraints
+import random
 
 
 # Default values for num_candidates and devices, change it as needed
@@ -1184,6 +1185,10 @@ def compile(
     return compiled_candidates
 
 
+def candidate_priority(candidates: list[int]):
+    return []
+
+
 def benchmark(
     args: argparse.Namespace,
     compiled_candidates: list[int],
@@ -1213,6 +1218,13 @@ def benchmark(
     candidate_indices = [i for i in compiled_candidates if i != 0]
     for i, can in enumerate(candidate_indices, start=1):
         tuning_client.tuning_records[can].benchmark_order_in_list = i
+    
+    ### Play Ground
+    # candidate_indices = 
+    # candidates.sort(key=candidate_priority)
+    # random.shuffle(candidate_indices)
+    ###
+
     candidate_results = benchmark_candidates(
         candidate_indices=candidate_indices,
         devices=args.devices,
