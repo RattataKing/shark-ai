@@ -59,7 +59,7 @@ def main():
     # args = parser.parse_args()
 
     # input_dir = Path(args.input_dir)
-    input_dir = Path("/home/amily/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump")
+    input_dir = Path("~/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump").expanduser().resolve()
     
     print(f"Processing MLIR files in: {input_dir}")
     
@@ -85,7 +85,7 @@ def main():
             if copy_benchmark_file(input_name, dump_dir, output_dir):
                 success_count += 1
     
-    print(f"Successfully processed {success_count}/{len(mlir_files)} files")
+    print(f"Successfully processed {success_count}/{len(mlir_files)} files in {output_dir}")
     return success_count == len(mlir_files)
 
 

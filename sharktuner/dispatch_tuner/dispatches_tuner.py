@@ -3,9 +3,9 @@ from pathlib import Path
 import os
 
 def main():
-    mlir_folder_path = Path("/home/amily/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump")
+    mlir_folder_path = Path("~/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump").expanduser().resolve()
     mlir_files = sorted(mlir_folder_path.glob("*.mlir"))
-    mlir_benchmark_folder_path = Path("/home/amily/shark-ai/sharktuner/dispatch_tuner/dump")
+    mlir_benchmark_folder_path = Path("~/shark-ai/sharktuner/dispatch_tuner/dump").expanduser().resolve()
     mlir_benchmark_files = sorted(mlir_benchmark_folder_path.glob("*.mlir"))
 
     print(f"[INFO] Found {len(mlir_files)} file(s) in {mlir_folder_path}")
@@ -40,7 +40,7 @@ def main():
             "--dispatch-tuner-num-dispatch-candidates=1024",
         ]
 
-        rc = subprocess.call(cmd, cwd=Path("/home/amily/shark-ai/sharktuner"))
+        rc = subprocess.call(cmd, cwd=Path("~/shark-ai/sharktuner").expanduser())
         if rc == 0:
             ok += 1
         else:
