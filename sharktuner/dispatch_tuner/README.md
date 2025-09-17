@@ -87,7 +87,6 @@ Dir Hierarchy:
 
 **To experiment with `sort()`**
 - Without Tuner:
-Example usage:
     ```bash
     cd ~/shark-ai/sharktuner
     python ./dispatch_tuner/test_sort.py ./dispatch_tuner/tuning_database/tuning_compute_gemm_4096_4096_8192_f16_f32_tB.csv
