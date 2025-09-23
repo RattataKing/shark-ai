@@ -3,6 +3,7 @@ import pandas as pd
 import glob
 from pathlib import Path
 import random
+import numpy as np
 
 if len(sys.argv) < 2:
     print(f"Usage: {sys.argv[0]} <input_csv>")
@@ -72,12 +73,29 @@ for dispatch_idx, (dispatch_id, g) in enumerate(df.groupby("dispatch_id", sort=T
 
     # sorting key: prefer greater cfg.workgroup_tile_size_x; NaN last
     def candidate_priority(cid: int):
-        if "cfg.workgroup_tile_size_x" in by_cid.columns:
-            wg_x = by_cid.at[cid, "cfg.workgroup_tile_size_x"]  # scalar
-        else:
-            wg_x = pd.NA
-        is_na = pd.isna(wg_x)
-        return (is_na, -float(wg_x) if not is_na else 0.0)
+        row = by_cid.loc[cid]
+        M=row.get("cfg.M")
+        N=row.get("cfg.N")
+        m=row.get("cfg.workgroup_tile_size_x")
+        n=row.get("cfg.workgroup_tile_size_y")
+        k=row.get("cfg.reduction_tile_size_3")
+        wg = (M / m) * (N / n)
+        q_ie = float(np.ceil(wg / 304.0) - (wg / 304.0) / np.ceil(wg / 304.0))
+        shared_mem = (2 * m * k) + (2 * n * k)
+        shared_mem_ratio = float(shared_mem / 65536)
+
+        # Heuristic: lower q_ie is better; give bonus if shared_mem is 8KB-aligned and ratio in [0.3, 0.8]
+        aligned = (shared_mem % (8 * 1024) == 0)
+        ratio_ok = (0.3 <= shared_mem_ratio <= 0.8)
+
+        # final score (lower sorts earlier)
+        score = q_ie * 100
+        # if not aligned:
+        #     score += 20
+        # if not ratio_ok:
+        #     score += 10
+        # # tie-breakers: prefer larger tiles (m, then n)
+        return (False, score, -float(m), -float(n))
 
     # sort candidate list for this dispatch
     candidate_list = rep["candidate_id"].tolist()
@@ -121,18 +139,36 @@ for dispatch_idx, (dispatch_id, g) in enumerate(df.groupby("dispatch_id", sort=T
         print(f"candidate_id: {cid}, sorted order: {sorted_order}, real rank: {real_rank}")
 
     # 5) distance of best candidate benchmark result from the optimal benchmark time
-    best_sorted_time = pd.to_numeric(by_cid.loc[sorted_top, "benchmark_time_ms"], errors="coerce").min()
-    optimal_time = pd.to_numeric(g["benchmark_optimal_time_ms"], errors="coerce").dropna().min()
-    distance_ms = best_sorted_time - optimal_time
-    distance_pct = distance_ms / optimal_time
-    thr_optimal_time = optimal_time*(2-OPTIMAL_THR_RATIO)
-    thr_distance_pct = (best_sorted_time - thr_optimal_time) / thr_optimal_time
+    best_sorted_time = pd.to_numeric(
+        by_cid.loc[sorted_top, "benchmark_time_ms"], errors="coerce"
+    ).min()
+    optimal_time = pd.to_numeric(
+        g["benchmark_optimal_time_ms"], errors="coerce"
+    ).dropna().min()
+
+    if pd.isna(best_sorted_time) or pd.isna(optimal_time) or optimal_time == 0:
+        # fallback: treat as worst-case
+        distance_ms = np.nan
+        distance_pct = 1.0   # 100%
+        thr_optimal_time = np.nan
+        thr_distance_pct = 1.0
+    else:
+        distance_ms = best_sorted_time - optimal_time
+        distance_pct = distance_ms / optimal_time
+        thr_optimal_time = optimal_time * (2 - OPTIMAL_THR_RATIO)
+        thr_distance_pct = (best_sorted_time - thr_optimal_time) / thr_optimal_time
+
     print(f"\nBest top benchmark vs optimal:\n"
-            f"best = {best_sorted_time:.3f} ms, optimal = {optimal_time:.3f} ms, "
-            f"gap = {distance_ms:.3f} ms ({distance_pct:.2%})")
+        f"best = {best_sorted_time if not pd.isna(best_sorted_time) else 'n/a'} ms, "
+        f"optimal = {optimal_time if not pd.isna(optimal_time) else 'n/a'} ms, "
+        f"gap = {distance_ms if not pd.isna(distance_ms) else 'n/a'} ms "
+        f"({distance_pct:.2%})")
+
     print(f"Best top benchmark vs {OPTIMAL_THR_RATIO*100}% optimal:\n"
-            f"best = {best_sorted_time:.3f} ms, {OPTIMAL_THR_RATIO*100}% optimal = {thr_optimal_time:.3f} ms, "
-            f"gap = {(best_sorted_time - thr_optimal_time):.3f} ms ({thr_distance_pct:.2%})")
+        f"best = {best_sorted_time if not pd.isna(best_sorted_time) else 'n/a'} ms, "
+        f"{OPTIMAL_THR_RATIO*100}% optimal = {thr_optimal_time if not pd.isna(thr_optimal_time) else 'n/a'} ms, "
+        f"gap = {(best_sorted_time - thr_optimal_time) if not (pd.isna(best_sorted_time) or pd.isna(thr_optimal_time)) else 'n/a'} ms "
+        f"({thr_distance_pct:.2%})")
 
 
     # collect aggregates

@@ -3,9 +3,10 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import glob
-from sklearn.tree import export_text
 import numpy as np
-from rulefit import RuleFit
+import math
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.model_selection import train_test_split
 
 files = glob.glob("./dispatch_tuner/tuning_database/*.csv")
 dfs = []
@@ -16,6 +17,9 @@ for f in files:
     dfs.append(df)
 
 big_df = pd.concat(dfs, ignore_index=True)
+
+# engineered features belong on big_df
+
 
 big_df["winners"] = (
     # (big_df["benchmark_status"] == False)
@@ -28,25 +32,6 @@ df=big_df
 df = df.dropna(axis=1, how="all")
 
 
-# filename = "tuning_square_gemm_256_256_256_f16_f32_tB"
-# df = pd.read_csv(f'./dispatch_tuner/single_gemm/{filename}.csv')
-# df["winners"] = (df["benchmark_result_order"] <= 20) & (df["benchmark_speedup"] < 1)
-
-
-
-# cfg_cols = [c for c in big_df.columns if c.startswith("cfg.")]
-# numeric_cols = big_df[cfg_cols].select_dtypes(include="number").columns
-# cat_cols = [c for c in cfg_cols if c not in numeric_cols]
-
-# X_cat = pd.get_dummies(big_df[cat_cols].astype(str))
-# X_all = pd.concat([big_df[numeric_cols].fillna(0), X_cat], axis=1)
-# y = big_df["is_winner"].astype(int)
-
-# clf = RandomForestClassifier(n_estimators=500, random_state=0, class_weight="balanced")
-# clf.fit(X_all, y)
-# importances = pd.Series(clf.feature_importances_, index=X_all.columns)
-# print(importances.sort_values(ascending=False).head(20))
-
 # exit()
 excluded_list = [
     'cfg.workgroup_tile_sizes',
@@ -54,12 +39,29 @@ excluded_list = [
     'cfg.subgroup_tile_sizes',
     'cfg.promote_operands',
     'cfg.pipeline_options_search_space',
+    'cfg.codegen_pipeline', 
+    'cfg.allowed_waves_per_eu', 
+    'cfg.pipeline_prefetch_shared_memory', 
+    'cfg.pipeline_no_reduce_shared_memory_bank_conflicts', 
+    'cfg.pipeline_use_igemm_convolution',
 
     'cfg.M',
     'cfg.N',
     'cfg.K',
+    'cfg.wg_z',
+    'cfg.subgroup_size',
+    'cfg.workgroup_tile_size_z',
+    'cfg.subgroup_tile_size_x',
+    'cfg.subgroup_tile_size_y',
+    'cfg.subgroup_tile_size_z',
+    'cfg.promote_operand_1',
+    'cfg.promote_operand_2',
+    'cfg.reduction_tile_size_1',
+    'cfg.reduction_tile_size_2',
+    # 'cfg.workgroup_tile_size_x',
+    # 'cfg.WG',
 
-    'cfg.mma_attr', # Str Class, need to do one-hot or label
+    # 'cfg.mma_attr', # Str Class, need to do one-hot or label
 ]
 
 cfg_cols = [c for c in df.columns if c.startswith("cfg.") and c not in excluded_list]
@@ -73,153 +75,62 @@ old_len = len(df)
 df = df.dropna(subset=selected_subset_cols)
 print(f"Before: {old_len} rows, After dropna: {len(df)} rows")
 
-# one-hot encode categories
-X_cat = pd.get_dummies(df[cat_cols].astype(str))
+# Encode categories as integer labels instead of one-hot
+enc = OrdinalEncoder()
+X_cat = pd.DataFrame(
+    enc.fit_transform(df[cat_cols].astype(str)),
+    columns=cat_cols,
+    index=df.index
+)
+
 X_num = df[numeric_cols]
 X_all = pd.concat([X_num, X_cat], axis=1)
 
-# corr = pd.concat([X_num, df["winners"]], axis=1).corr()
-# print(corr["winners"].sort_values(ascending=False))
-corr = pd.concat([X_all, df["winners"]], axis=1).corr()
-# print("Correlation Matrix:")
-# print(corr["winners"].sort_values(ascending=False).head(10))
-
-# exit()
-
-# Pick top-N features most correlated with winners (absolute value)
-head=10
-top_features = corr["winners"].abs().sort_values(ascending=False).head(head).index
-corr_subset = corr.loc[top_features, top_features]
-
-# # Plot
-# plt.figure(figsize=(14, 12))
-# sns.heatmap(
-#     corr_subset,
-#     annot=True,        # show numbers
-#     fmt=".2f",         # 2 decimal places
-#     cmap="coolwarm",
-#     linewidths=0.5,
-# )
-
-# plt.title(f"Correlation Heatmap (Top {head} Features vs Winners)", fontsize=14)
-# plt.tight_layout()
-
-# # Save directly to file
-# # plt.savefig(f"./dispatch_tuner/single_gemm/{filename}_correlation_heatmap.png", dpi=300)
-# plt.close()
-# # print(f"Correlation heatmap saved to ./dispatch_tuner/single_gemm/{filename}_correlation_heatmap.png")
-
-
-
-
-
 y = df["winners"].astype(int)
+
+# --- split ---
+X_train, X_test, y_train, y_test = train_test_split(
+    X_all, y, test_size=0.2, random_state=0, stratify=y
+)
+
 clf = RandomForestClassifier(
     n_estimators=500, 
     random_state=0, 
-    class_weight="balanced"
+    class_weight="balanced",
+    n_jobs=-1
 )
-clf.fit(X_all, y)
+clf.fit(X_train, y_train)
+
+print("Test set class balance:", y_test.value_counts(normalize=True).to_dict())
 
 importances = pd.Series(clf.feature_importances_, index=X_all.columns)
 print("Random Forest Feature Importances:")
-print(importances.sort_values(ascending=False).head(10))
-
-
-# Assume rf is trained RandomForestClassifier
-# for i, tree in enumerate(clf.estimators_[:5]):  # first 5 trees
-#     print(f"Tree {i}")
-#     print(export_text(tree, feature_names=X_all.columns))
+print(importances.sort_values(ascending=False))
 
 # exit()
 
+# Spearman correlation among numeric features
+if len(numeric_cols) > 1:
+    corr = X_train[numeric_cols].corr(method="spearman")
+    # Top correlated pairs
+    tri = corr.where(np.triu(np.ones(corr.shape), k=1).astype(bool))
+    top_pairs = (
+        tri.stack()
+           .rename("rho")
+           .abs()
+           .sort_values(ascending=False)
+           .head(30)
+    )
+    print("\nTop numeric-numeric Spearman |rho| pairs:")
+    print(top_pairs)
 
-
-# rf = RuleFit(tree_generator=clf)  # can pass your RF
-# rf.fit(X_all.values, y.values, feature_names=X_all.columns)
-# rules = rf.get_rules()
-# print(rules[rules.coef != 0].sort_values("importance", ascending=False).head(10))
-
-exit()
-
-
-
-
-feature_names = np.array(X_all.columns)
-X_mat = X_all.values
-y_arr = y.values.astype(int)
-base_rate = y_arr.mean()
-
-def rules_from_tree(estimator, X_mat, y_arr, feature_names, max_depth=6):
-    """
-    Extract rules (one per leaf reachable within max_depth) from a single DecisionTree.
-    Returns a list of dicts with: conditions, coverage, positives, precision, lift.
-    """
-    tree = estimator.tree_
-    cl = tree.children_left
-    cr = tree.children_right
-    feat = tree.feature
-    thr  = tree.threshold
-
-    paths, path = [], []
-
-    def recurse(node_id, depth):
-        # stop if depth exceeded
-        if depth > max_depth:
-            return
-        # leaf?
-        if cl[node_id] == cr[node_id]:
-            paths.append(list(path))  # record the path to this leaf
-            return
-        f = feat[node_id]
-        t = thr[node_id]
-
-        # left: <=
-        path.append((f, "<=", t))
-        recurse(cl[node_id], depth + 1)
-        path.pop()
-
-        # right: >
-        path.append((f, ">", t))
-        recurse(cr[node_id], depth + 1)
-        path.pop()
-
-    recurse(0, 0)
-
-    rules = []
-    for cond_triplets in paths:
-        # Build mask
-        mask = np.ones(len(X_mat), dtype=bool)
-        conds_text = []
-        for f_idx, op, t in cond_triplets:
-            fname = feature_names[f_idx]
-            if op == "<=":
-                mask &= (X_mat[:, f_idx] <= t)
-                conds_text.append(f"{fname} <= {t:.6g}")
-            else:
-                mask &= (X_mat[:, f_idx] >  t)
-                conds_text.append(f"{fname} > {t:.6g}")
-
-        cover = int(mask.sum())
-        if cover == 0:
-            continue
-        pos = int(y_arr[mask].sum())
-        prec = pos / cover
-        lift = prec / base_rate if base_rate > 0 else np.inf
-
-        rules.append({
-            "conditions": conds_text,   # list[str]
-            "coverage": cover,
-            "positives": pos,
-            "precision": prec,
-            "lift": lift,
-        })
-    return rules
-
-# Collect rules across the whole forest
-all_rules = []
-for est in clf.estimators_:
-    all_rules.extend(rules_from_tree(est, X_mat, y_arr, feature_names, max_depth=6))
-
-rules_df = pd.DataFrame(all_rules)
-print(f"Extracted {len(rules_df)} raw rules")
+    # Optional: quick heatmap
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    plt.figure(figsize=(10,8))
+    sns.heatmap(corr, cmap="vlag", center=0)
+    plt.title("Spearman correlation (numeric features)")
+    plt.tight_layout()
+    plt.show()
+else:
+    print("No numeric-numeric correlation to compute.")
