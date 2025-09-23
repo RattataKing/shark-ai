@@ -12,28 +12,27 @@ files = glob.glob("./dispatch_tuner/tuning_database/*.csv")
 dfs = []
 for f in files:
     df = pd.read_csv(f)
-    # add a dispatch identifier (from filename or dispatch_id column)
-    # df["dispatch_file"] = f
     dfs.append(df)
+df = pd.concat(dfs, ignore_index=True)
 
-big_df = pd.concat(dfs, ignore_index=True)
-
-# engineered features belong on big_df
-
-
-big_df["winners"] = (
-    # (big_df["benchmark_status"] == False)
-    (big_df["benchmark_result_order"] <= 10) &
-    (big_df["benchmark_speedup"] < 1)
-)
-df=big_df
-
-# 0) Drop columns that are entirely empty
+# df["winners"] = (
+#     # (df["benchmark_status"] == False)
+#     (df["benchmark_result_order"] <= 10) &
+#     (df["benchmark_speedup"] < 1)
+# )
+old_len = len(df)
 df = df.dropna(axis=1, how="all")
+df = df[df["candidate_id"] != 0]
+print(f"Before: {old_len} rows, After dropna: {len(df)} rows")
+df["winners"] = df["norm_speedup"] <= df["norm_speedup"].quantile(0.2)
+df=df
+
+
 
 
 # exit()
 excluded_list = [
+    # Useless/redundant feature
     'cfg.workgroup_tile_sizes',
     'cfg.reduction_tile_sizes',
     'cfg.subgroup_tile_sizes',
@@ -45,9 +44,12 @@ excluded_list = [
     'cfg.pipeline_no_reduce_shared_memory_bank_conflicts', 
     'cfg.pipeline_use_igemm_convolution',
 
+    # Problem size
     'cfg.M',
     'cfg.N',
     'cfg.K',
+
+    # No importance
     'cfg.wg_z',
     'cfg.subgroup_size',
     'cfg.workgroup_tile_size_z',
@@ -58,10 +60,11 @@ excluded_list = [
     'cfg.promote_operand_2',
     'cfg.reduction_tile_size_1',
     'cfg.reduction_tile_size_2',
-    # 'cfg.workgroup_tile_size_x',
-    # 'cfg.WG',
 
     # 'cfg.mma_attr', # Str Class, need to do one-hot or label
+
+    # Highly correlated with other features
+    'cfg.wg_x','cfg.wg_y','cfg.flat_wg_size','cfg.WG',
 ]
 
 cfg_cols = [c for c in df.columns if c.startswith("cfg.") and c not in excluded_list]
@@ -70,10 +73,10 @@ numeric_cols = df[cfg_cols].select_dtypes(include="number").columns
 # categorical subset (strings)
 cat_cols = [c for c in cfg_cols if c not in numeric_cols]
 
-selected_subset_cols = numeric_cols.tolist() + cat_cols
-old_len = len(df)
-df = df.dropna(subset=selected_subset_cols)
-print(f"Before: {old_len} rows, After dropna: {len(df)} rows")
+# selected_subset_cols = numeric_cols.tolist() + cat_cols
+# old_len = len(df)
+# df = df.dropna(subset=selected_subset_cols)
+# print(f"Before: {old_len} rows, After dropna: {len(df)} rows")
 
 # Encode categories as integer labels instead of one-hot
 enc = OrdinalEncoder()
@@ -123,14 +126,5 @@ if len(numeric_cols) > 1:
     )
     print("\nTop numeric-numeric Spearman |rho| pairs:")
     print(top_pairs)
-
-    # Optional: quick heatmap
-    import seaborn as sns
-    import matplotlib.pyplot as plt
-    plt.figure(figsize=(10,8))
-    sns.heatmap(corr, cmap="vlag", center=0)
-    plt.title("Spearman correlation (numeric features)")
-    plt.tight_layout()
-    plt.show()
 else:
     print("No numeric-numeric correlation to compute.")

@@ -13,11 +13,36 @@ LDS=65536
 for f in files:
     df = pd.read_csv(f)
 
+    if (
+        (
+            ((df["cfg.M"] % df["cfg.workgroup_tile_size_x"]) != 0) |
+            # ((df["cfg.N"] % df["cfg.workgroup_tile_size_y"]) != 0) |
+            # ((df["cfg.K"] % df["cfg.reduction_tile_size_3"]) != 0)
+        ) & (df["benchmark_status"] == True)
+    ).any():
+        print("HELLO")
+    else:
+        continue
+
+    old_len = len(df)
+    df = df[
+        ((df["cfg.M"] % df["cfg.workgroup_tile_size_x"]) == 0) &
+        ((df["cfg.N"] % df["cfg.workgroup_tile_size_y"]) == 0) &
+        ((df["cfg.K"] % df["cfg.reduction_tile_size_3"]) == 0)
+    ]
+    df = df[df["candidate_id"] != 0]
+    print(f"Before: {old_len} rows, After dropna: {len(df)} rows")
+
+    # exit()
+
     # WG = M/m * N/n
     df["cfg.WG"] = (
         (df["cfg.M"] / df["cfg.workgroup_tile_size_x"]) *
         (df["cfg.N"] / df["cfg.workgroup_tile_size_y"])
     )
+
+
+
     # num subgroups
     df["cfg.num_subgroups"] = df["cfg.sg_m_cnt"] * df["cfg.sg_n_cnt"]
     # quantization Inefficency = [ceil(WG/CU) - WG/CU] / ceil(WG/CU), ~0 is good
@@ -57,9 +82,6 @@ for f in files:
         df.loc[~success, "norm_rank"] = 1.0
     else:
         df["norm_rank"] = 1.0  # all failed → all worst
-
-    df.drop(columns=["cfg.norm_speedup"], inplace=True)
-    df.drop(columns=["cfg.norm_rank"], inplace=True)
 
     # Save back to the same file (overwrite)
     df.to_csv(f, index=False)
