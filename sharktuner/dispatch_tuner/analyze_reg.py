@@ -14,22 +14,18 @@ import seaborn as sns
 
 # Load all CSVs from tuning_database
 files = glob.glob('./dispatch_tuner/tuning_database/*.csv')
-dfs = []
-for f in files:
-    print(f)
-    df = pd.read_csv(f)
-    dfs.append(df)
-    break
+print(f"Found {len(files)} CSV files")
 
-df = pd.concat(dfs, ignore_index=True)
-df["norm_speedup"] = df["norm_speedup"]*100
-
-old_len = len(df)
-# Drop useless rows
-df = df.dropna(axis=1, how="all")
-df = df[df["candidate_id"] != 0]
-df = df[df["cfg.M"] % df["cfg.workgroup_tile_size_x"] == 0]
-print(f"Before: {old_len} rows, After dropna: {len(df)} rows")
+# Split at the file level
+train_files, test_files = train_test_split(
+    files, test_size=0.2, random_state=42
+)
+print(f"{len(train_files)} Train files:")
+for f in train_files:
+    print("  ", f)
+print(f"{len(test_files)} Test files:")
+for f in test_files:
+    print("  ", f)
 
 # Excluded columns
 excluded_list = [
@@ -66,33 +62,42 @@ excluded_list = [
     "cfg.wg_y", "cfg.wg_x", "cfg.flat_wg_size", "cfg.WG"
 ]
 
-cfg_cols = [c for c in df.columns if c.startswith("cfg.") and c not in excluded_list]
-# numeric subset
-numeric_cols = df[cfg_cols].select_dtypes(include="number").columns
-# categorical subset (strings)
-cat_cols = [c for c in cfg_cols if c not in numeric_cols]
+def sanitize_df(df):
+    df = df.dropna(axis=1, how="all")
+    df = df[df["candidate_id"] != 0]
+    df = df[df["cfg.M"] % df["cfg.workgroup_tile_size_x"] == 0]
+    return df
 
-# Encode categories as integer labels instead of one-hot
-enc = OrdinalEncoder()
-X_cat = pd.DataFrame(
-    enc.fit_transform(df[cat_cols].astype(str)),
-    columns=cat_cols,
-    index=df.index
-)
 
-X_num = df[numeric_cols]
-X_all = pd.concat([X_num, X_cat], axis=1)
+def prepare_features(df):
+    cfg_cols = [c for c in df.columns if c.startswith("cfg.") and c not in excluded_list]
+    # numeric subset
+    numeric_cols = df[cfg_cols].select_dtypes(include="number").columns
+    # categorical subset (strings)
+    cat_cols = [c for c in cfg_cols if c not in numeric_cols]
 
-# Define target
-y = df["norm_speedup"]
+    # Encode categories as integer labels instead of one-hot
+    enc = OrdinalEncoder()
+    X_cat = pd.DataFrame(
+        enc.fit_transform(df[cat_cols].astype(str)),
+        columns=cat_cols,
+        index=df.index
+    )
 
-# Combine numeric + categorical
-X = X_all
+    X_num = df[numeric_cols]
+    X_all = pd.concat([X_num, X_cat], axis=1)
+    y = df["norm_speedup"]
 
-# Train/test split
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
+    return X_all, y
+
+
+train_dfs = [pd.read_csv(f) for f in train_files]
+train_df = pd.concat(train_dfs, ignore_index=True)
+old_len = len(train_df)
+train_df = sanitize_df(train_df)
+print(f"Train set size after sanitized: {old_len} -> {len(train_df)} rows")
+
+X_train, y_train = prepare_features(train_df)
 
 # Build Random Forest Regressor
 rf = RandomForestRegressor(
@@ -103,9 +108,47 @@ rf = RandomForestRegressor(
 )
 rf.fit(X_train, y_train)
 
-# Predict
-y_pred = rf.predict(X_test)
 
+for i,f in enumerate(test_files):
+    test_df = pd.read_csv(f)
+    old_len = len(test_df)
+    test_df = sanitize_df(test_df)
+    print(f"Test set [{i}] size after sanitized: {old_len} -> {len(test_df)} rows")
+
+    X_test, y_test = prepare_features(test_df)
+    y_pred = rf.predict(X_test)
+
+
+    y_df = pd.DataFrame({
+        "y_test": y_test,
+        "y_pred": y_pred
+    })
+    print(f"Len of y_test = {len(y_test)}")
+    y_df_sorted = y_df.sort_values("y_test", ascending=True).reset_index(drop=True)
+    y_df_sorted["true_rank"] = rankdata(y_df_sorted["y_test"], method="dense")
+    y_df_sorted["pred_rank"] = rankdata(y_df_sorted["y_pred"], method="dense")
+    print(y_df_sorted.head(30))
+    spearman_corr, pval = spearmanr(y_df_sorted["true_rank"], y_df_sorted["pred_rank"])
+    print(f"Spearman correlation: {spearman_corr:.4f} (p={pval:.4g})")
+    rank_rmse = np.sqrt(mean_squared_error(y_df_sorted["true_rank"], y_df_sorted["pred_rank"]))
+    print(f"Rank RMSE: {rank_rmse:.2f}")
+
+    # --- fresh figure each loop ---
+    fig, ax = plt.subplots()
+    ax.scatter(y_df_sorted["true_rank"], y_df_sorted["pred_rank"], alpha=0.7)
+    ax.plot([1, len(y_df_sorted)], [1, len(y_df_sorted)], 'r--')
+    ax.set_xlabel("True Rank")
+    ax.set_ylabel("Predicted Rank")
+    ax.set_title("True vs Predicted Rank")
+
+    # save next to script (or use Path.cwd() if __file__ is unavailable)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    save_path = os.path.join(script_dir, f"true_vs_pred_rank_{i}.png")
+    fig.savefig(save_path, dpi=300, bbox_inches="tight")
+    plt.close(fig)  # <<< important to avoid overlay + memory growth
+    print(f"Saved plot to {save_path}")
+
+exit()
 # Evaluate
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 r2 = r2_score(y_test, y_pred)
@@ -141,20 +184,6 @@ plt.savefig(save_path, dpi=300, bbox_inches="tight")
 print(f"Save plot to {save_path}")
 
 exit()
-
-# r_test = y_test.sort_values(ascending=True)
-# r_test.index = r_test.rank(method="dense").astype(int).values
-# r_pred = pd.Series(y_pred, name="pred").sort_values(ascending=True)
-# r_pred.index = r_pred.rank(method="dense").astype(int).values
-# print(r_test)
-# print(r_pred)
-exit()
-r_test = rankdata(y_test, method="ordinal")
-r_pred = rankdata(y_pred, method="ordinal")
-# print(len(r_test))
-# print(r_pred)
-spearman_from_ranks = pearsonr(r_test, r_pred)[0]
-print("Spearman (from ranks):", spearman_from_ranks)
 
 print(f"RMSE: {rmse:.4f}")
 print(f"R2: {r2:.4f}")
