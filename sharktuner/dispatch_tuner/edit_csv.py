@@ -13,11 +13,28 @@ LDS=65536
 for f in files:
     df = pd.read_csv(f)
 
+    speedup = df["benchmark_speedup"]
+    missing_mask = speedup.isna()
+    min_val = speedup[~missing_mask].min()
+    max_val = speedup[~missing_mask].max()
+    eps=1e-6
+    normed = (speedup - min_val) / (max_val - min_val + eps)
+    normed *= (1 - eps)     # shrink top so max < 1
+    normed[missing_mask] = 1.0  # assign missing to 1.0
+    df["norm_speedup"] = normed
+
+    # Save back to the same file (overwrite)
+    df.to_csv(f, index=False)
+
+    print(f"Updated: {os.path.basename(f)}")
+
+    continue
+
     if (
         (
             ((df["cfg.M"] % df["cfg.workgroup_tile_size_x"]) != 0) |
-            # ((df["cfg.N"] % df["cfg.workgroup_tile_size_y"]) != 0) |
-            # ((df["cfg.K"] % df["cfg.reduction_tile_size_3"]) != 0)
+            ((df["cfg.N"] % df["cfg.workgroup_tile_size_y"]) != 0) |
+            ((df["cfg.K"] % df["cfg.reduction_tile_size_3"]) != 0)
         ) & (df["benchmark_status"] == True)
     ).any():
         print("HELLO")

@@ -11,6 +11,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 from scipy.stats import spearmanr, rankdata, pearsonr
 import matplotlib.pyplot as plt
 import seaborn as sns
+from pathlib import Path
 
 # Load all CSVs from tuning_database
 files = glob.glob('./dispatch_tuner/tuning_database/*.csv')
@@ -101,12 +102,14 @@ X_train, y_train = prepare_features(train_df)
 
 # Build Random Forest Regressor
 rf = RandomForestRegressor(
-    n_estimators=500,   # number of trees
+    n_estimators=1000,   # number of trees
     max_depth=None,     # let trees grow fully (can tune)
     n_jobs=-1,          # use all cores
     random_state=42
 )
+# y_log = np.log1p(y_train)
 rf.fit(X_train, y_train)
+# rf.fit(X_train, y_log)
 
 
 for i,f in enumerate(test_files):
@@ -117,6 +120,7 @@ for i,f in enumerate(test_files):
 
     X_test, y_test = prepare_features(test_df)
     y_pred = rf.predict(X_test)
+    # y_pred = np.expm1(rf.predict(X_test))
 
 
     y_df = pd.DataFrame({
@@ -139,7 +143,7 @@ for i,f in enumerate(test_files):
     ax.plot([1, len(y_df_sorted)], [1, len(y_df_sorted)], 'r--')
     ax.set_xlabel("True Rank")
     ax.set_ylabel("Predicted Rank")
-    ax.set_title("True vs Predicted Rank")
+    ax.set_title(f"True vs Predicted Rank\n{Path(f).stem}")
 
     # save next to script (or use Path.cwd() if __file__ is unavailable)
     script_dir = os.path.dirname(os.path.abspath(__file__))
