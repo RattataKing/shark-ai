@@ -107,9 +107,32 @@ rf = RandomForestRegressor(
     n_jobs=-1,          # use all cores
     random_state=42
 )
-# y_log = np.log1p(y_train)
+
 rf.fit(X_train, y_train)
-# rf.fit(X_train, y_log)
+# Feature importance
+importances = pd.Series(rf.feature_importances_, index=X_train.columns)
+print("\nRandom Forest Importances:")
+print(importances.sort_values(ascending=False).head(10))
+
+# Spearman correlation among numeric features
+df=train_df
+cfg_cols = [c for c in df.columns if c.startswith("cfg.") and c not in excluded_list]
+numeric_cols = df[cfg_cols].select_dtypes(include="number").columns
+if len(numeric_cols) > 1:
+    corr = X_train[numeric_cols].corr(method="spearman")
+    # Top correlated pairs
+    tri = corr.where(np.triu(np.ones(corr.shape), k=1).astype(bool))
+    top_pairs = (
+        tri.stack()
+        .rename("|rho|")
+        .abs()
+        .sort_values(ascending=False)
+        .head(30)
+    )
+    print("\nTop numeric-numeric Spearman |rho| pairs:")
+    print(top_pairs)
+else:
+    print("No numeric-numeric correlation to compute.")
 
 
 for i,f in enumerate(test_files):
@@ -131,7 +154,6 @@ for i,f in enumerate(test_files):
     y_df_sorted = y_df.sort_values("y_test", ascending=True).reset_index(drop=True)
     y_df_sorted["true_rank"] = rankdata(y_df_sorted["y_test"], method="dense")
     y_df_sorted["pred_rank"] = rankdata(y_df_sorted["y_pred"], method="dense")
-    print(y_df_sorted.head(30))
     spearman_corr, pval = spearmanr(y_df_sorted["true_rank"], y_df_sorted["pred_rank"])
     print(f"Spearman correlation: {spearman_corr:.4f} (p={pval:.4g})")
     rank_rmse = np.sqrt(mean_squared_error(y_df_sorted["true_rank"], y_df_sorted["pred_rank"]))
