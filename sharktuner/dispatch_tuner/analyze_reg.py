@@ -11,6 +11,7 @@ from scipy.stats import spearmanr, rankdata, pearsonr
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
+import joblib
 
 # Load CSVs from tuning_database_clean
 files = glob.glob('./dispatch_tuner/tuning_database_clean/*.csv')
@@ -18,6 +19,7 @@ excluded_files = [
     # Problem size too small 
     "tuning_square_gemm_128_128_128_f16_f32_tB.csv",
     "tuning_square_gemm_256_256_256_f16_f32_tB.csv",
+    "tuning_square_gemm_512_512_512_f16_f32_tB.csv",
 ]
 files = [f for f in files if os.path.basename(f) not in excluded_files]
 print(f"Found {len(files)} CSV files")
@@ -91,10 +93,11 @@ train_df = sanitize_df(train_df)
 print(f"Train set size after sanitized: {old_len} -> {len(train_df)} rows")
 
 X_train, y_train = prepare_features(train_df)
+print(f"Select Features: {X_train.columns}")
 
 # Build Random Forest Regressor
 rf = RandomForestRegressor(
-    n_estimators=1000,   # number of trees
+    n_estimators=500,   # number of trees
     max_depth=None,     # let trees grow fully (can tune)
     n_jobs=-1,          # use all cores
     random_state=42
@@ -153,10 +156,11 @@ for i,f in enumerate(test_files):
     # --- fresh figure each loop ---
     fig, ax = plt.subplots()
     ax.scatter(y_df_sorted["true_rank"], y_df_sorted["pred_rank"], alpha=0.7)
-    ax.plot([1, len(y_df_sorted)], [1, len(y_df_sorted)], 'r--')
-    ax.set_xlabel("True Rank")
-    ax.set_ylabel("Predicted Rank")
-    ax.set_title(f"True vs Predicted Rank\n{Path(f).stem}")
+    max_val = max(y_df_sorted["true_rank"].max(), y_df_sorted["pred_rank"].max())
+    ax.plot([1, max_val], [1, max_val], 'r--')
+    ax.set(xlim=(1, max_val), ylim=(1, max_val),
+        xlabel="True Rank", ylabel="Predicted Rank",
+        title=f"True vs Predicted Rank\n{Path(f).stem}")
 
     # save next to script (or use Path.cwd() if __file__ is unavailable)
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -164,3 +168,6 @@ for i,f in enumerate(test_files):
     fig.savefig(save_path, dpi=300, bbox_inches="tight")
     plt.close(fig)  # <<< important to avoid overlay + memory growth
     print(f"Saved plot to {save_path}")
+
+# joblib.dump(model, "rf_model.pkl")
+# print("Model saved as rf_model.pkl")

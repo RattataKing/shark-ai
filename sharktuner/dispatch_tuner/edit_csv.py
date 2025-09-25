@@ -56,7 +56,7 @@ for f in files:
     eps=1e-6
     normed = (speedup - min_val) / (max_val - min_val + eps)
     normed *= (1 - eps)     # shrink top so max < 1
-    normed[missing_mask] = 1.0  # assign missing to 1.0
+    normed[missing_mask] = 1  # assign missing to 1.0
     df["norm_speedup"] = normed
 
     out_path = os.path.join(output_dir, os.path.basename(f))
