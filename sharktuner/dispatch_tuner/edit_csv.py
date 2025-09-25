@@ -13,6 +13,22 @@ FP_BYTEWIDTH = 2
 CU = 304
 LDS=65536
 
+mma_attr_map = {
+    "#iree_gpu.mma_layout<MFMA_F32_16x16x16_F16>": 0,
+    "#iree_gpu.mma_layout<MFMA_F32_16x16x32_F16>": 1,
+    "#iree_gpu.mma_layout<MFMA_F32_32x32x16_F16>": 2,
+    "#iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>": 3,
+}
+MMA_ATTR_UNSEEN = 4
+
+# Check how many different mma_attr cross all CSVs
+# vals = set()
+# for f in files:
+#     vals |= set(pd.read_csv(f, usecols=['cfg.mma_attr'])['cfg.mma_attr'].dropna().astype(str).unique())
+# print(f"{len(vals)} unique values in cfg.mma_attr:")
+# print(*sorted(vals), sep="\n")
+# exit()
+
 for f in files:
     df = pd.read_csv(f)
 
@@ -58,6 +74,13 @@ for f in files:
     normed *= (1 - eps)     # shrink top so max < 1
     normed[missing_mask] = 1  # assign missing to 1.0
     df["norm_speedup"] = normed
+
+    # Encode mma_attr from strings to class IDs
+    df["cfg.mma_attr_map"] = (
+        df["cfg.mma_attr"].astype(str)
+        .map(lambda s: mma_attr_map.get(s, MMA_ATTR_UNSEEN))
+        .astype(int)
+    )
 
     out_path = os.path.join(output_dir, os.path.basename(f))
     df.to_csv(out_path, index=False)

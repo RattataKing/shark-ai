@@ -42,7 +42,10 @@ excluded_list = [
     "cfg.N",
     "cfg.K",
 
-    # # No importance
+    # Categorical features 
+    "cfg.mma_attr", # use int cfg.mma_attr_map instead
+
+    # Random Forest Importances = 0
     "cfg.rhs_type_bitwidth",
     "cfg.lhs_type_bitwidth",
     "cfg.subgroup_size,",
@@ -71,13 +74,18 @@ def prepare_features(df):
     # categorical subset (strings)
     cat_cols = [c for c in cfg_cols if c not in numeric_cols]
 
-    # Encode categories as integer labels instead of one-hot
-    enc = OrdinalEncoder()
-    X_cat = pd.DataFrame(
-        enc.fit_transform(df[cat_cols].astype(str)),
-        columns=cat_cols,
-        index=df.index
-    )
+    # Encode categories as integer labels (skip cleanly if none)
+    if cat_cols:
+        enc = OrdinalEncoder()
+        X_cat = pd.DataFrame(
+            enc.fit_transform(df[cat_cols].astype(str)),
+            columns=cat_cols,
+            index=df.index
+        )
+        print(f"Encoded features in {cat_cols}")
+    else:
+        enc = None
+        X_cat = pd.DataFrame(index=df.index)  # (n_rows x 0) placeholder
 
     X_num = df[numeric_cols]
     X_all = pd.concat([X_num, X_cat], axis=1)
@@ -129,6 +137,7 @@ if len(numeric_cols) > 1:
 else:
     print("No numeric-numeric correlation to compute.")
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
 for i,f in enumerate(test_files):
     test_df = pd.read_csv(f)
     old_len = len(test_df)
@@ -162,12 +171,11 @@ for i,f in enumerate(test_files):
         xlabel="True Rank", ylabel="Predicted Rank",
         title=f"True vs Predicted Rank\n{Path(f).stem}")
 
-    # save next to script (or use Path.cwd() if __file__ is unavailable)
-    script_dir = os.path.dirname(os.path.abspath(__file__))
     save_path = os.path.join(script_dir, f"true_vs_pred_rank_{i}.png")
     fig.savefig(save_path, dpi=300, bbox_inches="tight")
     plt.close(fig)  # <<< important to avoid overlay + memory growth
     print(f"Saved plot to {save_path}")
 
-# joblib.dump(model, "rf_model.pkl")
-# print("Model saved as rf_model.pkl")
+rf_output_path = os.path.join(script_dir, "rf.pkl")
+joblib.dump(rf, rf_output_path)
+print(f"Model saved as {rf_output_path}")
