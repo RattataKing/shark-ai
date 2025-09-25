@@ -36,8 +36,8 @@ def main():
             str(bench),
             "--compile-flags-file=dispatch_tuner/compile_flags.txt",
             "--devices=hip://6,hip://7",
-            "--num-candidates=1024",
-            "--dispatch-tuner-num-dispatch-candidates=1024",
+            "--num-candidates=2048",
+            "--dispatch-tuner-num-dispatch-candidates=2048",
         ]
 
         rc = subprocess.call(cmd, cwd=Path("~/shark-ai/sharktuner").expanduser())

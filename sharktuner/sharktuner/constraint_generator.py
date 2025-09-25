@@ -269,56 +269,65 @@ def generate_generic_contraction_solutions(
                     name="compilation_info", configuration=compilation_info
             )
             solution_variable = common.SolutionVariable (
-                mma_attr=str(mma_attr),
                 M=int(math.prod(M)),
                 N=int(math.prod(N)),
                 K=int(math.prod(K)),
-                workgroup_tile_sizes=workgroup_tile_sizes,
-                reduction_tile_sizes=reduction_tile_sizes,
-                subgroup_tile_sizes=subgroup_tile_sizes,
-                wg_x=lookup(wg_x),
-                wg_y=lookup(wg_y),
-                wg_z=lookup(wg_z),
                 subgroup_size=lookup(subgroup_size),
-                sg_m_cnt=lookup(sg_m_cnt),
-                sg_n_cnt=lookup(sg_n_cnt),
+                intrinsic_mn=lookup(intrinsic_mn),
+                intrinsic_k=lookup(intrinsic_k),
+                lhs_type_bitwidth=lhs_type.bitwidth,
+                rhs_type_bitwidth=rhs_type.bitwidth,
+
+                subgroup_tile_m=subgroup_tile_sizes[0],
+                subgroup_tile_n=subgroup_tile_sizes[1],
+                subgroup_tile_k=subgroup_tile_sizes[2],
                 promote_operands=promote_operands,
                 codegen_pipeline=codegen_pipeline,
                 pipeline_options_search_space=pipeline_options_search_space,
                 allowed_waves_per_eu=allowed_waves_per_eu,
                 padding=padding,
+
+                mma_attr=str(mma_attr),
+                m=workgroup_tile_sizes[0],
+                n=workgroup_tile_sizes[1],
+                k=reduction_tile_sizes[2],
+                wg_x=lookup(wg_x),
+                wg_y=lookup(wg_y),
+                wg_z=lookup(wg_z),
+                sg_m_cnt=lookup(sg_m_cnt),
+                sg_n_cnt=lookup(sg_n_cnt),
             )
-            # workgroup: x,y,z
-            for name, val in zip(["x", "y", "z"], workgroup_tile_sizes):
-                setattr(solution_variable, f"workgroup_tile_size_{name}", val)
+            # # workgroup: x,y,z
+            # for name, val in zip(["x", "y", "z"], workgroup_tile_sizes):
+            #     setattr(solution_variable, f"workgroup_tile_size_{name}", val)
 
-            # subgroup: x,y,z
-            for name, val in zip(["x", "y", "z"], subgroup_tile_sizes):
-                setattr(solution_variable, f"subgroup_tile_size_{name}", val)
+            # # subgroup: x,y,z
+            # for name, val in zip(["x", "y", "z"], subgroup_tile_sizes):
+            #     setattr(solution_variable, f"subgroup_tile_size_{name}", val)
 
-            # reduction: numbered
-            for i, val in enumerate(reduction_tile_sizes, start=1):
-                setattr(solution_variable, f"reduction_tile_size_{i}", val)
+            # # reduction: numbered
+            # for i, val in enumerate(reduction_tile_sizes, start=1):
+            #     setattr(solution_variable, f"reduction_tile_size_{i}", val)
             
-            # promote_operands: numbered
-            for i, val in enumerate(promote_operands, start=1):
-                setattr(solution_variable, f"promote_operand_{i}", val)
+            # # promote_operands: numbered
+            # for i, val in enumerate(promote_operands, start=1):
+            #     setattr(solution_variable, f"promote_operand_{i}", val)
             
-            # allowed_waves_per_eu: numbered
-            if len(allowed_waves_per_eu) > 1:
-                for i, val in enumerate(allowed_waves_per_eu, start=1):
-                    setattr(solution_variable, f"allowed_waves_per_eu_{i}", val)
+            # # allowed_waves_per_eu: numbered
+            # if len(allowed_waves_per_eu) > 1:
+            #     for i, val in enumerate(allowed_waves_per_eu, start=1):
+            #         setattr(solution_variable, f"allowed_waves_per_eu_{i}", val)
             
-            # padding: numbered
-            if padding and len(padding) > 1:
-                for i, val in enumerate(padding, start=1):
-                    setattr(solution_variable, f"padding_{i}", val)
+            # # padding: numbered
+            # if padding and len(padding) > 1:
+            #     for i, val in enumerate(padding, start=1):
+            #         setattr(solution_variable, f"padding_{i}", val)
 
-            # pipeline_options_search_space: attrs
-            for f in fields(pipeline_options_search_space):
-                name = f.name   # e.g. "prefetch_shared_memory"
-                value = getattr(pipeline_options_search_space, name)   # e.g. [True] or [None]
-                setattr(solution_variable, f"pipeline_{name}", value)
+            # # pipeline_options_search_space: attrs
+            # for f in fields(pipeline_options_search_space):
+            #     name = f.name   # e.g. "prefetch_shared_memory"
+            #     value = getattr(pipeline_options_search_space, name)   # e.g. [True] or [None]
+            #     setattr(solution_variable, f"pipeline_{name}", value)
 
 
             yield common.SolutionPack(solution_variable=solution_variable, tuning_configuration=tuning_configuration)
