@@ -12,8 +12,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 
-# Load all CSVs from tuning_database_clean
+# Load CSVs from tuning_database_clean
 files = glob.glob('./dispatch_tuner/tuning_database_clean/*.csv')
+excluded_files = [
+    # Problem size too small 
+    "tuning_square_gemm_128_128_128_f16_f32_tB.csv",
+    "tuning_square_gemm_256_256_256_f16_f32_tB.csv",
+]
+files = [f for f in files if os.path.basename(f) not in excluded_files]
 print(f"Found {len(files)} CSV files")
 
 # Split at the file level
