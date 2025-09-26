@@ -1,0 +1,177 @@
+import glob
+import os
+import ast
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+from scipy.stats import spearmanr, rankdata, pearsonr
+import matplotlib.pyplot as plt
+import seaborn as sns
+from pathlib import Path
+import joblib
+from pysr import PySRRegressor
+
+# Load CSVs from tuning_database_clean
+files = glob.glob('./dispatch_tuner/tuning_database_clean/*.csv')
+excluded_files = [
+    # Problem size too small 
+    "tuning_square_gemm_128_128_128_f16_f32_tB.csv",
+    "tuning_square_gemm_256_256_256_f16_f32_tB.csv",
+    "tuning_square_gemm_512_512_512_f16_f32_tB.csv",
+]
+files = [f for f in files if os.path.basename(f) not in excluded_files]
+print(f"Found {len(files)} CSV files")
+
+# Split at the file level
+train_files, test_files = train_test_split(
+    files, test_size=0.2,
+)
+print(f"{len(train_files)} Train files:")
+for f in train_files:
+    print("  ", f)
+print(f"{len(test_files)} Test files:")
+for f in test_files:
+    print("  ", f)
+
+# Excluded columns
+excluded_list = [
+    # Problem size
+    "cfg.M",
+    "cfg.N",
+    "cfg.K",
+
+    # Categorical features 
+    "cfg.mma_attr", # use int cfg.mma_attr_map instead
+
+    # Random Forest Importances = 0
+    "cfg.rhs_type_bitwidth",
+    "cfg.lhs_type_bitwidth",
+    "cfg.subgroup_size,",
+    "cfg.subgroup_tile_k",
+    "cfg.wg_z",
+    "cfg.subgroup_tile_m",
+    "cfg.subgroup_tile_n",
+    "cfg.promote_operands",
+    "cfg.subgroup_size",
+    "cfg.codegen_pipeline",
+    "cfg.pipeline_options_search_space",
+    "cfg.allowed_waves_per_eu",
+
+    # Highly correlated with other features
+    "cfg.wg_y", "cfg.wg_x", "cfg.flat_wg_size", "cfg.WG"
+]
+
+def sanitize_df(df):
+    df = df.dropna(axis=1, how="all")
+    return df
+
+def prepare_features(df):
+    df.columns = [c.replace(".", "_") for c in df.columns]
+    cfg_cols = [c for c in df.columns if c.startswith("cfg_") and c not in excluded_list]
+    # numeric subset
+    numeric_cols = df[cfg_cols].select_dtypes(include="number").columns
+    # categorical subset (strings)
+    cat_cols = [c for c in cfg_cols if c not in numeric_cols]
+
+    # Encode categories as integer labels (skip cleanly if none)
+    if cat_cols:
+        enc = OrdinalEncoder()
+        X_cat = pd.DataFrame(
+            enc.fit_transform(df[cat_cols].astype(str)),
+            columns=cat_cols,
+            index=df.index
+        )
+        print(f"Encoded features in {cat_cols}")
+    else:
+        enc = None
+        X_cat = pd.DataFrame(index=df.index)  # (n_rows x 0) placeholder
+
+    X_num = df[numeric_cols]
+    X_all = pd.concat([X_num, X_cat], axis=1)
+    y = df["norm_speedup"]
+
+    return X_all, y
+
+
+train_dfs = [pd.read_csv(f) for f in train_files]
+train_df = pd.concat(train_dfs, ignore_index=True)
+old_len = len(train_df)
+train_df = sanitize_df(train_df)
+print(f"Train set size after sanitized: {old_len} -> {len(train_df)} rows")
+
+X_train, y_train = prepare_features(train_df)
+print(f"Select Features: {X_train.columns}")
+
+
+sr = PySRRegressor(
+    niterations=10,
+    model_selection="accuracy",
+    # elementwise_loss="L2DistLoss()",   # <- optional; default is L2/MSE
+    population_size=1000,
+    maxsize=40,
+    parsimony=1e-4,
+
+    # lists, not tuples
+    unary_operators=["sin", "cos", "log", "exp", "abs"],
+    binary_operators=["+", "-", "*", "/", "pow"],
+    constraints={"pow": (None, 2)},
+
+    # make runs reproducible (note: serial for true determinism)
+    random_state=0,
+    # deterministic=True,
+    # parallelism="serial",
+    parallelism = "multithreading",
+    deterministic = False,
+
+    # you have >10k rows; batching helps
+    batching=True,
+    batch_size=8192,
+)
+
+sr.fit(X_train, y_train)
+script_dir = os.path.dirname(os.path.abspath(__file__))
+for i,f in enumerate(test_files):
+    test_df = pd.read_csv(f)
+    old_len = len(test_df)
+    test_df = sanitize_df(test_df)
+    print(f"Test set [{i}] size after sanitized: {old_len} -> {len(test_df)} rows")
+
+    X_test, y_test = prepare_features(test_df)
+    y_pred = sr.predict(X_test)
+
+    y_df = pd.DataFrame({
+        "y_test": y_test,
+        "y_pred": y_pred
+    })
+    print(f"Len of y_test = {len(y_test)}")
+    y_df_sorted = y_df.sort_values("y_test", ascending=True).reset_index(drop=True)
+    y_df_sorted["true_rank"] = rankdata(y_df_sorted["y_test"], method="dense")
+    y_df_sorted["pred_rank"] = rankdata(y_df_sorted["y_pred"], method="dense")
+    spearman_corr, pval = spearmanr(y_df_sorted["true_rank"], y_df_sorted["pred_rank"])
+    print(f"Spearman correlation: {spearman_corr:.4f} (p={pval:.4g})")
+    rank_rmse = np.sqrt(mean_squared_error(y_df_sorted["true_rank"], y_df_sorted["pred_rank"]))
+    print(f"Rank RMSE: {rank_rmse:.2f}")
+
+    # --- fresh figure each loop ---
+    fig, ax = plt.subplots()
+    ax.scatter(y_df_sorted["true_rank"], y_df_sorted["pred_rank"], alpha=0.7)
+    max_val = max(y_df_sorted["true_rank"].max(), y_df_sorted["pred_rank"].max())
+    ax.plot([1, max_val], [1, max_val], 'r--')
+    ax.set(xlim=(1, max_val), ylim=(1, max_val),
+        xlabel="True Rank", ylabel="Predicted Rank",
+        title=f"True vs Predicted Rank\n{Path(f).stem}")
+
+    save_path = os.path.join(script_dir, f"SR_true_vs_pred_rank_{i}.png")
+    fig.savefig(save_path, dpi=300, bbox_inches="tight")
+    plt.close(fig)  # <<< important to avoid overlay + memory growth
+    print(f"Saved plot to {save_path}")
+
+
+
+from sympy import simplify
+expr = sr.sympy()           # SymPy expression of the best equation
+print("Best expression:", simplify(expr))
+print("LaTeX:", sr.latex())
