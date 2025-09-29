@@ -76,14 +76,24 @@ def main():
     
     # Process each file
     success_count = 0
-    for mlir_file in mlir_files:
+    for i, mlir_file in enumerate(mlir_files, start=1):
         input_name = mlir_file.stem  # filename without extension
         
+        out_file = f"{input_name}_benchmark.mlir"
+        dest_file = output_dir / out_file
+        if dest_file.exists():
+            print(f"{out_file} already exists, skipping...")
+            success_count += 1
+            print(f"[{i} / {len(mlir_files)}]")
+            continue
         # Run iree-compile
         if run_iree_compile(mlir_file, dump_dir):
             # Copy benchmark file
             if copy_benchmark_file(input_name, dump_dir, output_dir):
                 success_count += 1
+        else:
+            print(f"Failed on {input_name}")
+        print(f"[{i} / {len(mlir_files)}]")
     
     print(f"Successfully processed {success_count}/{len(mlir_files)} files in {output_dir}")
     return success_count == len(mlir_files)
