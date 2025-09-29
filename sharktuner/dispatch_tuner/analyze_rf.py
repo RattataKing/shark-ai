@@ -64,7 +64,9 @@ excluded_list = [
 ]
 
 def sanitize_df(df):
+    old_shape = old_shape = df.shape
     df = df.dropna(axis=1, how="all")
+    print(f"Dataset shape after sanitized: {old_shape} -> {df.shape}")
     return df
 
 def prepare_features(df):
@@ -96,9 +98,7 @@ def prepare_features(df):
 
 train_dfs = [pd.read_csv(f) for f in train_files]
 train_df = pd.concat(train_dfs, ignore_index=True)
-old_len = len(train_df)
 train_df = sanitize_df(train_df)
-print(f"Train set size after sanitized: {old_len} -> {len(train_df)} rows")
 
 X_train, y_train = prepare_features(train_df)
 print(f"Select Features: {X_train.columns}")
@@ -140,9 +140,7 @@ else:
 script_dir = os.path.dirname(os.path.abspath(__file__))
 for i,f in enumerate(test_files):
     test_df = pd.read_csv(f)
-    old_len = len(test_df)
     test_df = sanitize_df(test_df)
-    print(f"Test set [{i}] size after sanitized: {old_len} -> {len(test_df)} rows")
 
     X_test, y_test = prepare_features(test_df)
     y_pred = rf.predict(X_test)
@@ -171,7 +169,7 @@ for i,f in enumerate(test_files):
         xlabel="True Rank", ylabel="Predicted Rank",
         title=f"True vs Predicted Rank\n{Path(f).stem}")
 
-    save_path = os.path.join(script_dir, f"true_vs_pred_rank_{i}.png")
+    save_path = os.path.join(script_dir, f"RF_true_vs_pred_rank_{i}.png")
     fig.savefig(save_path, dpi=300, bbox_inches="tight")
     plt.close(fig)  # <<< important to avoid overlay + memory growth
     print(f"Saved plot to {save_path}")
