@@ -1225,6 +1225,8 @@ def benchmark(
     # random.shuffle(candidate_indices)
     ###
 
+    tuning_client.benchmark_timeout = first_baseline_result.time * 1.5
+
     candidate_results = benchmark_candidates(
         candidate_indices=candidate_indices,
         devices=args.devices,

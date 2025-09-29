@@ -217,7 +217,8 @@ def generate_configs_and_td_specs(
 
     constraint_generator = dispatch_tuner.get_constraint_generator()
     solution_variables = []
-    for i, solution_pack in enumerate(
+    import random
+    solutions = list(
         constraint_generator.generate_solutions(
             tuner_context,
             codegen_pipeline,
@@ -226,9 +227,9 @@ def generate_configs_and_td_specs(
             allowed_waves_per_eu=allowed_waves_per_eu,
             pipeline_options_search_space=pipeline_options_search_space,
         )
-    ):
-        if i >= limit:
-            break
+    )
+    random.shuffle(solutions)
+    for i, solution_pack in enumerate(solutions[:limit]):
         config = [solution_pack.tuning_configuration]
         # config = solution_pack.tuning_configurations
         tune_logger.debug(f"Solution #{i+1}: {config}")
