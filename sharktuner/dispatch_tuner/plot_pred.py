@@ -72,7 +72,7 @@ class CMPResult:
     RIGHT = 1
     TIE = 2
 
-def cmp_rows(row1, row2) -> CMPResult:
+def cmp_rows(row1, row2) -> bool:
     get_tile_size = lambda x: x["cfg.m"] * x["cfg.n"] * x["cfg.k"]
 
     is_pow2 = lambda x: 1 if (int(x) != 0 and (int(x) & (int(x)-1)) == 0) else 0    # Zero = False, Non-zero = True
@@ -88,17 +88,9 @@ def cmp_rows(row1, row2) -> CMPResult:
     t_ai = lambda x: arith_intensity(x["cfg.m"], x["cfg.n"], x["cfg.k"])
     intrinsic_ai = lambda x: arith_intensity(x["cfg.intrinsic_mn"], x["cfg.intrinsic_mn"], x["cfg.intrinsic_k"])
 
+    return k_pow2(row1) >= k_pow2(row2)
 
-    # Always choose LEFT when tie for fixed sorting order
-    if k_pow2(row1) > k_pow2(row2):
-        return CMPResult.LEFT
-    elif k_pow2(row1) < k_pow2(row2):
-        return CMPResult.RIGHT
-    else:
-        return CMPResult.LEFT if n_pow2(row1) >= n_pow2(row2) else CMPResult.RIGHT
-
-
-def stable_sort(rows: list[dict]):
+def stable_sort(rows: list[dict], cmp_func):
     if len(rows) <= 1:
         return rows[:]
 
@@ -106,20 +98,21 @@ def stable_sort(rows: list[dict]):
         i = j = 0
         out = []
         while i < len(left) and j < len(right):
-            res = cmp_rows(left[i], right[j])
-            if res == CMPResult.LEFT:
+            if cmp_func(left[i], right[j]):
                 out.append(left[i])
                 i += 1
-            elif res == CMPResult.RIGHT:
+            elif cmp_func(left[i], right[j]):
                 out.append(right[j])
                 j += 1
+            else:
+                out.append(left[i]); i += 1  # choose left when tie
         out.extend(left[i:])
         out.extend(right[j:])
         return out
 
     mid = len(rows) // 2
-    left = stable_sort(rows[:mid], cmp_rows)
-    right = stable_sort(rows[mid:], cmp_rows)
+    left = stable_sort(rows[:mid], cmp_func)
+    right = stable_sort(rows[mid:], cmp_func)
     return merge(left, right)
 
 
