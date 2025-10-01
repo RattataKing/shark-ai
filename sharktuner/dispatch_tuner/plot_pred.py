@@ -25,6 +25,13 @@ files = [
 ]
 print(f"Found {len(files)} CSV files")
 
+# def geometric_mean(nums):
+#     product = 1
+#     n = len(nums)
+#     for x in nums:
+#         product *= x
+#     return product ** (1/n)
+
 def get_rank(candidates: list):
     return rankdata(candidates, method=RANKMETHOD)
 
@@ -140,7 +147,7 @@ def test_sort():
 def manual_rank(df):
     rows_sorted = stable_sort(df.to_dict("records"), cmp_rows)
     df_sorted = pd.DataFrame(rows_sorted)
-    df_sorted["pred_rank"] = [i for i in range(len(df_sorted))]
+    df_sorted["pred_rank"] = [i+1 for i in range(len(df_sorted))]
     df_final = df_sorted.set_index("candidate_id").loc[df["candidate_id"]].reset_index()
     return np.array(df_final["pred_rank"].tolist().copy())
 
@@ -179,12 +186,39 @@ for i, f in enumerate(files):
 
     results.append({
         "dispatch_id": df["dispatch_id"].iloc[0],
-        "shuffle_min_search_space": shuffle_min_search_space,
-        "heuristic_min_search_space": heuristic_min_search_space
+        "shuffle_min_search_space_#": shuffle_min_search_space,
+        "heuristic_min_search_space_#": heuristic_min_search_space,
+        "candidate_num": len(df),
+        "shuffle_min_search_space_%": round(shuffle_min_search_space / len(df), 5),
+        "heuristic_min_search_space_%": round(heuristic_min_search_space / len(df), 5)
     })
 
+
+def geometric_mean(nums):
+    product = 1
+    n = len(nums)
+    for x in nums:
+        if x==0: continue
+        product *= x
+    return product ** (1/n)
+
 out_df = pd.DataFrame(results)
+
+# Arithmetic means (averages)
+shuffle_avg = out_df["shuffle_min_search_space_%"].mean()
+heuristic_avg = out_df["heuristic_min_search_space_%"].mean()
+
+# Geometric means
+shuffle_gmean = geometric_mean(out_df["shuffle_min_search_space_%"])
+heuristic_gmean = geometric_mean(out_df["heuristic_min_search_space_%"])
+
 save_path = os.path.join(script_dir, f"sort_search_space.csv")
+out_df["shuffle_avg"] = round(shuffle_avg,5)
+out_df["heuristic_avg"] = round(heuristic_avg,5)
+out_df["shuffle_gmean"] = round(shuffle_gmean,5)
+out_df["heuristic_gmean"] = round(heuristic_gmean, 5)
+print(f"shuffle_avg vs. heuristic_avg: {shuffle_avg:.2f} vs. {heuristic_avg:.2f}")
+print(f"shuffle_gmean vs. heuristic_gmean: {shuffle_gmean:.2f} vs. {heuristic_gmean:.2f}")
 out_df.to_csv(save_path, index=False)
 print(f"Saved results to {save_path}")
 
