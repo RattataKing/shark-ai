@@ -4,7 +4,7 @@ import glob
 from pathlib import Path
 import random, secrets
 import numpy as np
-from scipy.stats import spearmanr, rankdata, pearsonr
+from scipy.stats import rankdata
 import matplotlib.pyplot as plt
 from functools import cmp_to_key
 
@@ -54,16 +54,15 @@ def draw(ax, true_rank, pred_rank, label, df, color=None):
     optimal_time = df["benchmark_time_ms"].min()
     mask_near = (df["benchmark_time_ms"].to_numpy() <= optimal_time * 1.5)
 
-    # --- Plot ---
     # valid points
     ax.scatter(true_rank[mask_valid], pred_rank[mask_valid],
                label=label, color=color, alpha=0.5)
 
-    # near-optimal points (stronger alpha)
+    # 95+% optimal points
     ax.scatter(true_rank[mask_near], pred_rank[mask_near],
                color=color, alpha=0.9)
 
-    # invalid points
+    # benchmark failed
     ax.scatter(true_rank[~mask_valid], pred_rank[~mask_valid],
                color=color, alpha=0.1)
     
@@ -73,7 +72,7 @@ class CMPResult:
     RIGHT = 1
     TIE = 2
 
-def cmp_rows(row1, row2):
+def cmp_rows(row1, row2) -> CMPResult:
     get_tile_size = lambda x: x["cfg.m"] * x["cfg.n"] * x["cfg.k"]
 
     is_pow2 = lambda x: 1 if (int(x) != 0 and (int(x) & (int(x)-1)) == 0) else 0    # Zero = False, Non-zero = True
@@ -89,6 +88,8 @@ def cmp_rows(row1, row2):
     t_ai = lambda x: arith_intensity(x["cfg.m"], x["cfg.n"], x["cfg.k"])
     intrinsic_ai = lambda x: arith_intensity(x["cfg.intrinsic_mn"], x["cfg.intrinsic_mn"], x["cfg.intrinsic_k"])
 
+
+    # Always choose LEFT when tie for fixed sorting order
     if k_pow2(row1) > k_pow2(row2):
         return CMPResult.LEFT
     elif k_pow2(row1) < k_pow2(row2):
@@ -97,7 +98,7 @@ def cmp_rows(row1, row2):
         return CMPResult.LEFT if n_pow2(row1) >= n_pow2(row2) else CMPResult.RIGHT
 
 
-def stable_sort(rows: list[dict], cmp_func):
+def stable_sort(rows: list[dict]):
     if len(rows) <= 1:
         return rows[:]
 
@@ -105,7 +106,7 @@ def stable_sort(rows: list[dict], cmp_func):
         i = j = 0
         out = []
         while i < len(left) and j < len(right):
-            res = cmp_func(left[i], right[j])
+            res = cmp_rows(left[i], right[j])
             if res == CMPResult.LEFT:
                 out.append(left[i])
                 i += 1
@@ -117,8 +118,8 @@ def stable_sort(rows: list[dict], cmp_func):
         return out
 
     mid = len(rows) // 2
-    left = stable_sort(rows[:mid], cmp_func)
-    right = stable_sort(rows[mid:], cmp_func)
+    left = stable_sort(rows[:mid], cmp_rows)
+    right = stable_sort(rows[mid:], cmp_rows)
     return merge(left, right)
 
 
@@ -129,7 +130,6 @@ def manual_rank(df):
     df_final = df_sorted.set_index("candidate_id").loc[df["candidate_id"]].reset_index()
 
     return np.array(df_final["pred_rank"].tolist().copy())
-
 
 
 rng = random.Random(secrets.randbits(64))

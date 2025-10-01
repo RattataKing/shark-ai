@@ -109,8 +109,19 @@ def prepare_features(df):
         enc = None
         X_cat = pd.DataFrame(index=df.index)  # (n_rows x 0) placeholder
 
+    numeric_cols = ["m_pow2", "n_pow2", "k_pow2", 
+                "m_square", "n_square", "k_square",
+                "m_cube", "n_cube", "k_cube",
+                "num_subgroups_mult4",
+                "cfg.M", "cfg.N", "cfg.K",
+                "cfg.m", "cfg.n", "cfg.k",
+                "p_ai", "t_ai", "intrinsic_ai",
+                "mn_ratio",
+                "cfg.quantization_inefficiency", "cfg.lds_utilization"]
+
     X_num = df[numeric_cols]
-    X_all = pd.concat([X_num, X_cat], axis=1)
+    # X_all = pd.concat([X_num, X_cat], axis=1)
+    X_all=X_num
     y = df["norm_speedup"]
 
     return X_all, y, numeric_cols

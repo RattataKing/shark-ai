@@ -118,6 +118,20 @@ for f in files:
     # num of subgroups is a multiple of 4 (number of SIMDs in a CU)
     df["num_subgroups_mult4"] = (df["cfg.num_subgroups"] % 4 == 0).astype(int)
 
+    num_flops = lambda x, y, z: 2* x * y * z
+    num_byte_access = lambda x, y, z: 2 * (x * y + y * z + x * z)
+    arith_intensity = lambda x,y,z: num_flops(x,y,z)/num_byte_access(x,y,z)
+    p_ai = lambda x: arith_intensity(x["cfg.M"], x["cfg.N"], x["cfg.K"])
+    t_ai = lambda x: arith_intensity(x["cfg.m"], x["cfg.n"], x["cfg.k"])
+    intrinsic_ai = lambda x: arith_intensity(x["cfg.intrinsic_mn"], x["cfg.intrinsic_mn"], x["cfg.intrinsic_k"])
+
+    df["p_ai"] = p_ai(df)
+    df["t_ai"] = t_ai(df)
+    df["intrinsic_ai"] = intrinsic_ai(df)
+
+    df["mn_ratio"] = df[["cfg.m", "cfg.n"]].min(axis=1) / df[["cfg.m", "cfg.n"]].max(axis=1)
+    
+
 
     out_path = os.path.join(output_dir, os.path.basename(f))
     df.to_csv(out_path, index=False)
