@@ -2,6 +2,21 @@ import subprocess
 from pathlib import Path
 import os
 
+redo_list = [
+# "tuning_unet_gemm_4096_5120_640_f16_f32_tB.csv",
+# "tuning_tk_gemm_2048_10240_1280_f16_f32_tB.csv",
+# "tuning_unet_gemm_2048_1280_1280_f16_f32_tB.csv",
+# "tuning_tk_gemm_8192_5120_640_f16_f32_tB.csv",
+# "tuning_unet_gemm_2048_1280_5120_f16_f32_tB.csv",
+# "tuning_tk_gemm_2048_1280_1280_f16_f32_tB.csv",
+# "tuning_unet_gemm_2048_10240_1280_f16_f32_tB.csv",
+# "tuning_unet_gemm_1024_1280_5120_f16_f32_tB.csv",
+# "tuning_tk_gemm_2048_1280_5120_f16_f32_tB.csv",
+# "tuning_unet_gemm_8192_5120_640_f16_f32_tB.csv",
+# "tuning_unet_gemm_1024_1280_1280_f16_f32_tB.csv",
+# "tuning_unet_gemm_1024_10240_1280_f16_f32_tB.csv",
+]
+
 def main():
     mlir_folder_path = Path("~/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump").expanduser().resolve()
     mlir_files = sorted(mlir_folder_path.glob("*.mlir"))
@@ -22,7 +37,7 @@ def main():
     csv_dir = Path(base_path) / "tuning_database"
     csv_dir.mkdir(exist_ok=True)
     for mlir, bench in zip(mlir_files, mlir_benchmark_files):
-        if ((csv_dir / f"tuning_{mlir.stem}.csv").exists()):
+        if (f"tuning_{mlir.stem}.csv" not in redo_list) and ((csv_dir / f"tuning_{mlir.stem}.csv").exists()):
             print(f"{mlir.stem} already tuned, skipping...")
             ok += 1
             continue
@@ -35,9 +50,9 @@ def main():
             str(mlir),
             str(bench),
             "--compile-flags-file=dispatch_tuner/compile_flags.txt",
-            "--devices=hip://6,hip://7",
+            "--devices=hip://2,hip://5,hip://6,hip://7",
             "--num-candidates=2048",
-            "--dispatch-tuner-num-dispatch-candidates=2048",
+            "--dispatch-tuner-num-dispatch-candidates=10",
         ]
 
         rc = subprocess.call(cmd, cwd=Path("~/shark-ai/sharktuner").expanduser())

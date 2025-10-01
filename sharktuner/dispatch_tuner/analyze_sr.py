@@ -70,27 +70,67 @@ def sanitize_df(df):
 
 def prepare_features(df):
     df.columns = [c.replace(".", "_") for c in df.columns]
-    cfg_cols = [c for c in df.columns if c.startswith("cfg_") and c not in excluded_list]
-    # numeric subset
-    numeric_cols = df[cfg_cols].select_dtypes(include="number").columns
-    # categorical subset (strings)
-    cat_cols = [c for c in cfg_cols if c not in numeric_cols]
+    # cfg_cols = [c for c in df.columns if c.startswith("cfg_") and c not in excluded_list]
+    # # numeric subset
+    # numeric_cols = df[cfg_cols].select_dtypes(include="number").columns
+    # # categorical subset (strings)
+    # cat_cols = [c for c in cfg_cols if c not in numeric_cols]
 
-    # Encode categories as integer labels (skip cleanly if none)
-    if cat_cols:
-        enc = OrdinalEncoder()
-        X_cat = pd.DataFrame(
-            enc.fit_transform(df[cat_cols].astype(str)),
-            columns=cat_cols,
-            index=df.index
-        )
-        print(f"Encoded features in {cat_cols}")
-    else:
-        enc = None
-        X_cat = pd.DataFrame(index=df.index)  # (n_rows x 0) placeholder
+    # # Encode categories as integer labels (skip cleanly if none)
+    # if cat_cols:
+    #     enc = OrdinalEncoder()
+    #     X_cat = pd.DataFrame(
+    #         enc.fit_transform(df[cat_cols].astype(str)),
+    #         columns=cat_cols,
+    #         index=df.index
+    #     )
+    #     print(f"Encoded features in {cat_cols}")
+    # else:
+    #     enc = None
+    #     X_cat = pd.DataFrame(index=df.index)  # (n_rows x 0) placeholder
 
-    X_num = df[numeric_cols]
-    X_all = pd.concat([X_num, X_cat], axis=1)
+    # X_num = df[numeric_cols]
+    feature_cols = [c for c in [
+        # Tiling / tails
+        "cfg.M_tail_zero","cfg.N_tail_zero","cfg.K_tail_zero",
+        "cfg.M_tail_small","cfg.N_tail_small","cfg.K_tail_small",
+        "perfect_tiling_all",
+
+        # Intrinsic (MMA) compatibility
+        "cfg.K_mod_intrinsicK_0","cfg.k_mod_intrinsicK_0",
+        "cfg.M_mod_intrinsicMN_0","cfg.N_mod_intrinsicMN_0",
+        "cfg.m_mod_intrinsicMN_0","cfg.n_mod_intrinsicMN_0",
+
+        # Common divisibility (problem & tile)
+        "cfg.M_mod64_0","cfg.N_mod64_0","cfg.K_mod64_0",
+        "cfg.m_mod64_0","cfg.n_mod64_0","cfg.k_mod64_0",
+        "cfg.M_mod32_0","cfg.N_mod32_0","cfg.K_mod32_0",
+        "cfg.m_mod32_0","cfg.n_mod32_0","cfg.k_mod32_0",
+        "cfg.M_mod16_0","cfg.N_mod16_0","cfg.K_mod16_0",
+        "cfg.m_mod16_0","cfg.n_mod16_0","cfg.k_mod16_0",
+
+        # Power-of-two predicates
+        "cfg.M_pow2","cfg.N_pow2","cfg.K_pow2",
+        "cfg.m_pow2","cfg.n_pow2","cfg.k_pow2",
+        "cfg.M_pow2_close","cfg.N_pow2_close","cfg.K_pow2_close",
+        "cfg.m_pow2_close","cfg.n_pow2_close","cfg.k_pow2_close",
+
+        # Subgroups / geometry
+        "num_subgroups_mult4","num_subgroups_mult2","num_subgroups_ge4",
+        "wg_threads_pow2","aspect_match_close",
+        "cfg.k_mod4_0","cfg.n_mod4_0","cfg.m_mod4_0",
+
+        # Small “gap” bins (turn distances into booleans)
+        "cfg.K_to_intrinsicK_gap_small",
+        "cfg.m_to_intrinsicMN_gap_small",
+        "cfg.n_to_intrinsicMN_gap_small",
+
+        # A few continuous heuristics (keep small set)
+        "cfg.lds_utilization","cfg.quantization_inefficiency",
+        "arith_intensity","wg_per_cu_frac"
+    ] if c in df.columns]
+    # X_all = pd.concat([X_num, X_cat], axis=1)
+    X_all = df[feature_cols]
     y = df["norm_speedup"]
 
     return X_all, y
@@ -107,7 +147,7 @@ print(f"Select Features: {X_train.columns}")
 
 
 sr = PySRRegressor(
-    niterations=10,
+    niterations=1000,
     model_selection="accuracy",
     # elementwise_loss="L2DistLoss()",   # <- optional; default is L2/MSE
     population_size=1000,
@@ -115,7 +155,7 @@ sr = PySRRegressor(
     parsimony=1e-4,
 
     # lists, not tuples
-    unary_operators=["sin", "cos", "log", "exp", "abs"],
+    unary_operators=[],
     binary_operators=["+", "-", "*", "/", "pow"],
     constraints={"pow": (None, 2)},
 
