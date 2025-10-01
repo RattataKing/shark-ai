@@ -65,12 +65,7 @@ def draw(ax, true_rank, pred_rank, label, df, color=None):
     # benchmark failed
     ax.scatter(true_rank[~mask_valid], pred_rank[~mask_valid],
                color=color, alpha=0.1)
-    
 
-class CMPResult:
-    LEFT = 0
-    RIGHT = 1
-    TIE = 2
 
 def cmp_rows(row1, row2) -> bool:
     get_tile_size = lambda x: x["cfg.m"] * x["cfg.n"] * x["cfg.k"]
@@ -88,7 +83,7 @@ def cmp_rows(row1, row2) -> bool:
     t_ai = lambda x: arith_intensity(x["cfg.m"], x["cfg.n"], x["cfg.k"])
     intrinsic_ai = lambda x: arith_intensity(x["cfg.intrinsic_mn"], x["cfg.intrinsic_mn"], x["cfg.intrinsic_k"])
 
-    return k_pow2(row1) >= k_pow2(row2)
+    return k_pow2(row1) > k_pow2(row2)
 
 def stable_sort(rows: list[dict], cmp_func):
     if len(rows) <= 1:
@@ -101,11 +96,12 @@ def stable_sort(rows: list[dict], cmp_func):
             if cmp_func(left[i], right[j]):
                 out.append(left[i])
                 i += 1
-            elif cmp_func(left[i], right[j]):
+            elif cmp_func(right[j], left[i]):
                 out.append(right[j])
                 j += 1
             else:
-                out.append(left[i]); i += 1  # choose left when tie
+                out.append(left[i])
+                i += 1
         out.extend(left[i:])
         out.extend(right[j:])
         return out
@@ -115,16 +111,45 @@ def stable_sort(rows: list[dict], cmp_func):
     right = stable_sort(rows[mid:], cmp_func)
     return merge(left, right)
 
+def test_cmp_rows(r1, r2):
+    # prefer tile_k that is pow2 
+    is_pow2 = lambda x: 1 if (int(x) != 0 and (int(x) & (int(x)-1)) == 0) else 0    # Zero = False, Non-zero = True
+    return is_pow2(r1["cfg.k"]) > is_pow2(r2["cfg.k"])
+
+def test_sort():
+    dummy = [
+        {"candidate_id": 1, "cfg.m": 4, "cfg.n": 4, "cfg.k": 7, "cfg.M": 16, "cfg.N": 16, "cfg.K": 16, "cfg.intrinsic_mn": 4, "cfg.intrinsic_k": 4},
+        {"candidate_id": 2, "cfg.m": 4, "cfg.n": 4, "cfg.k": 8, "cfg.M": 16, "cfg.N": 16, "cfg.K": 16, "cfg.intrinsic_mn": 4, "cfg.intrinsic_k": 4},
+        {"candidate_id": 3, "cfg.m": 4, "cfg.n": 4, "cfg.k": 6, "cfg.M": 16, "cfg.N": 16, "cfg.K": 16, "cfg.intrinsic_mn": 4, "cfg.intrinsic_k": 4},
+        {"candidate_id": 4, "cfg.m": 4, "cfg.n": 4, "cfg.k": 16, "cfg.M": 16, "cfg.N": 16, "cfg.K": 16, "cfg.intrinsic_mn": 4, "cfg.intrinsic_k": 4},
+        {"candidate_id": 5, "cfg.m": 8, "cfg.n": 4, "cfg.k": 16, "cfg.M": 16, "cfg.N": 16, "cfg.K": 16, "cfg.intrinsic_mn": 4, "cfg.intrinsic_k": 4},
+    ]
+
+    print("Test stable_sort():")
+    print(pd.DataFrame(dummy))
+
+    rows_sorted = stable_sort(dummy, test_cmp_rows)
+    print(pd.DataFrame(rows_sorted))
+
+    pred_id = [row["candidate_id"] for row in rows_sorted]
+    expect_id = [2, 4, 5, 1, 3]  
+    assert pred_id == expect_id, f"Expected {expect_id}, got {pred_id}"
+
+    print("stable_sort() passed!")
 
 def manual_rank(df):
     rows_sorted = stable_sort(df.to_dict("records"), cmp_rows)
     df_sorted = pd.DataFrame(rows_sorted)
     df_sorted["pred_rank"] = [i for i in range(len(df_sorted))]
     df_final = df_sorted.set_index("candidate_id").loc[df["candidate_id"]].reset_index()
-
     return np.array(df_final["pred_rank"].tolist().copy())
 
 
+
+
+test_sort()
+
+print("Ranking...")
 rng = random.Random(secrets.randbits(64))
 rng.shuffle(files)
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -166,7 +191,6 @@ print(f"Saved results to {save_path}")
 
 f = files[0]
 df = pd.read_csv(f)
-
 # df = df[df["benchmark_status"] == True]
 
 rank_max = []
