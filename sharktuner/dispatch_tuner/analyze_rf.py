@@ -110,8 +110,7 @@ def prepare_features(df):
         X_cat = pd.DataFrame(index=df.index)  # (n_rows x 0) placeholder
 
     numeric_cols = ["m_pow2", "n_pow2", "k_pow2", 
-                "m_square", "n_square", "k_square",
-                "m_cube", "n_cube", "k_cube",
+                "mnk_cube","closeness_to_cube_volume",
                 "num_subgroups_mult4",
                 "cfg.M", "cfg.N", "cfg.K",
                 "cfg.m", "cfg.n", "cfg.k",
@@ -166,7 +165,7 @@ else:
     print("No numeric-numeric correlation to compute.")
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-for i,f in enumerate(test_files):
+for i,f in enumerate(test_files[:5]):
     test_df = pd.read_csv(f)
     test_df = sanitize_df(test_df)
 
@@ -179,7 +178,7 @@ for i,f in enumerate(test_files):
         "y_test": y_test,
         "y_pred": y_pred
     })
-    print(f"Len of y_test = {len(y_test)}")
+    # print(f"Len of y_test = {len(y_test)}")
     y_df_sorted = y_df.sort_values("y_test", ascending=True).reset_index(drop=True)
     y_df_sorted["true_rank"] = rankdata(y_df_sorted["y_test"], method="dense")
     y_df_sorted["pred_rank"] = rankdata(y_df_sorted["y_pred"], method="dense")

@@ -107,16 +107,10 @@ for f in files:
     df["m_pow2"] = ((df["cfg.m"] > 0) & ((df["cfg.m"] & (df["cfg.m"] - 1)) == 0)).astype(int)
     df["n_pow2"] = ((df["cfg.n"] > 0) & ((df["cfg.n"] & (df["cfg.n"] - 1)) == 0)).astype(int)
     df["k_pow2"] = ((df["cfg.k"] > 0) & ((df["cfg.k"] & (df["cfg.k"] - 1)) == 0)).astype(int)
-    # Tilze size perfect square check
-    df["m_square"] = (np.sqrt(df["cfg.m"]).astype(int) ** 2 == df["cfg.m"]).astype(int)
-    df["n_square"] = (np.sqrt(df["cfg.n"]).astype(int) ** 2 == df["cfg.n"]).astype(int)
-    df["k_square"] = (np.sqrt(df["cfg.k"]).astype(int) ** 2 == df["cfg.k"]).astype(int)
-    # Tile size perfect cube check
-    df["m_cube"] = (np.round(df["cfg.m"] ** (1/3)) ** 3 == df["cfg.m"]).astype(int)
-    df["n_cube"] = (np.round(df["cfg.n"] ** (1/3)) ** 3 == df["cfg.n"]).astype(int)
-    df["k_cube"] = (np.round(df["cfg.k"] ** (1/3)) ** 3 == df["cfg.k"]).astype(int)
+
     # num of subgroups is a multiple of 4 (number of SIMDs in a CU)
     df["num_subgroups_mult4"] = (df["cfg.num_subgroups"] % 4 == 0).astype(int)
+    df["mnk_cube"] = (df["cfg.m"] == df["cfg.n"]) & (df["cfg.n"] == df["cfg.k"]).astype(int)
 
     num_flops = lambda x, y, z: 2* x * y * z
     num_byte_access = lambda x, y, z: 2 * (x * y + y * z + x * z)
@@ -130,6 +124,13 @@ for f in files:
     df["intrinsic_ai"] = intrinsic_ai(df)
 
     df["mn_ratio"] = df[["cfg.m", "cfg.n"]].min(axis=1) / df[["cfg.m", "cfg.n"]].max(axis=1)
+
+    def closeness_to_cube_volume(a, b, c):
+        volume = a * b * c
+        root = round(volume ** (1/3))
+        return abs(volume - root**3)
+
+    df["closeness_to_cube_volume"] = closeness_to_cube_volume(df["cfg.m"],df["cfg.n"],df["cfg.k"])
     
 
 
