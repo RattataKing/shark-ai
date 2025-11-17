@@ -38,6 +38,7 @@ import tempfile
 import os
 import random
 import time
+import csv
 
 import iree.runtime as ireert  # type: ignore
 import iree.compiler as ireec  # type: ignore

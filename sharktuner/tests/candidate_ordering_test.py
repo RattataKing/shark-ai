@@ -152,3 +152,5 @@ def test_reorder_assignments(target_info: iree_gpu.TargetInfo) -> None:
         )
         == []
     )
+
+    assert True
