@@ -160,10 +160,16 @@ def main() -> None:
         print("Check the summary in:")
         print(summary_log_file.resolve())
 
-        output_csv_name = f"{args.dispatch_file.stem}_candidate_analysis.csv"
-        csv_path = Path(path_config.base_dir) / output_csv_name
+        import os
+        base_path = os.path.dirname(os.path.abspath(__file__))
+        csv_dir = Path(base_path) / "tuning_database"
+        csv_dir.mkdir(exist_ok=True)
 
+
+        output_csv_name = f"tuning_{args.dispatch_file.stem.removesuffix('_benchmark')}.csv"
+        output_path = csv_dir/output_csv_name
+        
         libtuner.candidate_ordering.export_record_to_csv(
-            dispatch_tuner.tuning_records, csv_path
+            dispatch_tuner.tuning_records, output_path
         )
-        print(f"Wrote tuning records CSV: {csv_path}")
+        print(f"Wrote tuning records CSV: {output_path}")
