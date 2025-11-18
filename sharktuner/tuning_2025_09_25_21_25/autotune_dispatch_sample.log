@@ -1,0 +1,24 @@
+2025-09-25 21:25:00,337 - DEBUG - Input Arguments:
+2025-09-25 21:25:00,337 - DEBUG - dispatch_file: dispatch_tuner/dispatch_sample.mlir
+2025-09-25 21:25:00,337 - DEBUG - dispatch_tuner_num_dispatch_candidates: None
+2025-09-25 21:25:00,337 - DEBUG - compile_flags_file: dispatch_tuner/compile_flags.txt
+2025-09-25 21:25:00,337 - DEBUG - output_td_spec: tuning-spec.mlir
+2025-09-25 21:25:00,337 - DEBUG - dispatch_benchmark_timeout_mins: None
+2025-09-25 21:25:00,337 - DEBUG - input_file: dispatch_tuner/tmp/dispatch_sample.mlir
+2025-09-25 21:25:00,337 - DEBUG - verbose: False
+2025-09-25 21:25:00,337 - DEBUG - devices: ['hip://6', 'hip://7']
+2025-09-25 21:25:00,337 - DEBUG - max_cpu_workers: 64
+2025-09-25 21:25:00,337 - DEBUG - stop_after: 
+2025-09-25 21:25:00,337 - DEBUG - dry_run: False
+2025-09-25 21:25:00,337 - DEBUG - num_candidates: 30
+2025-09-25 21:25:00,337 - DEBUG - num_subgroups: -1
+2025-09-25 21:25:00,337 - DEBUG - lhs_dims: mk
+2025-09-25 21:25:00,337 - DEBUG - rhs_dims: nk
+2025-09-25 21:25:00,337 - DEBUG - tile_dims: mnk
+2025-09-25 21:25:00,337 - DEBUG - prefetch_shared_memory_options: [True]
+2025-09-25 21:25:00,337 - DEBUG - no_reduce_shared_memory_bank_conflicts_options: [None]
+2025-09-25 21:25:00,337 - DEBUG - waves_per_eu_options: [2]
+2025-09-25 21:25:00,337 - DEBUG - codegen_pipeline: llvmgpu_vector_distribute
+2025-09-25 21:25:00,337 - DEBUG - starter_td_spec: None
+2025-09-25 21:25:00,700 - DEBUG - Loading all available dialects
+2025-09-25 21:25:00,707 - DEBUG - generate_candidate_specs()

@@ -1,0 +1,22 @@
+2025-09-29 20:34:31,959 - INFO - Benchmarking compiled dispatch candidates...
+2025-09-29 20:39:13,415 - INFO - Candidate 24 time: 69.33 ms (65.0% of baseline)
+2025-09-29 20:39:13,415 - INFO - Candidate 212 time: 70.67 ms (66.3% of baseline)
+2025-09-29 20:39:13,415 - INFO - Candidate 239 time: 70.33 ms (66.8% of baseline)
+2025-09-29 20:39:13,415 - INFO - Candidate 291 time: 73.00 ms (66.9% of baseline)
+2025-09-29 20:39:13,415 - INFO - Candidate 125 time: 71.67 ms (67.2% of baseline)
+2025-09-29 20:39:13,415 - INFO - Candidate 20 time: 73.00 ms (69.3% of baseline)
+2025-09-29 20:39:13,415 - INFO - Candidate 6 time: 76.67 ms (70.2% of baseline)
+2025-09-29 20:39:13,415 - INFO - Candidate 194 time: 78.00 ms (71.5% of baseline)
+2025-09-29 20:39:13,416 - INFO - Candidate 283 time: 78.33 ms (71.6% of baseline)
+2025-09-29 20:39:13,416 - INFO - Candidate 119 time: 80.00 ms (73.2% of baseline)
+2025-09-29 20:39:13,416 - INFO - Top dispatch candidates: [24, 212, 239, 291, 125, 20, 6, 194, 283, 119]
+2025-09-29 20:39:13,416 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/24_spec.mlir
+2025-09-29 20:39:13,416 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/212_spec.mlir
+2025-09-29 20:39:13,416 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/239_spec.mlir
+2025-09-29 20:39:13,417 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/291_spec.mlir
+2025-09-29 20:39:13,417 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/125_spec.mlir
+2025-09-29 20:39:13,417 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/20_spec.mlir
+2025-09-29 20:39:13,417 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/6_spec.mlir
+2025-09-29 20:39:13,417 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/194_spec.mlir
+2025-09-29 20:39:13,417 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/283_spec.mlir
+2025-09-29 20:39:13,417 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_20_34/candidates/specs/119_spec.mlir

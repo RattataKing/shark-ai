@@ -1,0 +1,50 @@
+2025-09-29 17:44:29,326 - ERROR - An error occurred during candidates generation: No compatible intrinsics found
+2025-09-29 17:44:29,326 - ERROR - Error in candidate_gen.py:
+Traceback (most recent call last):
+  File "/home/amily/shark-ai/sharktuner/sharktuner/libtuner.py", line 791, in generate_candidate_specs
+    config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/candidate_gen.py", line 221, in generate_configs_and_td_specs
+    solutions = list(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/constraint_generator.py", line 102, in generate_generic_contraction_solutions
+    constraints = dispatch_constraints.generate_vector_distribute_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 205, in generate_vector_distribute_constraints
+    get_mfma_intrinsic_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 82, in get_mfma_intrinsic_constraints
+    assert len(compatible_intrinsics) > 0, "No compatible intrinsics found"
+AssertionError: No compatible intrinsics found
+2025-09-29 17:44:29,326 - ERROR - Error in candidate_gen.py:
+Traceback (most recent call last):
+  File "/home/amily/shark-ai/sharktuner/sharktuner/libtuner.py", line 791, in generate_candidate_specs
+    config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/candidate_gen.py", line 221, in generate_configs_and_td_specs
+    solutions = list(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/constraint_generator.py", line 102, in generate_generic_contraction_solutions
+    constraints = dispatch_constraints.generate_vector_distribute_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 205, in generate_vector_distribute_constraints
+    get_mfma_intrinsic_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 82, in get_mfma_intrinsic_constraints
+    assert len(compatible_intrinsics) > 0, "No compatible intrinsics found"
+AssertionError: No compatible intrinsics found
+2025-09-29 17:44:33,762 - INFO - Benchmarking compiled dispatch candidates...
+2025-09-29 17:48:11,681 - WARNING - Performance regressions detected for the following devices: hip://2, hip://5, hip://7.
+2025-09-29 17:48:11,683 - INFO - Candidate 140 time: 33.33 ms (62.5% of baseline)
+2025-09-29 17:48:11,683 - INFO - Candidate 90 time: 37.33 ms (70.4% of baseline)
+2025-09-29 17:48:11,683 - INFO - Candidate 164 time: 38.67 ms (72.5% of baseline)
+2025-09-29 17:48:11,683 - INFO - Candidate 197 time: 40.33 ms (75.4% of baseline)
+2025-09-29 17:48:11,683 - INFO - Candidate 159 time: 40.67 ms (76.7% of baseline)
+2025-09-29 17:48:11,683 - INFO - Candidate 176 time: 41.00 ms (76.9% of baseline)
+2025-09-29 17:48:11,683 - INFO - Candidate 177 time: 41.33 ms (77.3% of baseline)
+2025-09-29 17:48:11,684 - INFO - Candidate 212 time: 43.67 ms (78.7% of baseline)
+2025-09-29 17:48:11,684 - INFO - Candidate 182 time: 42.00 ms (78.8% of baseline)
+2025-09-29 17:48:11,684 - INFO - Candidate 171 time: 42.33 ms (79.1% of baseline)
+2025-09-29 17:48:11,684 - INFO - Top dispatch candidates: [140, 90, 164, 197, 159, 176, 177, 212, 182, 171]
+2025-09-29 17:48:11,684 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/140_spec.mlir
+2025-09-29 17:48:11,684 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/90_spec.mlir
+2025-09-29 17:48:11,684 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/164_spec.mlir
+2025-09-29 17:48:11,684 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/197_spec.mlir
+2025-09-29 17:48:11,685 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/159_spec.mlir
+2025-09-29 17:48:11,685 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/176_spec.mlir
+2025-09-29 17:48:11,685 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/177_spec.mlir
+2025-09-29 17:48:11,685 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/212_spec.mlir
+2025-09-29 17:48:11,685 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/182_spec.mlir
+2025-09-29 17:48:11,685 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_17_44/candidates/specs/171_spec.mlir

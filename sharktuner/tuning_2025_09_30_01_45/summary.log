@@ -1,0 +1,27 @@
+2025-09-30 01:45:58,689 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_30_01_45/template.mlir -o=tuning_2025_09_30_01_45/candidates/compiled/16.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_30_01_45/candidates/compiled/16.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_30_01_45/candidates/specs/16_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-30 01:46:01,335 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_30_01_45/template.mlir -o=tuning_2025_09_30_01_45/candidates/compiled/387.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_30_01_45/candidates/compiled/387.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_30_01_45/candidates/specs/387_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-30 01:46:02,221 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_30_01_45/template.mlir -o=tuning_2025_09_30_01_45/candidates/compiled/480.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_30_01_45/candidates/compiled/480.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_30_01_45/candidates/specs/480_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-30 01:46:03,092 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_30_01_45/template.mlir -o=tuning_2025_09_30_01_45/candidates/compiled/569.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_30_01_45/candidates/compiled/569.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_30_01_45/candidates/specs/569_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-30 01:46:08,139 - INFO - Benchmarking compiled dispatch candidates...
+2025-09-30 02:00:01,129 - WARNING - Performance regressions detected for the following devices: hip://5.
+2025-09-30 02:00:01,139 - INFO - Candidate 1458 time: 45.00 ms (76.9% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 703 time: 48.00 ms (82.1% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 185 time: 49.33 ms (82.9% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 228 time: 50.33 ms (84.6% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 776 time: 47.67 ms (84.9% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 769 time: 47.67 ms (84.9% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 728 time: 50.00 ms (85.5% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 867 time: 50.33 ms (86.0% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 30 time: 51.33 ms (86.3% of baseline)
+2025-09-30 02:00:01,139 - INFO - Candidate 148 time: 51.33 ms (86.3% of baseline)
+2025-09-30 02:00:01,140 - INFO - Top dispatch candidates: [1458, 703, 185, 228, 776, 769, 728, 867, 30, 148]
+2025-09-30 02:00:01,140 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/1458_spec.mlir
+2025-09-30 02:00:01,140 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/703_spec.mlir
+2025-09-30 02:00:01,140 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/185_spec.mlir
+2025-09-30 02:00:01,140 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/228_spec.mlir
+2025-09-30 02:00:01,141 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/776_spec.mlir
+2025-09-30 02:00:01,141 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/769_spec.mlir
+2025-09-30 02:00:01,141 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/728_spec.mlir
+2025-09-30 02:00:01,141 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/867_spec.mlir
+2025-09-30 02:00:01,141 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/30_spec.mlir
+2025-09-30 02:00:01,141 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_01_45/candidates/specs/148_spec.mlir

@@ -1,0 +1,55 @@
+2025-09-30 06:07:41,833 - DEBUG - Input Arguments:
+2025-09-30 06:07:41,834 - DEBUG - dispatch_file: /home/amily/iree-kernel-benchmark/dump_dispatch/problem_mlir_dump/square_gemm_2048_2048_2048_i32_i32_tB.mlir
+2025-09-30 06:07:41,834 - DEBUG - dispatch_tuner_num_dispatch_candidates: 10
+2025-09-30 06:07:41,834 - DEBUG - compile_flags_file: dispatch_tuner/compile_flags.txt
+2025-09-30 06:07:41,834 - DEBUG - output_td_spec: tuning-spec.mlir
+2025-09-30 06:07:41,834 - DEBUG - dispatch_benchmark_timeout_mins: None
+2025-09-30 06:07:41,834 - DEBUG - input_file: /home/amily/shark-ai/sharktuner/dispatch_tuner/dump/square_gemm_2048_2048_2048_i32_i32_tB_benchmark.mlir
+2025-09-30 06:07:41,834 - DEBUG - verbose: False
+2025-09-30 06:07:41,834 - DEBUG - devices: ['hip://2', 'hip://5', 'hip://6', 'hip://7']
+2025-09-30 06:07:41,834 - DEBUG - max_cpu_workers: 64
+2025-09-30 06:07:41,834 - DEBUG - stop_after: 
+2025-09-30 06:07:41,834 - DEBUG - dry_run: False
+2025-09-30 06:07:41,834 - DEBUG - num_candidates: 2048
+2025-09-30 06:07:41,834 - DEBUG - num_subgroups: -1
+2025-09-30 06:07:41,834 - DEBUG - lhs_dims: mk
+2025-09-30 06:07:41,834 - DEBUG - rhs_dims: nk
+2025-09-30 06:07:41,834 - DEBUG - tile_dims: mnk
+2025-09-30 06:07:41,834 - DEBUG - prefetch_shared_memory_options: [True]
+2025-09-30 06:07:41,834 - DEBUG - no_reduce_shared_memory_bank_conflicts_options: [None]
+2025-09-30 06:07:41,834 - DEBUG - waves_per_eu_options: [2]
+2025-09-30 06:07:41,834 - DEBUG - codegen_pipeline: llvmgpu_vector_distribute
+2025-09-30 06:07:41,834 - DEBUG - starter_td_spec: None
+2025-09-30 06:07:42,583 - DEBUG - Loading all available dialects
+2025-09-30 06:07:42,590 - DEBUG - generate_candidate_specs()
+2025-09-30 06:07:42,591 - DEBUG - Run: /home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-opt tuning_2025_09_30_06_07/template.mlir --iree-codegen-strip-compilation-info
+2025-09-30 06:07:42,633 - DEBUG - MLIR parsing successful!
+2025-09-30 06:07:42,633 - DEBUG - Captured messages from candidate_gen.py:
+2025-09-30 06:07:42,635 - DEBUG - [2048],[2048],[2048]
+2025-09-30 06:07:42,641 - ERROR - An error occurred during candidates generation: No compatible intrinsics found
+2025-09-30 06:07:42,641 - ERROR - Error in candidate_gen.py:
+Traceback (most recent call last):
+  File "/home/amily/shark-ai/sharktuner/sharktuner/libtuner.py", line 791, in generate_candidate_specs
+    config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/candidate_gen.py", line 221, in generate_configs_and_td_specs
+    solutions = list(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/constraint_generator.py", line 102, in generate_generic_contraction_solutions
+    constraints = dispatch_constraints.generate_vector_distribute_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 205, in generate_vector_distribute_constraints
+    get_mfma_intrinsic_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 82, in get_mfma_intrinsic_constraints
+    assert len(compatible_intrinsics) > 0, "No compatible intrinsics found"
+AssertionError: No compatible intrinsics found
+2025-09-30 06:07:42,641 - ERROR - Error in candidate_gen.py:
+Traceback (most recent call last):
+  File "/home/amily/shark-ai/sharktuner/sharktuner/libtuner.py", line 791, in generate_candidate_specs
+    config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/candidate_gen.py", line 221, in generate_configs_and_td_specs
+    solutions = list(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/constraint_generator.py", line 102, in generate_generic_contraction_solutions
+    constraints = dispatch_constraints.generate_vector_distribute_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 205, in generate_vector_distribute_constraints
+    get_mfma_intrinsic_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 82, in get_mfma_intrinsic_constraints
+    assert len(compatible_intrinsics) > 0, "No compatible intrinsics found"
+AssertionError: No compatible intrinsics found

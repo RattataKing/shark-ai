@@ -1,0 +1,54 @@
+2025-09-30 05:52:11,711 - ERROR - An error occurred during candidates generation: No compatible intrinsics found
+2025-09-30 05:52:11,712 - ERROR - Error in candidate_gen.py:
+Traceback (most recent call last):
+  File "/home/amily/shark-ai/sharktuner/sharktuner/libtuner.py", line 791, in generate_candidate_specs
+    config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/candidate_gen.py", line 221, in generate_configs_and_td_specs
+    solutions = list(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/constraint_generator.py", line 102, in generate_generic_contraction_solutions
+    constraints = dispatch_constraints.generate_vector_distribute_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 205, in generate_vector_distribute_constraints
+    get_mfma_intrinsic_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 82, in get_mfma_intrinsic_constraints
+    assert len(compatible_intrinsics) > 0, "No compatible intrinsics found"
+AssertionError: No compatible intrinsics found
+2025-09-30 05:52:11,712 - ERROR - Error in candidate_gen.py:
+Traceback (most recent call last):
+  File "/home/amily/shark-ai/sharktuner/sharktuner/libtuner.py", line 791, in generate_candidate_specs
+    config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/candidate_gen.py", line 221, in generate_configs_and_td_specs
+    solutions = list(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/constraint_generator.py", line 102, in generate_generic_contraction_solutions
+    constraints = dispatch_constraints.generate_vector_distribute_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 205, in generate_vector_distribute_constraints
+    get_mfma_intrinsic_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 82, in get_mfma_intrinsic_constraints
+    assert len(compatible_intrinsics) > 0, "No compatible intrinsics found"
+AssertionError: No compatible intrinsics found
+2025-09-30 05:52:43,171 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_30_05_52/template.mlir -o=tuning_2025_09_30_05_52/candidates/compiled/189.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_30_05_52/candidates/compiled/189.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_30_05_52/candidates/specs/189_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-30 05:52:43,443 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_30_05_52/template.mlir -o=tuning_2025_09_30_05_52/candidates/compiled/229.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_30_05_52/candidates/compiled/229.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_30_05_52/candidates/specs/229_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-30 05:52:53,806 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_30_05_52/template.mlir -o=tuning_2025_09_30_05_52/candidates/compiled/1270.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_30_05_52/candidates/compiled/1270.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_30_05_52/candidates/specs/1270_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-30 05:52:56,174 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_30_05_52/template.mlir -o=tuning_2025_09_30_05_52/candidates/compiled/1482.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_30_05_52/candidates/compiled/1482.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_30_05_52/candidates/specs/1482_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-30 05:52:56,349 - INFO - Benchmarking compiled dispatch candidates...
+2025-09-30 06:06:56,951 - WARNING - Performance regressions detected for the following devices: hip://6.
+2025-09-30 06:06:56,962 - INFO - Candidate 90 time: 79.67 ms (75.6% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 1197 time: 83.00 ms (76.9% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 644 time: 85.67 ms (78.8% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 1389 time: 85.67 ms (79.3% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 97 time: 87.33 ms (80.4% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 678 time: 85.00 ms (80.8% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 1171 time: 88.00 ms (81.5% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 707 time: 89.33 ms (82.2% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 121 time: 90.33 ms (83.6% of baseline)
+2025-09-30 06:06:56,962 - INFO - Candidate 683 time: 88.00 ms (83.7% of baseline)
+2025-09-30 06:06:56,963 - INFO - Top dispatch candidates: [90, 1197, 644, 1389, 97, 678, 1171, 707, 121, 683]
+2025-09-30 06:06:56,963 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/90_spec.mlir
+2025-09-30 06:06:56,963 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/1197_spec.mlir
+2025-09-30 06:06:56,963 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/644_spec.mlir
+2025-09-30 06:06:56,963 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/1389_spec.mlir
+2025-09-30 06:06:56,964 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/97_spec.mlir
+2025-09-30 06:06:56,964 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/678_spec.mlir
+2025-09-30 06:06:56,964 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/1171_spec.mlir
+2025-09-30 06:06:56,964 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/707_spec.mlir
+2025-09-30 06:06:56,964 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/121_spec.mlir
+2025-09-30 06:06:56,964 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_30_05_52/candidates/specs/683_spec.mlir

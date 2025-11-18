@@ -1,0 +1,265 @@
+2025-09-25 21:25:14,870 - DEBUG - Input Arguments:
+2025-09-25 21:25:14,870 - DEBUG - dispatch_file: dispatch_tuner/dispatch_sample.mlir
+2025-09-25 21:25:14,870 - DEBUG - dispatch_tuner_num_dispatch_candidates: None
+2025-09-25 21:25:14,870 - DEBUG - compile_flags_file: dispatch_tuner/compile_flags.txt
+2025-09-25 21:25:14,870 - DEBUG - output_td_spec: tuning-spec.mlir
+2025-09-25 21:25:14,870 - DEBUG - dispatch_benchmark_timeout_mins: None
+2025-09-25 21:25:14,870 - DEBUG - input_file: dispatch_tuner/tmp/dispatch_sample_benchmark.mlir
+2025-09-25 21:25:14,870 - DEBUG - verbose: False
+2025-09-25 21:25:14,871 - DEBUG - devices: ['hip://6', 'hip://7']
+2025-09-25 21:25:14,871 - DEBUG - max_cpu_workers: 64
+2025-09-25 21:25:14,871 - DEBUG - stop_after: 
+2025-09-25 21:25:14,871 - DEBUG - dry_run: False
+2025-09-25 21:25:14,871 - DEBUG - num_candidates: 30
+2025-09-25 21:25:14,871 - DEBUG - num_subgroups: -1
+2025-09-25 21:25:14,871 - DEBUG - lhs_dims: mk
+2025-09-25 21:25:14,871 - DEBUG - rhs_dims: nk
+2025-09-25 21:25:14,871 - DEBUG - tile_dims: mnk
+2025-09-25 21:25:14,871 - DEBUG - prefetch_shared_memory_options: [True]
+2025-09-25 21:25:14,871 - DEBUG - no_reduce_shared_memory_bank_conflicts_options: [None]
+2025-09-25 21:25:14,871 - DEBUG - waves_per_eu_options: [2]
+2025-09-25 21:25:14,871 - DEBUG - codegen_pipeline: llvmgpu_vector_distribute
+2025-09-25 21:25:14,871 - DEBUG - starter_td_spec: None
+2025-09-25 21:25:15,258 - DEBUG - Loading all available dialects
+2025-09-25 21:25:15,266 - DEBUG - generate_candidate_specs()
+2025-09-25 21:25:15,266 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-opt tuning_2025_09_25_21_25/template.mlir --iree-codegen-strip-compilation-info
+2025-09-25 21:25:15,318 - DEBUG - MLIR parsing successful!
+2025-09-25 21:25:15,318 - DEBUG - Captured messages from candidate_gen.py:
+2025-09-25 21:25:15,356 - DEBUG - [1024],[1280],[1280]
+2025-09-25 21:25:15,375 - DEBUG - Initial constraints: [And(wg_threads == wg_x*wg_y*wg_z,
+     subgroup_size == 64,
+     wg_threads <= 1024,
+     Or(And(intrinsic_mn == 16, intrinsic_k == 16),
+        And(intrinsic_mn == 16, intrinsic_k == 32),
+        And(intrinsic_mn == 32, intrinsic_k == 8),
+        And(intrinsic_mn == 32, intrinsic_k == 16)),
+     m0 >= intrinsic_mn,
+     m0 <= 512,
+     m0 <= 1024,
+     1024%m0 == 0,
+     n0 >= intrinsic_mn,
+     n0 <= 512,
+     n0 <= 1280,
+     1280%n0 == 0,
+     k0 >= intrinsic_k,
+     k0 <= 512,
+     k0 <= 1280,
+     1280%k0 == 0,
+     sg_m_cnt >= 1,
+     sg_m_cnt <= 32,
+     sg_n_cnt >= 1,
+     sg_n_cnt <= 32,
+     sg_m_tcnt >= 1,
+     sg_m_tcnt <= 32,
+     sg_n_tcnt >= 1,
+     sg_n_tcnt <= 32,
+     sg_k_tcnt >= 1,
+     sg_k_tcnt <= 32,
+     m0 == intrinsic_mn*sg_m_cnt*sg_m_tcnt,
+     n0 == intrinsic_mn*sg_n_cnt*sg_n_tcnt,
+     k0 == intrinsic_k*sg_k_tcnt,
+     wg_x == sg_n_cnt*subgroup_size,
+     wg_y == sg_m_cnt,
+     wg_z == 1,
+     Or(wg_x <= n0, wg_x <= m0),
+     k0%intrinsic_mn == 0,
+     (k0*n0)%wg_threads == 0,
+     (k0*m0)%wg_threads == 0,
+     sg_m_cnt*sg_n_cnt >= 1,
+     sg_m_cnt*sg_n_cnt <= 10,
+     2*k0*m0 + 2*k0*n0 <= 65536,
+     subgroup_m0 == 0,
+     subgroup_n0 == 0)]
+2025-09-25 21:25:15,700 - DEBUG - Solution #1: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_16x16x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 80], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [16, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:15,707 - DEBUG - Solution #2: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_16x16x32_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[2, 2, 1], [0, 1, 2]], workgroup = [32, 128, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [128, 2, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,074 - DEBUG - Solution #3: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[2, 2, 1], [0, 1, 2]], workgroup = [64, 128, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [128, 2, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,082 - DEBUG - Solution #4: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[2, 4, 1], [0, 1, 2]], workgroup = [128, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 2, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,097 - DEBUG - Solution #5: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[2, 4, 1], [0, 1, 2]], workgroup = [512, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 2, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,120 - DEBUG - Solution #6: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [512, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,136 - DEBUG - Solution #7: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [256, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,148 - DEBUG - Solution #8: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [64, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,159 - DEBUG - Solution #9: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [128, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,162 - DEBUG - Solution #10: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [32, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,165 - DEBUG - Solution #11: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [256, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,168 - DEBUG - Solution #12: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [512, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,176 - DEBUG - Solution #13: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [128, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,179 - DEBUG - Solution #14: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [64, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,182 - DEBUG - Solution #15: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 4, 1], [0, 1, 2]], workgroup = [32, 256, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [256, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,197 - DEBUG - Solution #16: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 2, 1], [0, 1, 2]], workgroup = [256, 128, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [128, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,211 - DEBUG - Solution #17: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [256, 128, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,217 - DEBUG - Solution #18: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [256, 64, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,224 - DEBUG - Solution #19: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [256, 160, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,237 - DEBUG - Solution #20: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [256, 160, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,241 - DEBUG - Solution #21: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [128, 64, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,253 - DEBUG - Solution #22: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [256, 64, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,256 - DEBUG - Solution #23: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [128, 64, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,264 - DEBUG - Solution #24: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [256, 128, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,267 - DEBUG - Solution #25: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [64, 32, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,271 - DEBUG - Solution #26: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.virtual_mma_layout<VMFMA_F32_32x32x16_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [128, 32, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,274 - DEBUG - Solution #27: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [64, 32, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,277 - DEBUG - Solution #28: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [128, 32, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,285 - DEBUG - Solution #29: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [256, 32, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,288 - DEBUG - Solution #30: [TuningConfiguration(name='compilation_info', configuration=CompilationInfoAttr(#iree_codegen.compilation_info<lowering_config = #iree_gpu.lowering_config<{mma_kind = #iree_gpu.mma_layout<MFMA_F32_32x32x8_F16>, promote_operands = [0, 1], reduction = [0, 0, 32], subgroup_basis = [[1, 1, 1], [0, 1, 2]], workgroup = [512, 32, 0]}>, translation_info = <pipeline = LLVMGPUVectorDistribute workgroup_size = [64, 1, 1] subgroup_size = 64, {gpu_pipeline_options = #iree_gpu.pipeline_options<prefetch_shared_memory = true>, llvm_func_attrs = {"amdgpu-waves-per-eu" = "2"}}>>))]
+2025-09-25 21:25:16,292 - DEBUG - Generated 31 tuning specs
+2025-09-25 21:25:16,292 - DEBUG - candidate_gen.py ends
+2025-09-25 21:25:16,300 - DEBUG - Generated [30] candidates
+2025-09-25 21:25:16,300 - DEBUG - compile()
+2025-09-25 21:25:16,300 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-opt tuning_2025_09_25_21_25/template.mlir --iree-codegen-strip-compilation-info
+2025-09-25 21:25:16,415 - DEBUG - Compiling candidate 0 with spec: tuning_2025_09_25_21_25/candidates/specs/0_spec.mlir
+2025-09-25 21:25:16,415 - DEBUG - Compiling candidate 1 with spec: tuning_2025_09_25_21_25/candidates/specs/1_spec.mlir
+2025-09-25 21:25:16,415 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/1.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/1.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/1_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,415 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/0.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/0.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/0_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,415 - DEBUG - Compiling candidate 2 with spec: tuning_2025_09_25_21_25/candidates/specs/2_spec.mlir
+2025-09-25 21:25:16,415 - DEBUG - Compiling candidate 3 with spec: tuning_2025_09_25_21_25/candidates/specs/3_spec.mlir
+2025-09-25 21:25:16,415 - DEBUG - Compiling candidate 5 with spec: tuning_2025_09_25_21_25/candidates/specs/5_spec.mlir
+2025-09-25 21:25:16,415 - DEBUG - Compiling candidate 4 with spec: tuning_2025_09_25_21_25/candidates/specs/4_spec.mlir
+2025-09-25 21:25:16,416 - DEBUG - Compiling candidate 7 with spec: tuning_2025_09_25_21_25/candidates/specs/7_spec.mlir
+2025-09-25 21:25:16,416 - DEBUG - Compiling candidate 8 with spec: tuning_2025_09_25_21_25/candidates/specs/8_spec.mlir
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/2.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/2.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/2_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/3.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/3.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/3_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/5.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/5.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/5_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Compiling candidate 6 with spec: tuning_2025_09_25_21_25/candidates/specs/6_spec.mlir
+2025-09-25 21:25:16,416 - DEBUG - Compiling candidate 9 with spec: tuning_2025_09_25_21_25/candidates/specs/9_spec.mlir
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/8.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/8.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/8_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/7.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/7.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/7_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/4.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/4.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/4_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Compiling candidate 11 with spec: tuning_2025_09_25_21_25/candidates/specs/11_spec.mlir
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/9.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/9.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/9_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/6.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/6.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/6_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Compiling candidate 12 with spec: tuning_2025_09_25_21_25/candidates/specs/12_spec.mlir
+2025-09-25 21:25:16,416 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/11.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/11.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/11_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,417 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/12.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/12.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/12_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,416 - DEBUG - Compiling candidate 10 with spec: tuning_2025_09_25_21_25/candidates/specs/10_spec.mlir
+2025-09-25 21:25:16,416 - DEBUG - Compiling candidate 14 with spec: tuning_2025_09_25_21_25/candidates/specs/14_spec.mlir
+2025-09-25 21:25:16,417 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/14.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/14.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/14_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 13 with spec: tuning_2025_09_25_21_25/candidates/specs/13_spec.mlir
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 17 with spec: tuning_2025_09_25_21_25/candidates/specs/17_spec.mlir
+2025-09-25 21:25:16,417 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/10.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/10.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/10_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,417 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/17.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/17.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/17_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 15 with spec: tuning_2025_09_25_21_25/candidates/specs/15_spec.mlir
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 19 with spec: tuning_2025_09_25_21_25/candidates/specs/19_spec.mlir
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 20 with spec: tuning_2025_09_25_21_25/candidates/specs/20_spec.mlir
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 16 with spec: tuning_2025_09_25_21_25/candidates/specs/16_spec.mlir
+2025-09-25 21:25:16,417 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/13.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/13.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/13_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/19.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/19.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/19_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 21 with spec: tuning_2025_09_25_21_25/candidates/specs/21_spec.mlir
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 22 with spec: tuning_2025_09_25_21_25/candidates/specs/22_spec.mlir
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/20.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/20.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/20_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,418 - DEBUG - Compiling candidate 23 with spec: tuning_2025_09_25_21_25/candidates/specs/23_spec.mlir
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/15.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/15.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/15_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,417 - DEBUG - Compiling candidate 18 with spec: tuning_2025_09_25_21_25/candidates/specs/18_spec.mlir
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/22.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/22.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/22_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/23.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/23.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/23_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/16.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/16.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/16_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/21.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/21.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/21_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,418 - DEBUG - Compiling candidate 27 with spec: tuning_2025_09_25_21_25/candidates/specs/27_spec.mlir
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/18.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/18.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/18_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,418 - DEBUG - Compiling candidate 28 with spec: tuning_2025_09_25_21_25/candidates/specs/28_spec.mlir
+2025-09-25 21:25:16,418 - DEBUG - Compiling candidate 25 with spec: tuning_2025_09_25_21_25/candidates/specs/25_spec.mlir
+2025-09-25 21:25:16,418 - DEBUG - Compiling candidate 26 with spec: tuning_2025_09_25_21_25/candidates/specs/26_spec.mlir
+2025-09-25 21:25:16,418 - DEBUG - Compiling candidate 24 with spec: tuning_2025_09_25_21_25/candidates/specs/24_spec.mlir
+2025-09-25 21:25:16,418 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/27.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/27.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/27_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,419 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/28.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/28.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/28_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,419 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/26.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/26.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/26_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,419 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/25.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/25.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/25_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,419 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/24.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/24.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/24_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,420 - DEBUG - Compiling candidate 30 with spec: tuning_2025_09_25_21_25/candidates/specs/30_spec.mlir
+2025-09-25 21:25:16,420 - DEBUG - Compiling candidate 29 with spec: tuning_2025_09_25_21_25/candidates/specs/29_spec.mlir
+2025-09-25 21:25:16,421 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/30.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/30.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/30_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:16,421 - DEBUG - Run: /home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_25_21_25/template.mlir -o=tuning_2025_09_25_21_25/candidates/compiled/29.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_25_21_25/candidates/compiled/29.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_25_21_25/candidates/specs/29_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources
+2025-09-25 21:25:19,249 - DEBUG - Successfully compiled [31] candidates. Success rate: 0.97
+2025-09-25 21:25:19,253 - DEBUG - Produced [30] unique vmfbs
+2025-09-25 21:25:19,254 - INFO - Benchmarking compiled dispatch candidates...
+2025-09-25 21:25:19,254 - DEBUG - benchmark()
+2025-09-25 21:25:22,471 - DEBUG - Benchmark time of candidate 0: 71.33 ms
+2025-09-25 21:25:25,567 - DEBUG - Benchmark time of candidate 0: 64.00 ms
+2025-09-25 21:25:28,851 - DEBUG - Benchmark time of candidate 3: 73.67 ms
+2025-09-25 21:25:28,877 - DEBUG - Benchmark time of candidate 15: 83.00 ms
+2025-09-25 21:25:31,991 - DEBUG - Benchmark time of candidate 26: 74.67 ms
+2025-09-25 21:25:32,095 - DEBUG - Benchmark time of candidate 27: 72.33 ms
+2025-09-25 21:25:35,023 - DEBUG - Benchmark time of candidate 14: 79.33 ms
+2025-09-25 21:25:35,151 - DEBUG - Benchmark time of candidate 2: 72.67 ms
+2025-09-25 21:25:38,343 - DEBUG - Benchmark time of candidate 10: 79.67 ms
+2025-09-25 21:25:38,671 - DEBUG - Benchmark time of candidate 25: 77.67 ms
+2025-09-25 21:25:41,463 - DEBUG - Benchmark time of candidate 28: 74.67 ms
+2025-09-25 21:25:41,783 - DEBUG - Benchmark time of candidate 4: 96.33 ms
+2025-09-25 21:25:44,583 - DEBUG - Benchmark time of candidate 8: 88.33 ms
+2025-09-25 21:25:44,895 - DEBUG - Benchmark time of candidate 23: 79.67 ms
+2025-09-25 21:25:47,719 - DEBUG - Benchmark time of candidate 13: 101.00 ms
+2025-09-25 21:25:47,963 - DEBUG - Benchmark time of candidate 9: 101.00 ms
+2025-09-25 21:25:50,739 - DEBUG - Benchmark time of candidate 21: 81.00 ms
+2025-09-25 21:25:51,319 - DEBUG - Benchmark time of candidate 29: 93.33 ms
+2025-09-25 21:25:53,659 - DEBUG - Benchmark time of candidate 5: 740.67 ms
+2025-09-25 21:25:54,511 - DEBUG - Benchmark time of candidate 11: 126.00 ms
+2025-09-25 21:25:56,703 - DEBUG - Benchmark time of candidate 18: 107.67 ms
+2025-09-25 21:25:57,771 - DEBUG - Benchmark time of candidate 7: 130.00 ms
+2025-09-25 21:25:59,839 - DEBUG - Benchmark time of candidate 16: 116.00 ms
+2025-09-25 21:26:00,803 - DEBUG - Benchmark time of candidate 22: 114.00 ms
+2025-09-25 21:26:02,971 - DEBUG - Benchmark time of candidate 30: 147.00 ms
+2025-09-25 21:26:03,939 - DEBUG - Benchmark time of candidate 12: 2740.00 ms
+2025-09-25 21:26:05,983 - DEBUG - Benchmark time of candidate 24: 1256.67 ms
+2025-09-25 21:26:07,067 - DEBUG - Benchmark time of candidate 6: 2526.67 ms
+2025-09-25 21:26:08,983 - DEBUG - Benchmark time of candidate 17: 1330.00 ms
+2025-09-25 21:26:10,099 - DEBUG - Benchmark time of candidate 19: 1693.33 ms
+2025-09-25 21:26:12,063 - DEBUG - Benchmark time of candidate 20: 1910.00 ms
+2025-09-25 21:26:15,191 - DEBUG - Benchmark time of candidate 0: 61.33 ms
+2025-09-25 21:26:18,571 - DEBUG - Benchmark time of candidate 0: 65.33 ms
+2025-09-25 21:26:18,572 - INFO - Candidate 2 time: 72.67 ms (109.5% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 27 time: 72.33 ms (111.9% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 26 time: 74.67 ms (112.6% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 3 time: 73.67 ms (113.9% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 28 time: 74.67 ms (115.5% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 25 time: 77.67 ms (117.1% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 23 time: 79.67 ms (120.1% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 14 time: 79.33 ms (122.7% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 10 time: 79.67 ms (123.2% of baseline)
+2025-09-25 21:26:18,572 - INFO - Candidate 15 time: 83.00 ms (125.1% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 21 time: 81.00 ms (125.3% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 8 time: 88.33 ms (136.6% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 29 time: 93.33 ms (140.7% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 4 time: 96.33 ms (145.2% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 9 time: 101.00 ms (152.3% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 13 time: 101.00 ms (156.2% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 18 time: 107.67 ms (166.5% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 22 time: 114.00 ms (171.9% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 16 time: 116.00 ms (179.4% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 11 time: 126.00 ms (189.9% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 7 time: 130.00 ms (196.0% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 30 time: 147.00 ms (227.3% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 5 time: 740.67 ms (1145.4% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 24 time: 1256.67 ms (1943.3% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 17 time: 1330.00 ms (2056.7% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 19 time: 1693.33 ms (2552.8% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 20 time: 1910.00 ms (2953.6% of baseline)
+2025-09-25 21:26:18,573 - INFO - Candidate 6 time: 2526.67 ms (3809.0% of baseline)
+2025-09-25 21:26:18,574 - INFO - Candidate 12 time: 2740.00 ms (4130.7% of baseline)
+2025-09-25 21:26:18,574 - INFO - Top dispatch candidates: [2, 27, 26, 3, 28, 25, 23, 14, 10, 15, 21, 8, 29, 4, 9, 13, 18, 22, 16, 11, 7, 30, 5, 24, 17, 19, 20, 6, 12]
+2025-09-25 21:26:18,574 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/2_spec.mlir
+2025-09-25 21:26:18,574 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/27_spec.mlir
+2025-09-25 21:26:18,574 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/26_spec.mlir
+2025-09-25 21:26:18,574 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/3_spec.mlir
+2025-09-25 21:26:18,574 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/28_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/25_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/23_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/14_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/10_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/15_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/21_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/8_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/29_spec.mlir
+2025-09-25 21:26:18,575 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/4_spec.mlir
+2025-09-25 21:26:18,576 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/9_spec.mlir
+2025-09-25 21:26:18,576 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/13_spec.mlir
+2025-09-25 21:26:18,576 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/18_spec.mlir
+2025-09-25 21:26:18,576 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/22_spec.mlir
+2025-09-25 21:26:18,576 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/16_spec.mlir
+2025-09-25 21:26:18,576 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/11_spec.mlir
+2025-09-25 21:26:18,576 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/7_spec.mlir
+2025-09-25 21:26:18,576 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/30_spec.mlir
+2025-09-25 21:26:18,577 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/5_spec.mlir
+2025-09-25 21:26:18,577 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/24_spec.mlir
+2025-09-25 21:26:18,577 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/17_spec.mlir
+2025-09-25 21:26:18,577 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/19_spec.mlir
+2025-09-25 21:26:18,577 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/20_spec.mlir
+2025-09-25 21:26:18,577 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/6_spec.mlir
+2025-09-25 21:26:18,577 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_25_21_25/candidates/specs/12_spec.mlir

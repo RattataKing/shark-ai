@@ -1,0 +1,1637 @@
+2025-09-23 21:52:42,366 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/622.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/622.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/622_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:42,491 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/636.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/636.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/636_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:42,498 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/637.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/637.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/637_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:42,587 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/649.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/649.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/649_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:43,281 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/697.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/697.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/697_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:45,597 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/949.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/949.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/949_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:45,603 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/948.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/948.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/948_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:45,791 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/966.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/966.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/966_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:45,894 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/972.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/972.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/972_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:50,365 - WARNING - Command '/home/amily/iree-build/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_23_21_52/template.mlir -o=tuning_2025_09_23_21_52/candidates/compiled/1253.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_23_21_52/candidates/compiled/1253.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_23_21_52/candidates/specs/1253_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-23 21:52:51,360 - INFO - Benchmarking compiled dispatch candidates...
+2025-09-23 22:14:32,727 - WARNING - Performance regressions detected for the following devices: hip://7.
+2025-09-23 22:14:32,736 - INFO - Candidate 954 time: 45.33 ms (80.5% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 1016 time: 45.67 ms (81.1% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 895 time: 46.67 ms (82.8% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 236 time: 48.33 ms (85.8% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 1316 time: 49.00 ms (87.0% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 919 time: 49.33 ms (87.6% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 1378 time: 49.67 ms (88.2% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 12 time: 50.00 ms (88.8% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 225 time: 50.00 ms (88.8% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 873 time: 44.67 ms (89.3% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 992 time: 50.33 ms (89.3% of baseline)
+2025-09-23 22:14:32,736 - INFO - Candidate 522 time: 45.00 ms (90.0% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 61 time: 51.00 ms (90.5% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 604 time: 51.00 ms (90.5% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 1216 time: 51.00 ms (90.5% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 412 time: 51.33 ms (91.1% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 512 time: 51.33 ms (91.1% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 704 time: 51.33 ms (91.1% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 1014 time: 51.33 ms (91.1% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 1314 time: 51.33 ms (91.1% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 22 time: 51.67 ms (91.7% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 13 time: 51.67 ms (91.7% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 32 time: 51.67 ms (91.7% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 581 time: 51.67 ms (91.7% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 1162 time: 51.67 ms (91.7% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 1321 time: 51.67 ms (91.7% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 1360 time: 51.67 ms (91.7% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 81 time: 52.00 ms (92.3% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 123 time: 52.00 ms (92.3% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 892 time: 52.00 ms (92.3% of baseline)
+2025-09-23 22:14:32,737 - INFO - Candidate 1311 time: 52.00 ms (92.3% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 907 time: 46.33 ms (92.7% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 1337 time: 46.33 ms (92.7% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 890 time: 52.33 ms (92.9% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 456 time: 52.67 ms (93.5% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 666 time: 52.67 ms (93.5% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 865 time: 52.67 ms (93.5% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 1034 time: 52.67 ms (93.5% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 1120 time: 52.67 ms (93.5% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 34 time: 53.00 ms (94.1% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 219 time: 53.00 ms (94.1% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 254 time: 53.00 ms (94.1% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 416 time: 53.00 ms (94.1% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 904 time: 53.00 ms (94.1% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 1153 time: 53.00 ms (94.1% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 1214 time: 53.00 ms (94.1% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 63 time: 53.33 ms (94.7% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 218 time: 53.33 ms (94.7% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 576 time: 53.33 ms (94.7% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 597 time: 53.33 ms (94.7% of baseline)
+2025-09-23 22:14:32,738 - INFO - Candidate 606 time: 53.33 ms (94.7% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 614 time: 53.67 ms (95.3% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 822 time: 53.67 ms (95.3% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 1160 time: 53.67 ms (95.3% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 426 time: 54.00 ms (95.9% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 437 time: 54.00 ms (95.9% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 476 time: 54.00 ms (95.9% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 617 time: 54.00 ms (95.9% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 893 time: 54.00 ms (95.9% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 1060 time: 54.00 ms (95.9% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 1140 time: 54.00 ms (95.9% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 596 time: 54.33 ms (96.4% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 607 time: 54.33 ms (96.4% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 857 time: 54.33 ms (96.4% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 1283 time: 54.33 ms (96.4% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 1388 time: 48.33 ms (96.7% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 125 time: 54.67 ms (97.0% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 203 time: 54.67 ms (97.0% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 341 time: 54.67 ms (97.0% of baseline)
+2025-09-23 22:14:32,739 - INFO - Candidate 1358 time: 54.67 ms (97.0% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 417 time: 55.00 ms (97.6% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 453 time: 55.00 ms (97.6% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 164 time: 55.33 ms (98.2% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 489 time: 55.33 ms (98.2% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 584 time: 55.33 ms (98.2% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 809 time: 55.33 ms (98.2% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 850 time: 55.33 ms (98.2% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 1374 time: 55.33 ms (98.2% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 201 time: 49.33 ms (98.7% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 871 time: 49.33 ms (98.7% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 187 time: 55.67 ms (98.8% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 438 time: 55.67 ms (98.8% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 578 time: 55.67 ms (98.8% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 574 time: 55.67 ms (98.8% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 591 time: 55.67 ms (98.8% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 710 time: 55.67 ms (98.8% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 991 time: 55.67 ms (98.8% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 1125 time: 55.67 ms (98.8% of baseline)
+2025-09-23 22:14:32,740 - INFO - Candidate 1051 time: 49.67 ms (99.3% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 80 time: 56.00 ms (99.4% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 122 time: 56.00 ms (99.4% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 511 time: 56.00 ms (99.4% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 592 time: 56.00 ms (99.4% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 667 time: 56.00 ms (99.4% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 727 time: 56.00 ms (99.4% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 832 time: 56.00 ms (99.4% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 1062 time: 56.00 ms (99.4% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 233 time: 56.33 ms (100.0% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 259 time: 56.33 ms (100.0% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 343 time: 56.33 ms (100.0% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 716 time: 56.33 ms (100.0% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 26 time: 56.67 ms (100.6% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 237 time: 56.67 ms (100.6% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 1008 time: 56.67 ms (100.6% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 1132 time: 56.67 ms (100.6% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 109 time: 50.33 ms (100.7% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 189 time: 50.33 ms (100.7% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 239 time: 50.33 ms (100.7% of baseline)
+2025-09-23 22:14:32,741 - INFO - Candidate 1317 time: 50.33 ms (100.7% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 66 time: 57.00 ms (101.2% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 41 time: 57.00 ms (101.2% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 116 time: 57.00 ms (101.2% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 955 time: 57.00 ms (101.2% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 1194 time: 57.00 ms (101.2% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 1353 time: 57.00 ms (101.2% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 1355 time: 57.00 ms (101.2% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 454 time: 50.67 ms (101.3% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 496 time: 50.67 ms (101.3% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 1310 time: 50.67 ms (101.3% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 112 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 217 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 235 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 286 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 394 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 465 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 616 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 1402 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,742 - INFO - Candidate 1392 time: 57.33 ms (101.8% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 82 time: 51.00 ms (102.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 146 time: 51.00 ms (102.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 145 time: 51.00 ms (102.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 588 time: 51.00 ms (102.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 1097 time: 51.00 ms (102.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 156 time: 57.67 ms (102.4% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 232 time: 57.67 ms (102.4% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 820 time: 57.67 ms (102.4% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 844 time: 57.67 ms (102.4% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 1009 time: 57.67 ms (102.4% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 1280 time: 57.67 ms (102.4% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 228 time: 51.33 ms (102.7% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 1357 time: 51.33 ms (102.7% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 65 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 68 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 86 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 120 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 113 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,743 - INFO - Candidate 195 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 422 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 428 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 706 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 867 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 1022 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 1164 time: 58.00 ms (103.0% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 15 time: 51.67 ms (103.3% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 568 time: 51.67 ms (103.3% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 855 time: 51.67 ms (103.3% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 1400 time: 51.67 ms (103.3% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 234 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 287 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 333 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 387 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 736 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 821 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 843 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 883 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,744 - INFO - Candidate 1133 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 1265 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 1319 time: 58.33 ms (103.6% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 509 time: 52.00 ms (104.0% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 957 time: 52.00 ms (104.0% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 1078 time: 52.00 ms (104.0% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 1215 time: 52.00 ms (104.0% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 1309 time: 52.00 ms (104.0% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 1320 time: 52.00 ms (104.0% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 383 time: 58.67 ms (104.1% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 608 time: 58.67 ms (104.1% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 894 time: 58.67 ms (104.1% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 933 time: 58.67 ms (104.1% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 1168 time: 58.67 ms (104.1% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 321 time: 52.33 ms (104.7% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 478 time: 52.33 ms (104.7% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 40 time: 59.00 ms (104.7% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 58 time: 59.00 ms (104.7% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 819 time: 59.00 ms (104.7% of baseline)
+2025-09-23 22:14:32,745 - INFO - Candidate 1087 time: 59.00 ms (104.7% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 1139 time: 59.00 ms (104.7% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 199 time: 59.33 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 318 time: 59.33 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 1005 time: 59.33 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 1068 time: 59.33 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 1167 time: 59.33 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 1315 time: 59.33 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 1339 time: 59.33 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 67 time: 52.67 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 226 time: 52.67 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 205 time: 52.67 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 344 time: 52.67 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 1079 time: 52.67 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 1116 time: 52.67 ms (105.3% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 124 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 231 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 445 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 466 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 523 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,746 - INFO - Candidate 580 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1088 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1376 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1379 time: 59.67 ms (105.9% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 121 time: 53.00 ms (106.0% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 262 time: 53.00 ms (106.0% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 931 time: 53.00 ms (106.0% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 996 time: 53.00 ms (106.0% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1192 time: 53.00 ms (106.0% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 212 time: 60.00 ms (106.5% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 413 time: 60.00 ms (106.5% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 799 time: 60.00 ms (106.5% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1308 time: 60.00 ms (106.5% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1019 time: 53.33 ms (106.7% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1264 time: 53.33 ms (106.7% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1370 time: 53.33 ms (106.7% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 214 time: 60.33 ms (107.1% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 699 time: 60.33 ms (107.1% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1229 time: 60.33 ms (107.1% of baseline)
+2025-09-23 22:14:32,747 - INFO - Candidate 1401 time: 60.33 ms (107.1% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 154 time: 53.67 ms (107.3% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 430 time: 53.67 ms (107.3% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 455 time: 53.67 ms (107.3% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 579 time: 53.67 ms (107.3% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 729 time: 53.67 ms (107.3% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 932 time: 53.67 ms (107.3% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 1375 time: 53.67 ms (107.3% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 55 time: 60.67 ms (107.7% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 157 time: 60.67 ms (107.7% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 221 time: 60.67 ms (107.7% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 358 time: 60.67 ms (107.7% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 423 time: 60.67 ms (107.7% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 498 time: 60.67 ms (107.7% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 1266 time: 60.67 ms (107.7% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 4 time: 54.00 ms (108.0% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 16 time: 54.00 ms (108.0% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 115 time: 54.00 ms (108.0% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 1151 time: 54.00 ms (108.0% of baseline)
+2025-09-23 22:14:32,748 - INFO - Candidate 1212 time: 54.00 ms (108.0% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 1312 time: 54.00 ms (108.0% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 337 time: 61.00 ms (108.3% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 572 time: 61.00 ms (108.3% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 796 time: 61.00 ms (108.3% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 1191 time: 61.00 ms (108.3% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 1396 time: 61.00 ms (108.3% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 62 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 209 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 525 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 569 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 577 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 587 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 629 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 1003 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 1391 time: 54.33 ms (108.7% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 110 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 385 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 502 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,749 - INFO - Candidate 583 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 668 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 737 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 848 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 1090 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 1119 time: 61.33 ms (108.9% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 686 time: 54.67 ms (109.3% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 771 time: 54.67 ms (109.3% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 631 time: 61.67 ms (109.5% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 1050 time: 61.67 ms (109.5% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 1390 time: 61.67 ms (109.5% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 615 time: 55.00 ms (110.0% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 618 time: 55.00 ms (110.0% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 630 time: 55.00 ms (110.0% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 889 time: 55.00 ms (110.0% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 1137 time: 55.00 ms (110.0% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 215 time: 62.00 ms (110.1% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 265 time: 62.00 ms (110.1% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 983 time: 62.00 ms (110.1% of baseline)
+2025-09-23 22:14:32,750 - INFO - Candidate 329 time: 62.33 ms (110.7% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 480 time: 62.33 ms (110.7% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 611 time: 62.33 ms (110.7% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 652 time: 62.33 ms (110.7% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 33 time: 55.33 ms (110.7% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 213 time: 55.33 ms (110.7% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 342 time: 55.33 ms (110.7% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 672 time: 55.33 ms (110.7% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 131 time: 62.67 ms (111.2% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 494 time: 62.67 ms (111.2% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 655 time: 62.67 ms (111.2% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 940 time: 62.67 ms (111.2% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 1217 time: 62.67 ms (111.2% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 111 time: 55.67 ms (111.3% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 182 time: 55.67 ms (111.3% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 527 time: 55.67 ms (111.3% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 872 time: 55.67 ms (111.3% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 1138 time: 55.67 ms (111.3% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 1165 time: 55.67 ms (111.3% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 1359 time: 55.67 ms (111.3% of baseline)
+2025-09-23 22:14:32,751 - INFO - Candidate 79 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 250 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 488 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 564 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 829 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 918 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 937 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 1020 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 1354 time: 63.00 ms (111.8% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 421 time: 56.00 ms (112.0% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 424 time: 56.00 ms (112.0% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 1367 time: 56.00 ms (112.0% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 114 time: 63.33 ms (112.4% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 670 time: 63.33 ms (112.4% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 849 time: 63.33 ms (112.4% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 238 time: 56.33 ms (112.7% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 429 time: 56.33 ms (112.7% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 856 time: 56.33 ms (112.7% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 1281 time: 56.33 ms (112.7% of baseline)
+2025-09-23 22:14:32,752 - INFO - Candidate 585 time: 63.67 ms (113.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 619 time: 63.67 ms (113.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 733 time: 63.67 ms (113.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 64 time: 56.67 ms (113.3% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 158 time: 64.00 ms (113.6% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 774 time: 64.00 ms (113.6% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 1284 time: 64.00 ms (113.6% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 56 time: 57.00 ms (114.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 59 time: 57.00 ms (114.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 11 time: 57.00 ms (114.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 70 time: 57.00 ms (114.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 735 time: 57.00 ms (114.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 884 time: 57.00 ms (114.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 1015 time: 57.00 ms (114.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 1193 time: 57.00 ms (114.0% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 317 time: 64.33 ms (114.2% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 676 time: 64.33 ms (114.2% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 677 time: 64.33 ms (114.2% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 3 time: 57.33 ms (114.7% of baseline)
+2025-09-23 22:14:32,753 - INFO - Candidate 252 time: 57.33 ms (114.7% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 444 time: 57.33 ms (114.7% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 598 time: 57.33 ms (114.7% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 810 time: 57.33 ms (114.7% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 956 time: 57.33 ms (114.7% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 1017 time: 57.33 ms (114.7% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 1371 time: 57.33 ms (114.7% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 594 time: 64.67 ms (114.8% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 827 time: 64.67 ms (114.8% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 908 time: 64.67 ms (114.8% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 1096 time: 64.67 ms (114.8% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 309 time: 57.67 ms (115.3% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 510 time: 57.67 ms (115.3% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 505 time: 57.67 ms (115.3% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 605 time: 57.67 ms (115.3% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 714 time: 57.67 ms (115.3% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 864 time: 57.67 ms (115.3% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 930 time: 57.67 ms (115.3% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 1107 time: 57.67 ms (115.3% of baseline)
+2025-09-23 22:14:32,754 - INFO - Candidate 482 time: 65.00 ms (115.4% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 529 time: 65.00 ms (115.4% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 763 time: 65.00 ms (115.4% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 917 time: 65.33 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 1033 time: 65.33 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 2 time: 58.00 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 497 time: 58.00 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 833 time: 58.00 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 891 time: 58.00 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 885 time: 58.00 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 1061 time: 58.00 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 1338 time: 58.00 ms (116.0% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 346 time: 65.67 ms (116.6% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 682 time: 65.67 ms (116.6% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 702 time: 65.67 ms (116.6% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 952 time: 65.67 ms (116.6% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 85 time: 58.33 ms (116.7% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 149 time: 58.33 ms (116.7% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 427 time: 58.33 ms (116.7% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 464 time: 58.33 ms (116.7% of baseline)
+2025-09-23 22:14:32,755 - INFO - Candidate 457 time: 58.33 ms (116.7% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 866 time: 58.33 ms (116.7% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 1053 time: 58.33 ms (116.7% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 107 time: 66.00 ms (117.2% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 74 time: 66.00 ms (117.2% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 374 time: 66.00 ms (117.2% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 1428 time: 66.00 ms (117.2% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 183 time: 58.67 ms (117.3% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 257 time: 58.67 ms (117.3% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 570 time: 58.67 ms (117.3% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 669 time: 58.67 ms (117.3% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 708 time: 58.67 ms (117.3% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 896 time: 58.67 ms (117.3% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 1075 time: 58.67 ms (117.3% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 1089 time: 58.67 ms (117.3% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 31 time: 66.33 ms (117.8% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 166 time: 66.33 ms (117.8% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 24 time: 59.00 ms (118.0% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 69 time: 59.00 ms (118.0% of baseline)
+2025-09-23 22:14:32,756 - INFO - Candidate 328 time: 59.00 ms (118.0% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1007 time: 59.00 ms (118.0% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1373 time: 59.00 ms (118.0% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 227 time: 66.67 ms (118.3% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 582 time: 66.67 ms (118.3% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1335 time: 66.67 ms (118.3% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 216 time: 59.33 ms (118.7% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1159 time: 59.33 ms (118.7% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1313 time: 59.33 ms (118.7% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1356 time: 59.33 ms (118.7% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1350 time: 59.33 ms (118.7% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 610 time: 67.00 ms (118.9% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 764 time: 67.00 ms (118.9% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1267 time: 67.00 ms (118.9% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 1322 time: 67.00 ms (118.9% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 42 time: 59.67 ms (119.3% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 240 time: 59.67 ms (119.3% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 842 time: 59.67 ms (119.3% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 853 time: 59.67 ms (119.3% of baseline)
+2025-09-23 22:14:32,757 - INFO - Candidate 291 time: 67.33 ms (119.5% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 690 time: 67.33 ms (119.5% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 8 time: 60.00 ms (120.0% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 188 time: 60.00 ms (120.0% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 395 time: 60.00 ms (120.0% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 472 time: 60.00 ms (120.0% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 534 time: 60.00 ms (120.0% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 685 time: 60.00 ms (120.0% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 1149 time: 60.00 ms (120.0% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 1437 time: 60.00 ms (120.0% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 150 time: 60.33 ms (120.7% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 249 time: 60.33 ms (120.7% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 603 time: 60.33 ms (120.7% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 905 time: 60.33 ms (120.7% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 536 time: 68.00 ms (120.7% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 1080 time: 68.00 ms (120.7% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 60 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 84 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 390 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,758 - INFO - Candidate 567 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 830 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 959 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 1158 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 1282 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 1372 time: 60.67 ms (121.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 127 time: 61.00 ms (122.0% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 151 time: 61.00 ms (122.0% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 743 time: 61.00 ms (122.0% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 797 time: 61.00 ms (122.0% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 836 time: 61.00 ms (122.0% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 595 time: 61.33 ms (122.7% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 671 time: 61.33 ms (122.7% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 126 time: 61.67 ms (123.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 347 time: 61.67 ms (123.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 573 time: 61.67 ms (123.3% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 653 time: 69.67 ms (123.7% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 693 time: 69.67 ms (123.7% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 1213 time: 62.00 ms (124.0% of baseline)
+2025-09-23 22:14:32,759 - INFO - Candidate 130 time: 70.00 ms (124.3% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 322 time: 62.33 ms (124.7% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 349 time: 62.33 ms (124.7% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 712 time: 62.33 ms (124.7% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 1246 time: 62.33 ms (124.7% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 1398 time: 62.33 ms (124.7% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 335 time: 62.67 ms (125.3% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 599 time: 62.67 ms (125.3% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 651 time: 62.67 ms (125.3% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 1380 time: 62.67 ms (125.3% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 586 time: 63.00 ms (126.0% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 1179 time: 63.00 ms (126.0% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 1268 time: 63.00 ms (126.0% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 1399 time: 63.00 ms (126.0% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 391 time: 71.00 ms (126.0% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 1368 time: 71.33 ms (126.6% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 230 time: 63.33 ms (126.7% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 420 time: 63.33 ms (126.7% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 654 time: 63.33 ms (126.7% of baseline)
+2025-09-23 22:14:32,760 - INFO - Candidate 1129 time: 63.33 ms (126.7% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 339 time: 71.67 ms (127.2% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 1091 time: 71.67 ms (127.2% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 1270 time: 71.67 ms (127.2% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 1387 time: 71.67 ms (127.2% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 263 time: 63.67 ms (127.3% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 1012 time: 63.67 ms (127.3% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 1052 time: 63.67 ms (127.3% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 1049 time: 63.67 ms (127.3% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 1127 time: 63.67 ms (127.3% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 664 time: 72.00 ms (127.8% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 338 time: 64.00 ms (128.0% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 665 time: 64.00 ms (128.0% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 689 time: 64.00 ms (128.0% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 726 time: 64.00 ms (128.0% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 229 time: 64.33 ms (128.7% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 264 time: 72.67 ms (129.0% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 379 time: 72.67 ms (129.0% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 1235 time: 72.67 ms (129.0% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 953 time: 64.67 ms (129.3% of baseline)
+2025-09-23 22:14:32,761 - INFO - Candidate 302 time: 73.00 ms (129.6% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 1227 time: 73.00 ms (129.6% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 119 time: 65.00 ms (130.0% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 620 time: 65.00 ms (130.0% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 1105 time: 65.00 ms (130.0% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 348 time: 73.33 ms (130.2% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 725 time: 73.33 ms (130.2% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 758 time: 73.33 ms (130.2% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 563 time: 65.33 ms (130.7% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 1255 time: 73.67 ms (130.8% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 798 time: 65.67 ms (131.3% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 253 time: 74.00 ms (131.4% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 223 time: 74.00 ms (131.4% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 1385 time: 74.00 ms (131.4% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 658 time: 74.33 ms (132.0% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 593 time: 66.00 ms (132.0% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 675 time: 66.00 ms (132.0% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 1024 time: 74.67 ms (132.5% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 165 time: 66.33 ms (132.7% of baseline)
+2025-09-23 22:14:32,762 - INFO - Candidate 224 time: 66.33 ms (132.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 473 time: 66.33 ms (132.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 600 time: 66.33 ms (132.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 906 time: 66.33 ms (132.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 1093 time: 66.33 ms (132.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 1278 time: 66.33 ms (132.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 1395 time: 66.33 ms (132.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 674 time: 75.00 ms (133.1% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 396 time: 66.67 ms (133.3% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 118 time: 75.33 ms (133.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 340 time: 67.00 ms (134.0% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 818 time: 75.67 ms (134.3% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 275 time: 67.33 ms (134.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 1148 time: 67.33 ms (134.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 1377 time: 67.33 ms (134.7% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 319 time: 76.00 ms (134.9% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 506 time: 76.00 ms (134.9% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 728 time: 76.00 ms (134.9% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 663 time: 67.67 ms (135.3% of baseline)
+2025-09-23 22:14:32,763 - INFO - Candidate 1094 time: 76.33 ms (135.5% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 128 time: 68.00 ms (136.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 589 time: 68.00 ms (136.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 484 time: 68.00 ms (136.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 950 time: 68.00 ms (136.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 995 time: 68.00 ms (136.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 1297 time: 68.00 ms (136.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 284 time: 76.67 ms (136.1% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 386 time: 68.33 ms (136.7% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 1299 time: 77.33 ms (137.3% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 83 time: 68.67 ms (137.3% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 436 time: 68.67 ms (137.3% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 691 time: 68.67 ms (137.3% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 251 time: 77.67 ms (137.9% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 1047 time: 77.67 ms (137.9% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 106 time: 69.00 ms (138.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 393 time: 69.00 ms (138.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 590 time: 69.00 ms (138.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 1113 time: 69.00 ms (138.0% of baseline)
+2025-09-23 22:14:32,764 - INFO - Candidate 1318 time: 69.00 ms (138.0% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 625 time: 78.00 ms (138.5% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 941 time: 78.00 ms (138.5% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 28 time: 69.33 ms (138.7% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 248 time: 69.33 ms (138.7% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 388 time: 69.33 ms (138.7% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 1234 time: 69.33 ms (138.7% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 1298 time: 69.33 ms (138.7% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 129 time: 69.67 ms (139.3% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 517 time: 70.00 ms (140.0% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 541 time: 70.00 ms (140.0% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 958 time: 70.33 ms (140.7% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 1397 time: 79.33 ms (140.8% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 266 time: 70.67 ms (141.3% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 757 time: 70.67 ms (141.3% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 247 time: 71.00 ms (142.0% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 168 time: 80.00 ms (142.0% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 815 time: 80.00 ms (142.0% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 561 time: 80.33 ms (142.6% of baseline)
+2025-09-23 22:14:32,765 - INFO - Candidate 384 time: 71.33 ms (142.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 800 time: 72.67 ms (145.3% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 562 time: 82.00 ms (145.6% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 804 time: 73.00 ms (146.0% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 530 time: 82.33 ms (146.2% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 519 time: 73.33 ms (146.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 1279 time: 73.33 ms (146.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 1220 time: 83.33 ms (147.9% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 1389 time: 74.00 ms (148.0% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 535 time: 74.33 ms (148.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 220 time: 74.67 ms (149.3% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 612 time: 74.67 ms (149.3% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 540 time: 84.33 ms (149.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 641 time: 84.33 ms (149.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 1070 time: 84.33 ms (149.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 657 time: 75.00 ms (150.0% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 724 time: 75.00 ms (150.0% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 57 time: 75.33 ms (150.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 244 time: 75.33 ms (150.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 807 time: 75.33 ms (150.7% of baseline)
+2025-09-23 22:14:32,766 - INFO - Candidate 211 time: 85.00 ms (150.9% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 694 time: 75.67 ms (151.3% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 640 time: 85.33 ms (151.5% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 1166 time: 85.33 ms (151.5% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 782 time: 85.67 ms (152.1% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 105 time: 86.33 ms (153.3% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 1269 time: 86.33 ms (153.3% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 54 time: 76.67 ms (153.3% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 803 time: 76.67 ms (153.3% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 1031 time: 76.67 ms (153.3% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 442 time: 86.67 ms (153.8% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 964 time: 87.00 ms (154.4% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 684 time: 77.67 ms (155.3% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 808 time: 77.67 ms (155.3% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 167 time: 78.00 ms (156.0% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 1150 time: 88.00 ms (156.2% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 560 time: 79.00 ms (158.0% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 207 time: 89.67 ms (159.2% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 1275 time: 80.00 ms (160.0% of baseline)
+2025-09-23 22:14:32,767 - INFO - Candidate 1276 time: 91.00 ms (161.5% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 542 time: 81.00 ms (162.0% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 1048 time: 81.00 ms (162.0% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 1394 time: 91.33 ms (162.1% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 241 time: 81.33 ms (162.7% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 315 time: 81.33 ms (162.7% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 692 time: 91.67 ms (162.7% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 806 time: 82.00 ms (164.0% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 1 time: 82.33 ms (164.7% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 639 time: 82.67 ms (165.3% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 17 time: 94.33 ms (167.5% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 554 time: 95.00 ms (168.6% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 159 time: 85.67 ms (171.3% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 1254 time: 97.00 ms (172.2% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 1095 time: 87.33 ms (174.7% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 1177 time: 88.33 ms (176.7% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 5 time: 102.67 ms (182.2% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 553 time: 91.67 ms (183.3% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 609 time: 91.67 ms (183.3% of baseline)
+2025-09-23 22:14:32,768 - INFO - Candidate 642 time: 91.67 ms (183.3% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 117 time: 93.33 ms (186.7% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 613 time: 94.00 ms (188.0% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 929 time: 95.67 ms (191.3% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 242 time: 96.67 ms (193.3% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 193 time: 97.00 ms (194.0% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 909 time: 110.33 ms (195.9% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 626 time: 98.67 ms (197.3% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 1386 time: 112.33 ms (199.4% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 197 time: 100.33 ms (200.7% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 1369 time: 101.00 ms (202.0% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 1189 time: 104.00 ms (208.0% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 869 time: 125.33 ms (222.5% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 1323 time: 125.67 ms (223.1% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 1161 time: 117.00 ms (234.0% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 389 time: 118.67 ms (237.3% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 938 time: 136.00 ms (241.4% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 1271 time: 122.33 ms (244.7% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 1218 time: 124.33 ms (248.7% of baseline)
+2025-09-23 22:14:32,769 - INFO - Candidate 1163 time: 126.00 ms (252.0% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 376 time: 145.00 ms (257.4% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 380 time: 130.33 ms (260.7% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 1188 time: 130.67 ms (261.3% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 1121 time: 133.67 ms (267.3% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 397 time: 151.67 ms (269.2% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 1130 time: 152.00 ms (269.8% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 375 time: 152.67 ms (271.0% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 934 time: 136.67 ms (273.3% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 838 time: 158.00 ms (280.5% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 845 time: 158.67 ms (281.7% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 184 time: 144.00 ms (288.0% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 108 time: 145.67 ms (291.3% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 911 time: 152.00 ms (304.0% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 377 time: 155.00 ms (310.0% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 659 time: 175.00 ms (310.7% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 1306 time: 177.00 ms (314.2% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 627 time: 178.67 ms (317.2% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 645 time: 183.33 ms (325.4% of baseline)
+2025-09-23 22:14:32,770 - INFO - Candidate 656 time: 190.33 ms (337.9% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 565 time: 171.00 ms (342.0% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 1131 time: 173.33 ms (346.7% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 73 time: 177.00 ms (354.0% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 547 time: 200.67 ms (356.2% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 571 time: 178.67 ms (357.3% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 132 time: 185.33 ms (370.7% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 1002 time: 187.33 ms (374.7% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 566 time: 217.00 ms (385.2% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 638 time: 197.67 ms (395.3% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 357 time: 200.00 ms (400.0% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 632 time: 226.00 ms (401.2% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 102 time: 232.33 ms (412.4% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 783 time: 210.67 ms (421.3% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 680 time: 238.67 ms (423.7% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 545 time: 223.00 ms (446.0% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 951 time: 223.00 ms (446.0% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 104 time: 224.33 ms (448.7% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 602 time: 226.67 ms (453.3% of baseline)
+2025-09-23 22:14:32,771 - INFO - Candidate 839 time: 226.67 ms (453.3% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 742 time: 227.33 ms (454.7% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 320 time: 258.67 ms (459.2% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 392 time: 232.67 ms (465.3% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 683 time: 269.33 ms (478.1% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 801 time: 273.00 ms (484.6% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 647 time: 245.33 ms (490.7% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 754 time: 277.67 ms (492.9% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 805 time: 248.00 ms (496.0% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 679 time: 255.00 ms (510.0% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 935 time: 304.67 ms (540.8% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 1103 time: 330.67 ms (587.0% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 292 time: 334.00 ms (592.9% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 462 time: 341.00 ms (605.3% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 673 time: 315.67 ms (631.3% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 555 time: 316.67 ms (633.3% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 755 time: 360.00 ms (639.1% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 910 time: 322.67 ms (645.3% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 939 time: 322.67 ms (645.3% of baseline)
+2025-09-23 22:14:32,772 - INFO - Candidate 274 time: 369.67 ms (656.2% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 688 time: 329.67 ms (659.3% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 769 time: 333.00 ms (666.0% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 486 time: 338.00 ms (676.0% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 316 time: 388.33 ms (689.3% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 575 time: 394.33 ms (700.0% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 943 time: 407.67 ms (723.7% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 802 time: 363.00 ms (726.0% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 650 time: 388.33 ms (776.7% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 1190 time: 439.67 ms (780.5% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 643 time: 440.67 ms (782.2% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 243 time: 391.33 ms (782.7% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 1256 time: 444.33 ms (788.8% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 945 time: 404.67 ms (809.3% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 246 time: 458.33 ms (813.6% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 298 time: 407.00 ms (814.0% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 773 time: 474.67 ms (842.6% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 628 time: 432.33 ms (864.7% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 1305 time: 432.67 ms (865.3% of baseline)
+2025-09-23 22:14:32,773 - INFO - Candidate 775 time: 437.67 ms (875.3% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 695 time: 517.00 ms (917.8% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 942 time: 460.00 ms (920.0% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 381 time: 519.33 ms (921.9% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 968 time: 520.67 ms (924.3% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 557 time: 524.67 ms (931.4% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 1178 time: 475.33 ms (950.7% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 546 time: 535.67 ms (950.9% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 1382 time: 483.33 ms (966.7% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 378 time: 550.67 ms (977.5% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 556 time: 503.33 ms (1006.7% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 601 time: 573.67 ms (1018.3% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 753 time: 517.00 ms (1034.0% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 963 time: 585.33 ms (1039.1% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 1046 time: 614.67 ms (1091.1% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 623 time: 615.67 ms (1092.9% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 1277 time: 551.00 ms (1102.0% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 1421 time: 625.67 ms (1110.7% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 543 time: 564.33 ms (1128.7% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 989 time: 576.33 ms (1152.7% of baseline)
+2025-09-23 22:14:32,774 - INFO - Candidate 1381 time: 582.00 ms (1164.0% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 306 time: 587.67 ms (1175.3% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 282 time: 595.33 ms (1190.7% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 222 time: 596.00 ms (1192.0% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 1273 time: 598.00 ms (1196.0% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 698 time: 676.33 ms (1200.6% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 1236 time: 623.67 ms (1247.3% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 661 time: 735.33 ms (1305.3% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 646 time: 751.33 ms (1333.7% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 1030 time: 680.67 ms (1361.3% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 94 time: 784.33 ms (1392.3% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 382 time: 705.00 ms (1410.0% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 1393 time: 712.00 ms (1424.0% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 936 time: 820.00 ms (1455.6% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 92 time: 730.67 ms (1461.3% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 633 time: 738.00 ms (1476.0% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 944 time: 766.00 ms (1532.0% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 965 time: 768.67 ms (1537.3% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 660 time: 797.33 ms (1594.7% of baseline)
+2025-09-23 22:14:32,775 - INFO - Candidate 741 time: 808.33 ms (1616.7% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 103 time: 815.67 ms (1631.3% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 946 time: 816.33 ms (1632.7% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 1222 time: 933.00 ms (1656.2% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 314 time: 958.00 ms (1700.6% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 756 time: 860.33 ms (1720.7% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 101 time: 868.00 ms (1736.0% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 644 time: 979.00 ms (1737.9% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 947 time: 869.67 ms (1739.3% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 752 time: 980.67 ms (1740.8% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 1067 time: 989.33 ms (1756.2% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 285 time: 1020.00 ms (1810.7% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 169 time: 1040.00 ms (1846.2% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 170 time: 997.00 ms (1994.0% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 621 time: 1176.67 ms (2088.8% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 624 time: 1183.33 ms (2100.6% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 696 time: 1190.00 ms (2112.4% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 648 time: 1056.67 ms (2113.3% of baseline)
+2025-09-23 22:14:32,776 - INFO - Candidate 1272 time: 1223.33 ms (2171.6% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 1383 time: 1186.67 ms (2373.3% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 681 time: 1360.00 ms (2414.2% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 544 time: 1220.00 ms (2440.0% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 245 time: 1233.33 ms (2466.7% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 1252 time: 1233.33 ms (2466.7% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 759 time: 1396.67 ms (2479.3% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 300 time: 1426.67 ms (2532.5% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 751 time: 1286.67 ms (2573.3% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 301 time: 1330.00 ms (2660.0% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 634 time: 1333.33 ms (2666.7% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 1118 time: 1340.00 ms (2680.0% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 1384 time: 1373.33 ms (2746.7% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 678 time: 1433.33 ms (2866.7% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 967 time: 1670.00 ms (2964.5% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 1422 time: 1730.00 ms (3071.0% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 1092 time: 1736.67 ms (3082.8% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 91 time: 1560.00 ms (3120.0% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 687 time: 1573.33 ms (3146.7% of baseline)
+2025-09-23 22:14:32,777 - INFO - Candidate 1274 time: 1826.67 ms (3242.6% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 761 time: 1713.33 ms (3426.7% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 635 time: 1943.33 ms (3449.7% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 760 time: 1746.67 ms (3493.3% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 1045 time: 1750.00 ms (3500.0% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 299 time: 1783.33 ms (3566.7% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 463 time: 1806.67 ms (3613.3% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 662 time: 2036.67 ms (3615.4% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 283 time: 1853.33 ms (3706.7% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 93 time: 2120.00 ms (4240.0% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 1221 time: 3173.33 ms (5633.1% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 1069 time: 3220.00 ms (6440.0% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 171 time: 3350.00 ms (6700.0% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 1224 time: 3853.33 ms (6840.2% of baseline)
+2025-09-23 22:14:32,778 - INFO - Candidate 1027 time: 3706.67 ms (7413.3% of baseline)
+2025-09-23 22:14:32,779 - INFO - Top dispatch candidates: [954, 1016, 895, 236, 1316, 919, 1378, 12, 225, 873, 992, 522, 61, 604, 1216, 412, 512, 704, 1014, 1314, 22, 13, 32, 581, 1162, 1321, 1360, 81, 123, 892, 1311, 907, 1337, 890, 456, 666, 865, 1034, 1120, 34, 219, 254, 416, 904, 1153, 1214, 63, 218, 576, 597, 606, 614, 822, 1160, 426, 437, 476, 617, 893, 1060, 1140, 596, 607, 857, 1283, 1388, 125, 203, 341, 1358, 417, 453, 164, 489, 584, 809, 850, 1374, 201, 871, 187, 438, 578, 574, 591, 710, 991, 1125, 1051, 80, 122, 511, 592, 667, 727, 832, 1062, 233, 259, 343, 716, 26, 237, 1008, 1132, 109, 189, 239, 1317, 66, 41, 116, 955, 1194, 1353, 1355, 454, 496, 1310, 112, 217, 235, 286, 394, 465, 616, 1402, 1392, 82, 146, 145, 588, 1097, 156, 232, 820, 844, 1009, 1280, 228, 1357, 65, 68, 86, 120, 113, 195, 422, 428, 706, 867, 1022, 1164, 15, 568, 855, 1400, 234, 287, 333, 387, 736, 821, 843, 883, 1133, 1265, 1319, 509, 957, 1078, 1215, 1309, 1320, 383, 608, 894, 933, 1168, 321, 478, 40, 58, 819, 1087, 1139, 199, 318, 1005, 1068, 1167, 1315, 1339, 67, 226, 205, 344, 1079, 1116, 124, 231, 445, 466, 523, 580, 1088, 1376, 1379, 121, 262, 931, 996, 1192, 212, 413, 799, 1308, 1019, 1264, 1370, 214, 699, 1229, 1401, 154, 430, 455, 579, 729, 932, 1375, 55, 157, 221, 358, 423, 498, 1266, 4, 16, 115, 1151, 1212, 1312, 337, 572, 796, 1191, 1396, 62, 209, 525, 569, 577, 587, 629, 1003, 1391, 110, 385, 502, 583, 668, 737, 848, 1090, 1119, 686, 771, 631, 1050, 1390, 615, 618, 630, 889, 1137, 215, 265, 983, 329, 480, 611, 652, 33, 213, 342, 672, 131, 494, 655, 940, 1217, 111, 182, 527, 872, 1138, 1165, 1359, 79, 250, 488, 564, 829, 918, 937, 1020, 1354, 421, 424, 1367, 114, 670, 849, 238, 429, 856, 1281, 585, 619, 733, 64, 158, 774, 1284, 56, 59, 11, 70, 735, 884, 1015, 1193, 317, 676, 677, 3, 252, 444, 598, 810, 956, 1017, 1371, 594, 827, 908, 1096, 309, 510, 505, 605, 714, 864, 930, 1107, 482, 529, 763, 917, 1033, 2, 497, 833, 891, 885, 1061, 1338, 346, 682, 702, 952, 85, 149, 427, 464, 457, 866, 1053, 107, 74, 374, 1428, 183, 257, 570, 669, 708, 896, 1075, 1089, 31, 166, 24, 69, 328, 1007, 1373, 227, 582, 1335, 216, 1159, 1313, 1356, 1350, 610, 764, 1267, 1322, 42, 240, 842, 853, 291, 690, 8, 188, 395, 472, 534, 685, 1149, 1437, 150, 249, 603, 905, 536, 1080, 60, 84, 390, 567, 830, 959, 1158, 1282, 1372, 127, 151, 743, 797, 836, 595, 671, 126, 347, 573, 653, 693, 1213, 130, 322, 349, 712, 1246, 1398, 335, 599, 651, 1380, 586, 1179, 1268, 1399, 391, 1368, 230, 420, 654, 1129, 339, 1091, 1270, 1387, 263, 1012, 1052, 1049, 1127, 664, 338, 665, 689, 726, 229, 264, 379, 1235, 953, 302, 1227, 119, 620, 1105, 348, 725, 758, 563, 1255, 798, 253, 223, 1385, 658, 593, 675, 1024, 165, 224, 473, 600, 906, 1093, 1278, 1395, 674, 396, 118, 340, 818, 275, 1148, 1377, 319, 506, 728, 663, 1094, 128, 589, 484, 950, 995, 1297, 284, 386, 1299, 83, 436, 691, 251, 1047, 106, 393, 590, 1113, 1318, 625, 941, 28, 248, 388, 1234, 1298, 129, 517, 541, 958, 1397, 266, 757, 247, 168, 815, 561, 384, 800, 562, 804, 530, 519, 1279, 1220, 1389, 535, 220, 612, 540, 641, 1070, 657, 724, 57, 244, 807, 211, 694, 640, 1166, 782, 105, 1269, 54, 803, 1031, 442, 964, 684, 808, 167, 1150, 560, 207, 1275, 1276, 542, 1048, 1394, 241, 315, 692, 806, 1, 639, 17, 554, 159, 1254, 1095, 1177, 5, 553, 609, 642, 117, 613, 929, 242, 193, 909, 626, 1386, 197, 1369, 1189, 869, 1323, 1161, 389, 938, 1271, 1218, 1163, 376, 380, 1188, 1121, 397, 1130, 375, 934, 838, 845, 184, 108, 911, 377, 659, 1306, 627, 645, 656, 565, 1131, 73, 547, 571, 132, 1002, 566, 638, 357, 632, 102, 783, 680, 545, 951, 104, 602, 839, 742, 320, 392, 683, 801, 647, 754, 805, 679, 935, 1103, 292, 462, 673, 555, 755, 910, 939, 274, 688, 769, 486, 316, 575, 943, 802, 650, 1190, 643, 243, 1256, 945, 246, 298, 773, 628, 1305, 775, 695, 942, 381, 968, 557, 1178, 546, 1382, 378, 556, 601, 753, 963, 1046, 623, 1277, 1421, 543, 989, 1381, 306, 282, 222, 1273, 698, 1236, 661, 646, 1030, 94, 382, 1393, 936, 92, 633, 944, 965, 660, 741, 103, 946, 1222, 314, 756, 101, 644, 947, 752, 1067, 285, 169, 170, 621, 624, 696, 648, 1272, 1383, 681, 544, 245, 1252, 759, 300, 751, 301, 634, 1118, 1384, 678, 967, 1422, 1092, 91, 687, 1274, 761, 635, 760, 1045, 299, 463, 662, 283, 93, 1221, 1069, 171, 1224, 1027]
+2025-09-23 22:14:32,779 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/954_spec.mlir
+2025-09-23 22:14:32,779 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1016_spec.mlir
+2025-09-23 22:14:32,779 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/895_spec.mlir
+2025-09-23 22:14:32,779 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/236_spec.mlir
+2025-09-23 22:14:32,779 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1316_spec.mlir
+2025-09-23 22:14:32,780 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/919_spec.mlir
+2025-09-23 22:14:32,780 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1378_spec.mlir
+2025-09-23 22:14:32,780 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/12_spec.mlir
+2025-09-23 22:14:32,780 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/225_spec.mlir
+2025-09-23 22:14:32,780 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/873_spec.mlir
+2025-09-23 22:14:32,780 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/992_spec.mlir
+2025-09-23 22:14:32,780 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/522_spec.mlir
+2025-09-23 22:14:32,780 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/61_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/604_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1216_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/412_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/512_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/704_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1014_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1314_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/22_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/13_spec.mlir
+2025-09-23 22:14:32,781 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/32_spec.mlir
+2025-09-23 22:14:32,782 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/581_spec.mlir
+2025-09-23 22:14:32,782 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1162_spec.mlir
+2025-09-23 22:14:32,782 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1321_spec.mlir
+2025-09-23 22:14:32,782 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1360_spec.mlir
+2025-09-23 22:14:32,782 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/81_spec.mlir
+2025-09-23 22:14:32,782 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/123_spec.mlir
+2025-09-23 22:14:32,782 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/892_spec.mlir
+2025-09-23 22:14:32,782 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1311_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/907_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1337_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/890_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/456_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/666_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/865_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1034_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1120_spec.mlir
+2025-09-23 22:14:32,783 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/34_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/219_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/254_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/416_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/904_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1153_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1214_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/63_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/218_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/576_spec.mlir
+2025-09-23 22:14:32,784 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/597_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/606_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/614_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/822_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1160_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/426_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/437_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/476_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/617_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/893_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1060_spec.mlir
+2025-09-23 22:14:32,785 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1140_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/596_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/607_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/857_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1283_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1388_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/125_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/203_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/341_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1358_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/417_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/453_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/164_spec.mlir
+2025-09-23 22:14:32,786 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/489_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/584_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/809_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/850_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1374_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/201_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/871_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/187_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/438_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/578_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/574_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/591_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/710_spec.mlir
+2025-09-23 22:14:32,787 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/991_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1125_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1051_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/80_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/122_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/511_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/592_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/667_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/727_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/832_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1062_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/233_spec.mlir
+2025-09-23 22:14:32,788 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/259_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/343_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/716_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/26_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/237_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1008_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1132_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/109_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/189_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/239_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1317_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/66_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/41_spec.mlir
+2025-09-23 22:14:32,789 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/116_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/955_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1194_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1353_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1355_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/454_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/496_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1310_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/112_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/217_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/235_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/286_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/394_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/465_spec.mlir
+2025-09-23 22:14:32,790 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/616_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1402_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1392_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/82_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/146_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/145_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/588_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1097_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/156_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/232_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/820_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/844_spec.mlir
+2025-09-23 22:14:32,791 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1009_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1280_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/228_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1357_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/65_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/68_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/86_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/120_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/113_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/195_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/422_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/428_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/706_spec.mlir
+2025-09-23 22:14:32,792 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/867_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1022_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1164_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/15_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/568_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/855_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1400_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/234_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/287_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/333_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/387_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/736_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/821_spec.mlir
+2025-09-23 22:14:32,793 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/843_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/883_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1133_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1265_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1319_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/509_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/957_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1078_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1215_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1309_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1320_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/383_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/608_spec.mlir
+2025-09-23 22:14:32,794 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/894_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/933_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1168_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/321_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/478_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/40_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/58_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/819_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1087_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1139_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/199_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/318_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1005_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1068_spec.mlir
+2025-09-23 22:14:32,795 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1167_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1315_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1339_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/67_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/226_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/205_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/344_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1079_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1116_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/124_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/231_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/445_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/466_spec.mlir
+2025-09-23 22:14:32,796 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/523_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/580_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1088_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1376_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1379_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/121_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/262_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/931_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/996_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1192_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/212_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/413_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/799_spec.mlir
+2025-09-23 22:14:32,797 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1308_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1019_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1264_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1370_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/214_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/699_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1229_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1401_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/154_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/430_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/455_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/579_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/729_spec.mlir
+2025-09-23 22:14:32,798 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/932_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1375_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/55_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/157_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/221_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/358_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/423_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/498_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1266_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/4_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/16_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/115_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1151_spec.mlir
+2025-09-23 22:14:32,799 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1212_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1312_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/337_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/572_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/796_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1191_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1396_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/62_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/209_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/525_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/569_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/577_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/587_spec.mlir
+2025-09-23 22:14:32,800 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/629_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1003_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1391_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/110_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/385_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/502_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/583_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/668_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/737_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/848_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1090_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1119_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/686_spec.mlir
+2025-09-23 22:14:32,801 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/771_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/631_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1050_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1390_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/615_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/618_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/630_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/889_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1137_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/215_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/265_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/983_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/329_spec.mlir
+2025-09-23 22:14:32,802 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/480_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/611_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/652_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/33_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/213_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/342_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/672_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/131_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/494_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/655_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/940_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1217_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/111_spec.mlir
+2025-09-23 22:14:32,803 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/182_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/527_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/872_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1138_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1165_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1359_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/79_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/250_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/488_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/564_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/829_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/918_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/937_spec.mlir
+2025-09-23 22:14:32,804 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1020_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1354_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/421_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/424_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1367_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/114_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/670_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/849_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/238_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/429_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/856_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1281_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/585_spec.mlir
+2025-09-23 22:14:32,805 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/619_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/733_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/64_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/158_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/774_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1284_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/56_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/59_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/11_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/70_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/735_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/884_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1015_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1193_spec.mlir
+2025-09-23 22:14:32,806 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/317_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/676_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/677_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/3_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/252_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/444_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/598_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/810_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/956_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1017_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1371_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/594_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/827_spec.mlir
+2025-09-23 22:14:32,807 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/908_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1096_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/309_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/510_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/505_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/605_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/714_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/864_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/930_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1107_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/482_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/529_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/763_spec.mlir
+2025-09-23 22:14:32,808 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/917_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1033_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/2_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/497_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/833_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/891_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/885_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1061_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1338_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/346_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/682_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/702_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/952_spec.mlir
+2025-09-23 22:14:32,809 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/85_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/149_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/427_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/464_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/457_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/866_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1053_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/107_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/74_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/374_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1428_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/183_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/257_spec.mlir
+2025-09-23 22:14:32,810 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/570_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/669_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/708_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/896_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1075_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1089_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/31_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/166_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/24_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/69_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/328_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1007_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1373_spec.mlir
+2025-09-23 22:14:32,811 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/227_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/582_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1335_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/216_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1159_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1313_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1356_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1350_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/610_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/764_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1267_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1322_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/42_spec.mlir
+2025-09-23 22:14:32,812 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/240_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/842_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/853_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/291_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/690_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/8_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/188_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/395_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/472_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/534_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/685_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1149_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1437_spec.mlir
+2025-09-23 22:14:32,813 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/150_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/249_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/603_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/905_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/536_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1080_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/60_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/84_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/390_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/567_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/830_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/959_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1158_spec.mlir
+2025-09-23 22:14:32,814 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1282_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1372_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/127_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/151_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/743_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/797_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/836_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/595_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/671_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/126_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/347_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/573_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/653_spec.mlir
+2025-09-23 22:14:32,815 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/693_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1213_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/130_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/322_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/349_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/712_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1246_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1398_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/335_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/599_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/651_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1380_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/586_spec.mlir
+2025-09-23 22:14:32,816 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1179_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1268_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1399_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/391_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1368_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/230_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/420_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/654_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1129_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/339_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1091_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1270_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1387_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/263_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1012_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1052_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1049_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1127_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/664_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/338_spec.mlir
+2025-09-23 22:14:32,817 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/665_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/689_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/726_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/229_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/264_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/379_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1235_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/953_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/302_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1227_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/119_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/620_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1105_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/348_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/725_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/758_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/563_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1255_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/798_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/253_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/223_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1385_spec.mlir
+2025-09-23 22:14:32,818 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/658_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/593_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/675_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1024_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/165_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/224_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/473_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/600_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/906_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1093_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1278_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1395_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/674_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/396_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/118_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/340_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/818_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/275_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1148_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1377_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/319_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/506_spec.mlir
+2025-09-23 22:14:32,819 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/728_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/663_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1094_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/128_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/589_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/484_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/950_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/995_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1297_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/284_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/386_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1299_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/83_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/436_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/691_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/251_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1047_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/106_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/393_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/590_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1113_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1318_spec.mlir
+2025-09-23 22:14:32,820 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/625_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/941_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/28_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/248_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/388_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1234_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1298_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/129_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/517_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/541_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/958_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1397_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/266_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/757_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/247_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/168_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/815_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/561_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/384_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/800_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/562_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/804_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/530_spec.mlir
+2025-09-23 22:14:32,821 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/519_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1279_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1220_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1389_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/535_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/220_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/612_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/540_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/641_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1070_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/657_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/724_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/57_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/244_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/807_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/211_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/694_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/640_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1166_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/782_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/105_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1269_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/54_spec.mlir
+2025-09-23 22:14:32,822 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/803_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1031_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/442_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/964_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/684_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/808_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/167_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1150_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/560_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/207_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1275_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1276_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/542_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1048_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1394_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/241_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/315_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/692_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/806_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/639_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/17_spec.mlir
+2025-09-23 22:14:32,823 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/554_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/159_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1254_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1095_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1177_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/5_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/553_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/609_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/642_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/117_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/613_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/929_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/242_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/193_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/909_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/626_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1386_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/197_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1369_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1189_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/869_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1323_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1161_spec.mlir
+2025-09-23 22:14:32,824 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/389_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/938_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1271_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1218_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1163_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/376_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/380_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1188_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1121_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/397_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1130_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/375_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/934_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/838_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/845_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/184_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/108_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/911_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/377_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/659_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1306_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/627_spec.mlir
+2025-09-23 22:14:32,825 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/645_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/656_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/565_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1131_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/73_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/547_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/571_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/132_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1002_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/566_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/638_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/357_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/632_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/102_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/783_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/680_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/545_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/951_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/104_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/602_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/839_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/742_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/320_spec.mlir
+2025-09-23 22:14:32,826 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/392_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/683_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/801_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/647_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/754_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/805_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/679_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/935_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1103_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/292_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/462_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/673_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/555_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/755_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/910_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/939_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/274_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/688_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/769_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/486_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/316_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/575_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/943_spec.mlir
+2025-09-23 22:14:32,827 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/802_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/650_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1190_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/643_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/243_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1256_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/945_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/246_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/298_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/773_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/628_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1305_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/775_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/695_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/942_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/381_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/968_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/557_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1178_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/546_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1382_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/378_spec.mlir
+2025-09-23 22:14:32,828 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/556_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/601_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/753_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/963_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1046_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/623_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1277_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1421_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/543_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/989_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1381_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/306_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/282_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/222_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1273_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/698_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1236_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/661_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/646_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1030_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/94_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/382_spec.mlir
+2025-09-23 22:14:32,829 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1393_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/936_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/92_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/633_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/944_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/965_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/660_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/741_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/103_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/946_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1222_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/314_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/756_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/101_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/644_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/947_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/752_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1067_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/285_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/169_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/170_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/621_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/624_spec.mlir
+2025-09-23 22:14:32,830 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/696_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/648_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1272_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1383_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/681_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/544_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/245_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1252_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/759_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/300_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/751_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/301_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/634_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1118_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1384_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/678_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/967_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1422_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1092_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/91_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/687_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1274_spec.mlir
+2025-09-23 22:14:32,831 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/761_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/635_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/760_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1045_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/299_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/463_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/662_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/283_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/93_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1221_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1069_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/171_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1224_spec.mlir
+2025-09-23 22:14:32,832 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_23_21_52/candidates/specs/1027_spec.mlir

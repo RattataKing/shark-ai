@@ -1,0 +1,64 @@
+2025-09-29 21:35:38,666 - ERROR - An error occurred during candidates generation: No compatible intrinsics found
+2025-09-29 21:35:38,666 - ERROR - Error in candidate_gen.py:
+Traceback (most recent call last):
+  File "/home/amily/shark-ai/sharktuner/sharktuner/libtuner.py", line 791, in generate_candidate_specs
+    config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/candidate_gen.py", line 221, in generate_configs_and_td_specs
+    solutions = list(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/constraint_generator.py", line 102, in generate_generic_contraction_solutions
+    constraints = dispatch_constraints.generate_vector_distribute_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 205, in generate_vector_distribute_constraints
+    get_mfma_intrinsic_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 82, in get_mfma_intrinsic_constraints
+    assert len(compatible_intrinsics) > 0, "No compatible intrinsics found"
+AssertionError: No compatible intrinsics found
+2025-09-29 21:35:38,666 - ERROR - Error in candidate_gen.py:
+Traceback (most recent call last):
+  File "/home/amily/shark-ai/sharktuner/sharktuner/libtuner.py", line 791, in generate_candidate_specs
+    config_specs, solution_variables = candidate_gen.generate_configs_and_td_specs(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/candidate_gen.py", line 221, in generate_configs_and_td_specs
+    solutions = list(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/constraint_generator.py", line 102, in generate_generic_contraction_solutions
+    constraints = dispatch_constraints.generate_vector_distribute_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 205, in generate_vector_distribute_constraints
+    get_mfma_intrinsic_constraints(
+  File "/home/amily/shark-ai/sharktuner/sharktuner/dispatch_constraints.py", line 82, in get_mfma_intrinsic_constraints
+    assert len(compatible_intrinsics) > 0, "No compatible intrinsics found"
+AssertionError: No compatible intrinsics found
+2025-09-29 21:36:14,681 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/16.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/16.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/16_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:16,825 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/307.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/307.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/307_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:18,252 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/450.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/450.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/450_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:19,460 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/535.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/535.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/535_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:21,828 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/726.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/726.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/726_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:23,188 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/807.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/807.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/807_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:23,200 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/809.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/809.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/809_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:23,468 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/820.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/820.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/820_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:23,874 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/835.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/835.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/835_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:27,818 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/1124.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/1124.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/1124_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:28,648 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/1188.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/1188.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/1188_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:31,414 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/1361.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/1361.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/1361_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:32,118 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/1428.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/1428.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/1428_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:32,135 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/1431.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/1431.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/1431_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:32,612 - WARNING - Command '/home/amily/iree-build-old/compiler/bindings/python/iree/compiler/tools/../_mlir_libs/iree-compile tuning_2025_09_29_21_35/template.mlir -o=tuning_2025_09_29_21_35/candidates/compiled/1466.vmfb --mlir-pass-pipeline-crash-reproducer=tuning_2025_09_29_21_35/candidates/compiled/1466.vmfb.crash_report.mlir --iree-codegen-tuning-spec-path=tuning_2025_09_29_21_35/candidates/specs/1466_spec.mlir --iree-hal-target-device=hip --iree-hip-target=gfx942 --compile-from=executable-sources' timed out after 16 seconds.
+2025-09-29 21:36:32,792 - INFO - Benchmarking compiled dispatch candidates...
+2025-09-29 21:52:35,691 - INFO - Candidate 1240 time: 94.33 ms (83.9% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 512 time: 96.33 ms (85.6% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 699 time: 96.67 ms (85.9% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 501 time: 95.00 ms (86.5% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 336 time: 98.67 ms (87.7% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 1594 time: 97.33 ms (88.2% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 662 time: 99.33 ms (88.3% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 438 time: 97.00 ms (88.3% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 204 time: 98.00 ms (88.8% of baseline)
+2025-09-29 21:52:35,692 - INFO - Candidate 782 time: 100.00 ms (88.9% of baseline)
+2025-09-29 21:52:35,692 - INFO - Top dispatch candidates: [1240, 512, 699, 501, 336, 1594, 662, 438, 204, 782]
+2025-09-29 21:52:35,693 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/1240_spec.mlir
+2025-09-29 21:52:35,693 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/512_spec.mlir
+2025-09-29 21:52:35,693 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/699_spec.mlir
+2025-09-29 21:52:35,693 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/501_spec.mlir
+2025-09-29 21:52:35,693 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/336_spec.mlir
+2025-09-29 21:52:35,693 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/1594_spec.mlir
+2025-09-29 21:52:35,693 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/662_spec.mlir
+2025-09-29 21:52:35,694 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/438_spec.mlir
+2025-09-29 21:52:35,694 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/204_spec.mlir
+2025-09-29 21:52:35,694 - INFO - /home/amily/shark-ai/sharktuner/tuning_2025_09_29_21_35/candidates/specs/782_spec.mlir
