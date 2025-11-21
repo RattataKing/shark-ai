@@ -1,4 +1,3 @@
-import analyzer
 import pandas as pd
 import glob
 import matplotlib.pyplot as plt
@@ -8,6 +7,47 @@ from pathlib import Path
 import math
 import numpy as np
 
+def is_pow2(x):
+    return (x & (x - 1) == 0) and x > 0
+
+def is_mult_simd_num(x: int, simd_num=4) -> bool:
+    return x % simd_num == 0
+
+def arith_intensity(x: int, y: int, z: int) -> float:
+    num_flops = 2 * x * y * z
+    num_byte_access = 2 * (x * y + y * z + x * z)
+    return num_flops / num_byte_access
+
+def quantization_inefficiency(M, tile_m, N, tile_n, cu_num: int = 304):
+    num_workgroups = (M / tile_m) * (N / tile_n)
+    ceil_val = np.ceil(num_workgroups / cu_num)
+    q_ie = (ceil_val - num_workgroups / cu_num) / ceil_val
+    return q_ie
+
+def compute_sort_columns(df):
+    df = df.copy()
+    df["tile_k_is_pow2"] = df["knob_tile_k"].apply(is_pow2)
+
+    df["is_mult_simd"] = (
+        (df["knob_subgroup_m_cnt"] * df["knob_subgroup_n_cnt"])
+        .apply(lambda x: is_mult_simd_num(x))
+    )
+
+    df["ai"] = arith_intensity(
+        df["knob_intrinsic_mn"],
+        df["knob_intrinsic_mn"],
+        df["knob_intrinsic_k"],
+    )
+
+    df["q_ie"] = quantization_inefficiency(
+        df["knob_M"],
+        df["knob_tile_m"],
+        df["knob_N"],
+        df["knob_tile_n"],
+    )
+
+    return df
+    
 def geometric_mean(nums):
     product = 1
     n = len(nums)
@@ -22,12 +62,13 @@ files = [
     f for f in files
     if all(pd.read_csv(f)[col].iloc[0] > 512 for col in ["knob_M", "knob_N", "knob_K"])
 ]
+files = files[:7] + files[10:]
 print(f"Found {len(files)} CSV files")
 
 results = []
 for i, f in enumerate(files):
     df = pd.read_csv(f)
-    df2 = analyzer.compute_sort_columns(df)
+    df2 = compute_sort_columns(df)
 
     df_sorted = df2.sort_values(
         by=["tile_k_is_pow2", "is_mult_simd", "ai", "q_ie"],

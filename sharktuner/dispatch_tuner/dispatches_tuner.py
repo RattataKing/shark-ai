@@ -22,14 +22,14 @@ redo_list = [
 # "tuning_unet_gemm_1024_10240_1280_f16_f32_tB.csv",
 ]
 ok_list = [
-    "compute_gemm_4096_4096_8192_i8_i32_tB.mlir",
-    "tk_gemm_128_1280_2048_i8_i32_tB.mlir",
+    # "compute_gemm_4096_4096_8192_i8_i32_tB.mlir",
+    # "tk_gemm_128_1280_2048_i8_i32_tB.mlir",
 ]
-failed_list = [
-    "unet_gemm_4096_5120_640_f32_f32_tB.mlir",
-    "square_gemm_2048_2048_2048_i32_i32_tB.mlir",
-    "unet_gemm_64_1280_2048_i32_i32_tB.mlir"
-]
+# failed_list = [
+#     "unet_gemm_4096_5120_640_f32_f32_tB.mlir",
+#     "square_gemm_2048_2048_2048_i32_i32_tB.mlir",
+#     "unet_gemm_64_1280_2048_i32_i32_tB.mlir"
+# ]
 PICK_SAMPLE = False
 MAX_SAMPLE_SIZE = 5
 
@@ -110,8 +110,9 @@ def main():
     csv_dir = Path(base_path) / "tuning_database"
     csv_dir.mkdir(exist_ok=True)
 
-    for bench in mlir_benchmark_files:
+    for i, bench in enumerate(mlir_benchmark_files, start=1):
         file_start = time.perf_counter()
+        logger.debug(f"Processing {i} / {len(mlir_benchmark_files)}")
         logger.debug(f"File {bench} started at {start_dt.isoformat(timespec='seconds')}")
 
         mlir_filename = bench.stem.replace("_benchmark","")

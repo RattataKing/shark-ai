@@ -7,7 +7,7 @@ from pathlib import Path
 import math
 import numpy as np
 
-files = glob.glob('./dispatch_tuner/tuning_database/*.csv')
+files = glob.glob('./dispatch_tuner/tuning_database_small/*.csv')
 files = [
     f for f in files
     if all(pd.read_csv(f)[col].iloc[0] > 512 for col in ["knob_M", "knob_N", "knob_K"])
@@ -83,6 +83,8 @@ for i, f in enumerate(files):
     # print(df_sorted.head(2000))
     pred_rank = list(range(1, len(df_sorted) + 1))
     true_rank = df_sorted["benchmark_rank_order"].tolist().copy()
+    if not [r for r in true_rank if not pd.isna(r)]:
+        continue
     max_rank = int(max(r for r in true_rank if not pd.isna(r)))
     true_rank = [
         int(r) if not pd.isna(r) else max_rank + 1
