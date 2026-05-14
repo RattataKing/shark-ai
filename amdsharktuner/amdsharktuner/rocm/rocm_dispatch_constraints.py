@@ -248,8 +248,8 @@ def generate_vector_distribute_constraints(
     m_vars, n_vars, k_vars = tile_sizes
     intrinsic_mn, intrinsic_k = intrinsic_size
     wg_x, wg_y, wg_z = workgroup_size
-    wg_threads = z3.Int("wg_threads")
-    constraints = [wg_threads == wg_x * wg_y * wg_z]
+    wg_threads = subgroup_size * subgroup_m_count * subgroup_n_count
+    constraints = [wg_x == wg_threads, wg_y == 1, wg_z == 1]
     # Use minimum subgroup size for consistency with IREE side.
     # https://github.com/iree-org/iree/blob/c37c680ae6e71f715bd7c540909155061bc44491/compiler/src/iree/compiler/Codegen/Dialect/GPU/IR/IREEGPUAttrs.td#L623-L632
     target_subgroup_size = min(gpu_target_info.subgroup_size_choices)
@@ -285,9 +285,6 @@ def generate_vector_distribute_constraints(
     constraints += [m == subgroup_m_count * subgroup_m_tile_count * intrinsic_mn]
     constraints += [n == subgroup_n_count * subgroup_n_tile_count * intrinsic_mn]
     constraints += [k == subgroup_k_count * subgroup_k_tile_count * intrinsic_k]
-    constraints += [wg_x == subgroup_size * subgroup_n_count]
-    constraints += [wg_y == subgroup_m_count]
-    constraints += [wg_z == subgroup_k_count]
     constraints += [z3.Or(wg_x <= n, wg_x <= m)]
     constraints += [k % intrinsic_mn == 0]
     constraints += [(k * n) % wg_threads == 0]

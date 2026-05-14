@@ -280,8 +280,10 @@ def get_knobs_from_constraint_op(
     """Extract knob names from a ConstraintsOp and return z3 Int constants.
 
     Recursively walks the knobs DictAttr, collecting the name of every
-    IntKnobAttr and OneOfKnobAttr leaf. Returns one z3 Int constant per name,
-    consistent with the declarations in `convert_constraints_op_to_smtlib`.
+    IntKnobAttr and OneOfKnobAttr leaf. IntegerAttr leaves are treated as
+    fixed constants in the template and skipped. Returns one z3 Int constant
+    per name, consistent with the declarations in
+    `convert_constraints_op_to_smtlib`.
 
     Example:
     given knobs = {workgroup_size = #iree_codegen.smt.int_knob<"wg_m">,
@@ -310,6 +312,8 @@ def get_knobs_from_constraint_op(
         match attr:
             case iree_codegen.IntKnobAttr() | iree_codegen.OneOfKnobAttr():
                 knob_names.append(attr.name)
+            case ir.IntegerAttr():
+                return
             case ir.ArrayAttr():
                 for elem in attr:
                     collect(elem)

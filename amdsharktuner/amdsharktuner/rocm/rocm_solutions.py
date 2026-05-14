@@ -6,6 +6,7 @@
 
 import z3  # type: ignore
 import math
+from pathlib import Path
 from typing import Iterator, Optional, TypedDict
 
 from iree.compiler import ir  # type: ignore
@@ -213,12 +214,18 @@ def generate_generic_contraction_solutions(
             + len(contraction_dims.batch)
         )
 
-    constraint_payload_list = [
-        constraint_generator.ConstraintPayload(
-            mega_constraints.solver.to_smt2(), mega_constraints.z3_constants.to_meta()
+    dump_dir = Path(__file__).resolve().parents[2] / "dispatch_tuner"
+    dump_dir.mkdir(parents=True, exist_ok=True)
+    constraint_payload_list = []
+    for idx, mega_constraints in enumerate(mega_constraints_list):
+        constraint_smt = mega_constraints.solver.to_smt2()
+        constraint_dump_path = dump_dir / f"tuner_constraint_smt_str_{idx:03d}.txt"
+        constraint_dump_path.write_text(constraint_smt)
+        constraint_payload_list.append(
+            constraint_generator.ConstraintPayload(
+                constraint_smt, mega_constraints.z3_constants.to_meta()
+            )
         )
-        for mega_constraints in mega_constraints_list
-    ]
     tuner_ctx.logger.debug(
         f"Will generate [{len(constraint_payload_list)}] constraint solvers."
     )
