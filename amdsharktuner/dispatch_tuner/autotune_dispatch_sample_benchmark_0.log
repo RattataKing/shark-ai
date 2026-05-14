@@ -1,0 +1,44 @@
+2026-05-14 03:18:57,543 - DEBUG - Input Arguments:
+2026-05-14 03:18:57,543 - DEBUG - dispatch_file: dispatch_tuner/dispatch_sample.mlir
+2026-05-14 03:18:57,543 - DEBUG - dispatch_tuner_num_dispatch_candidates: None
+2026-05-14 03:18:57,543 - DEBUG - compile_flags_file: dispatch_tuner/compile_flags.txt
+2026-05-14 03:18:57,543 - DEBUG - output_td_spec: tuning-spec.mlir
+2026-05-14 03:18:57,543 - DEBUG - dispatch_benchmark_timeout_mins: None
+2026-05-14 03:18:57,543 - DEBUG - input_file: dispatch_tuner/dispatch_sample_benchmark_0.mlir
+2026-05-14 03:18:57,543 - DEBUG - verbose: False
+2026-05-14 03:18:57,543 - DEBUG - devices: ['hip://0']
+2026-05-14 03:18:57,543 - DEBUG - max_cpu_workers: 16
+2026-05-14 03:18:57,543 - DEBUG - stop_after: ExecutionPhases.dont_stop
+2026-05-14 03:18:57,543 - DEBUG - dry_run: False
+2026-05-14 03:18:57,543 - DEBUG - benchmark_timing_method: BenchmarkTimingMethod.iree_benchmark_module
+2026-05-14 03:18:57,543 - DEBUG - num_candidates: 2048
+2026-05-14 03:18:57,543 - DEBUG - candidate_order: CandidateOrderKind.shuffle
+2026-05-14 03:18:57,543 - DEBUG - search_space_shuffle_seed: 42
+2026-05-14 03:18:57,543 - DEBUG - enable_random_seed: False
+2026-05-14 03:18:57,543 - DEBUG - num_subgroups: -1
+2026-05-14 03:18:57,543 - DEBUG - lhs_dims: mk
+2026-05-14 03:18:57,543 - DEBUG - rhs_dims: nk
+2026-05-14 03:18:57,543 - DEBUG - tile_dims: mnk
+2026-05-14 03:18:57,543 - DEBUG - prefetch_num_stages_options: [2]
+2026-05-14 03:18:57,543 - DEBUG - no_reduce_shared_memory_bank_conflicts_options: [None]
+2026-05-14 03:18:57,543 - DEBUG - waves_per_eu_options: [2]
+2026-05-14 03:18:57,543 - DEBUG - denorm_flushing_options: [False]
+2026-05-14 03:18:57,543 - DEBUG - codegen_pipeline: llvmgpu_vector_distribute
+2026-05-14 03:18:57,543 - DEBUG - conv_strategy: both
+2026-05-14 03:18:57,543 - DEBUG - starter_td_spec: None
+2026-05-14 03:18:57,566 - DEBUG - Loading all available dialects
+2026-05-14 03:18:57,571 - DEBUG - generate_candidate_specs()
+2026-05-14 03:18:57,583 - DEBUG - MLIR parsing successful!
+2026-05-14 03:18:57,583 - DEBUG - Captured messages from candidate_gen.py:
+2026-05-14 03:18:57,598 - DEBUG - M=[1024], N=[1280], K=[1280], overpadding_applied=False
+2026-05-14 03:18:57,604 - DEBUG - Will generate [1] constraint solvers.
+2026-05-14 03:19:00,231 - DEBUG - Search space sizes for each constraint set: [1008].
+2026-05-14 03:19:00,271 - DEBUG - Completed candidate generation in 2.672589s
+
+2026-05-14 03:19:00,271 - DEBUG - Max search space size: 1008
+2026-05-14 03:19:00,271 - DEBUG - Selected candidate ordering strategy: CandidateOrderKind.shuffle
+2026-05-14 03:19:00,345 - DEBUG - Generated 1009 tuning specs
+2026-05-14 03:19:00,346 - DEBUG - candidate_gen.py ends
+2026-05-14 03:19:00,422 - DEBUG - Generated [1008] candidates
+2026-05-14 03:19:00,423 - DEBUG - compile()
+2026-05-14 03:19:39,418 - WARNING - Successfully compiled [1009] candidates. Success rate: 0.74

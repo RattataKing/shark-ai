@@ -1,0 +1,3 @@
+Total ConstraintsOp count: 1
+Dumped z3 constraints to: /home/amily/amd-shark-ai/amdsharktuner/dispatch_tuner/iree_constraint_smt_str.txt
+Solution count: 1008
