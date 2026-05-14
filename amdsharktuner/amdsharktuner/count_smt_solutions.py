@@ -5,6 +5,8 @@
 # See https://llvm.org/LICENSE.txt for license information.
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
+# Usage: python -m amdsharktuner.count_smt_solutions ./dispatch_tuner/dispatch_sample_benchmark_with_constraints_0.mlir > dispatch_tuner/iree_solution_count.log
+
 import argparse
 from collections.abc import Iterator
 from pathlib import Path
