@@ -889,13 +889,15 @@ def generate_candidate_specs(
         )
         solutions = [solutions[i] for i in sorted_order] if sorted_order else solutions
         solutions = solutions[: args.num_candidates]
-
+        logging.debug(f"solutions: {solutions}")
         config_specs: list[ir.Module] = candidate_gen.generate_configs_and_td_specs(
             dispatch_tuner=dispatch_tuner,
             input_module=mlir_module,
             solutions=solutions,
         )
-
+        # logging.debug(f"config_specs: {config_specs}")
+        for config_spec in config_specs:
+            logging.debug(f"config_spec: {config_spec.operation.get_asm()}")
         # Total number of configs = candidates generated + baseline.
         assert len(config_specs) == len(solutions) + 1
 
