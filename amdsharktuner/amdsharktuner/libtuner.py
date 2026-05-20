@@ -888,6 +888,7 @@ def generate_candidate_specs(
             sort_key_map=rocm_candidate_ordering.ROCM_SORT_KEY_MAP,
         )
         solutions = [solutions[i] for i in sorted_order] if sorted_order else solutions
+        print(f"solutions: {len(solutions)}")
         solutions = solutions[: args.num_candidates]
         logging.debug(f"solutions: {solutions}")
         config_specs: list[ir.Module] = candidate_gen.generate_configs_and_td_specs(
@@ -1302,9 +1303,10 @@ def compile(
     )
     compiled_candidates = executor.run(task_list, run_iree_compile_command)
     success_rate = get_compilation_success_rate(compiled_candidates)
-    logging.debug(
+    logging.warning(
         f"Successfully compiled [{len(compiled_candidates)}] candidates. Success rate: {success_rate:.2f}"
     )
+    exit(0)
     compiled_candidates = [c for c in compiled_candidates if c is not None]
 
     # Remove duplicate vmfbs from the candidate list.
