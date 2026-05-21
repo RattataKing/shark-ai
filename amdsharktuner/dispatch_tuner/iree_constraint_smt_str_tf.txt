@@ -1,0 +1,137 @@
+; benchmark generated from python API
+(set-info :status unknown)
+(declare-fun problem_dim_0 () Int)
+(declare-fun problem_dim_1 () Int)
+(declare-fun problem_dim_2 () Int)
+(declare-fun mma_idx () Int)
+(declare-fun sg_size () Int)
+(declare-fun wg_0 () Int)
+(declare-fun sg_0 () Int)
+(declare-fun wg_1 () Int)
+(declare-fun sg_1 () Int)
+(declare-fun red_2 () Int)
+(declare-fun wg_size_x () Int)
+(declare-fun wg_size_y () Int)
+(declare-fun wg_size_z () Int)
+(assert
+ (= problem_dim_0 1024))
+(assert
+ (= problem_dim_1 1280))
+(assert
+ (= problem_dim_2 1280))
+(assert
+ (>= mma_idx 0))
+(assert
+ (<= mma_idx 0))
+(assert
+ (= sg_size 32))
+(assert
+ (= (mod problem_dim_0 wg_0) 0))
+(assert
+ (>= wg_0 1))
+(assert
+ (<= wg_0 problem_dim_0))
+(assert
+ (= (mod wg_0 sg_0) 0))
+(assert
+ (= (mod problem_dim_1 wg_1) 0))
+(assert
+ (>= wg_1 1))
+(assert
+ (<= wg_1 problem_dim_1))
+(assert
+ (= (mod wg_1 sg_1) 0))
+(assert
+ (>= wg_0 16))
+(assert
+ (>= wg_1 16))
+(assert
+ (= (mod wg_0 16) 0))
+(assert
+ (= (mod wg_1 16) 0))
+(assert
+ (= (mod wg_0 (* sg_0 16)) 0))
+(assert
+ (= (mod wg_1 (* sg_1 16)) 0))
+(assert
+ (let ((?x50 (* 1 wg_0)))
+ (<= ?x50 512)))
+(assert
+ (let ((?x53 (* 1 wg_1)))
+ (<= ?x53 512)))
+(assert
+ (let ((?x50 (* 1 wg_0)))
+ (= ?x50 (* (* 1 sg_0) (div wg_0 (* sg_0 16)) 16))))
+(assert
+ (let ((?x53 (* 1 wg_1)))
+ (= ?x53 (* (* 1 sg_1) (div wg_1 (* sg_1 16)) 16))))
+(assert
+ (>= red_2 1))
+(assert
+ (let ((?x65 (* red_2 16)))
+ (let ((?x69 (* (div (+ problem_dim_2 (- 16 1)) 16) 16)))
+ (= (mod ?x69 ?x65) 0))))
+(assert
+ (let ((?x65 (* red_2 16)))
+ (<= ?x65 512)))
+(assert
+ (let ((?x69 (* (div (+ problem_dim_2 (- 16 1)) 16) 16)))
+ (let ((?x65 (* red_2 16)))
+ (<= ?x65 ?x69))))
+(assert
+ (>= sg_0 1))
+(assert
+ (>= sg_1 1))
+(assert
+ (let ((?x44 (* sg_0 16)))
+ (let ((?x55 (div wg_0 ?x44)))
+ (>= ?x55 1))))
+(assert
+ (let ((?x44 (* sg_0 16)))
+ (let ((?x55 (div wg_0 ?x44)))
+ (<= ?x55 32))))
+(assert
+ (let ((?x47 (* sg_1 16)))
+ (let ((?x59 (div wg_1 ?x47)))
+ (>= ?x59 1))))
+(assert
+ (let ((?x47 (* sg_1 16)))
+ (let ((?x59 (div wg_1 ?x47)))
+ (<= ?x59 32))))
+(assert
+ (let ((?x47 (* sg_1 16)))
+ (let ((?x59 (div wg_1 ?x47)))
+ (let ((?x44 (* sg_0 16)))
+ (let ((?x55 (div wg_0 ?x44)))
+ (let ((?x80 (* ?x55 ?x59)))
+ (>= ?x80 1)))))))
+(assert
+ (let ((?x47 (* sg_1 16)))
+ (let ((?x59 (div wg_1 ?x47)))
+ (let ((?x44 (* sg_0 16)))
+ (let ((?x55 (div wg_0 ?x44)))
+ (let ((?x80 (* ?x55 ?x59)))
+ (<= ?x80 10)))))))
+(assert
+ (let ((?x47 (* sg_1 16)))
+ (let ((?x59 (div wg_1 ?x47)))
+ (let ((?x44 (* sg_0 16)))
+ (let ((?x55 (div wg_0 ?x44)))
+ (let ((?x80 (* ?x55 ?x59)))
+ (let ((?x84 (* ?x80 sg_size)))
+ (<= ?x84 1024))))))))
+(assert
+ (<= (+ (* 2 wg_0 red_2 16) (* 2 wg_1 red_2 16)) 65536))
+(assert
+ (let ((?x47 (* sg_1 16)))
+ (let ((?x59 (div wg_1 ?x47)))
+ (let ((?x44 (* sg_0 16)))
+ (let ((?x55 (div wg_0 ?x44)))
+ (let ((?x80 (* ?x55 ?x59)))
+ (let ((?x84 (* ?x80 sg_size)))
+ (= wg_size_x ?x84))))))))
+(assert
+ (= wg_size_y 1))
+(assert
+ (= wg_size_z 1))
+(check-sat)
