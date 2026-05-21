@@ -1,0 +1,165 @@
+; benchmark generated from python API
+(set-info :status unknown)
+(declare-fun problem_dim_0 () Int)
+(declare-fun problem_dim_1 () Int)
+(declare-fun problem_dim_2 () Int)
+(declare-fun problem_dim_3 () Int)
+(declare-fun problem_dim_4 () Int)
+(declare-fun problem_dim_5 () Int)
+(declare-fun mma_idx () Int)
+(declare-fun use_igemm_convolution () Int)
+(declare-fun sg_size () Int)
+(declare-fun wg_0 () Int)
+(declare-fun sg_0 () Int)
+(declare-fun wg_1 () Int)
+(declare-fun sg_1 () Int)
+(declare-fun wg_2 () Int)
+(declare-fun sg_2 () Int)
+(declare-fun sg_m_cnt () Int)
+(declare-fun sg_n_cnt () Int)
+(declare-fun red_5 () Int)
+(declare-fun wg_size_x () Int)
+(declare-fun wg_size_y () Int)
+(declare-fun wg_size_z () Int)
+(assert
+ (= problem_dim_0 56))
+(assert
+ (= problem_dim_1 56))
+(assert
+ (= problem_dim_2 64))
+(assert
+ (= problem_dim_3 3))
+(assert
+ (= problem_dim_4 3))
+(assert
+ (= problem_dim_5 64))
+(assert
+ (>= mma_idx 0))
+(assert
+ (<= mma_idx 0))
+(assert
+ (>= use_igemm_convolution 0))
+(assert
+ (<= use_igemm_convolution 1))
+(assert
+ (= sg_size 32))
+(assert
+ (let (($x36 (>= problem_dim_0 33)))
+ (let ((?x37 (ite $x36 (* (div (+ problem_dim_0 (- 32 1)) 32) 32) problem_dim_0)))
+ (let (($x44 (>= problem_dim_0 129)))
+ (let ((?x45 (ite $x44 (* (div (+ problem_dim_0 (- 128 1)) 128) 128) ?x37)))
+ (let (($x46 (= use_igemm_convolution 1)))
+ (let ((?x47 (ite $x46 ?x45 problem_dim_0)))
+ (= (mod ?x47 wg_0) 0))))))))
+(assert
+ (>= wg_0 1))
+(assert
+ (let (($x36 (>= problem_dim_0 33)))
+ (let ((?x37 (ite $x36 (* (div (+ problem_dim_0 (- 32 1)) 32) 32) problem_dim_0)))
+ (let (($x44 (>= problem_dim_0 129)))
+ (let ((?x45 (ite $x44 (* (div (+ problem_dim_0 (- 128 1)) 128) 128) ?x37)))
+ (let (($x46 (= use_igemm_convolution 1)))
+ (let ((?x47 (ite $x46 ?x45 problem_dim_0)))
+ (<= wg_0 ?x47))))))))
+(assert
+ (= (mod wg_0 sg_0) 0))
+(assert
+ (let ((?x60 (* (div (+ problem_dim_1 (- 16 1)) 16) 16)))
+ (= (mod ?x60 wg_1) 0)))
+(assert
+ (>= wg_1 1))
+(assert
+ (let ((?x60 (* (div (+ problem_dim_1 (- 16 1)) 16) 16)))
+ (<= wg_1 ?x60)))
+(assert
+ (= (mod wg_1 sg_1) 0))
+(assert
+ (let ((?x71 (* (div (+ problem_dim_2 (- 16 1)) 16) 16)))
+ (= (mod ?x71 wg_2) 0)))
+(assert
+ (>= wg_2 1))
+(assert
+ (let ((?x71 (* (div (+ problem_dim_2 (- 16 1)) 16) 16)))
+ (<= wg_2 ?x71)))
+(assert
+ (= (mod wg_2 sg_2) 0))
+(assert
+ (>= wg_1 16))
+(assert
+ (>= wg_2 16))
+(assert
+ (= (mod wg_1 16) 0))
+(assert
+ (= (mod wg_2 16) 0))
+(assert
+ (= (mod wg_1 (* sg_1 16)) 0))
+(assert
+ (= (mod wg_2 (* sg_2 16)) 0))
+(assert
+ (let ((?x93 (* (* 1 wg_0) wg_1)))
+ (<= ?x93 512)))
+(assert
+ (let ((?x96 (* 1 wg_2)))
+ (<= ?x96 512)))
+(assert
+ (let ((?x93 (* (* 1 wg_0) wg_1)))
+ (= (mod ?x93 (* (* (* 1 sg_0) sg_1) 16)) 0)))
+(assert
+ (= (mod (* 1 wg_2) (* (* 1 sg_2) 16)) 0))
+(assert
+ (let ((?x93 (* (* 1 wg_0) wg_1)))
+ (= ?x93 (* (* (* 1 sg_0) sg_1) sg_m_cnt 16))))
+(assert
+ (let ((?x96 (* 1 wg_2)))
+ (= ?x96 (* (* 1 sg_2) sg_n_cnt 16))))
+(assert
+ (>= red_5 1))
+(assert
+ (let ((?x115 (* red_5 16)))
+ (let (($x46 (= use_igemm_convolution 1)))
+ (let ((?x122 (ite $x46 (* problem_dim_5 (* (* 1 problem_dim_3) problem_dim_4)) (* (div (+ problem_dim_5 (- 16 1)) 16) 16))))
+ (= (mod ?x122 ?x115) 0)))))
+(assert
+ (let ((?x115 (* red_5 16)))
+ (<= ?x115 512)))
+(assert
+ (let (($x46 (= use_igemm_convolution 1)))
+ (let ((?x122 (ite $x46 (* problem_dim_5 (* (* 1 problem_dim_3) problem_dim_4)) (* (div (+ problem_dim_5 (- 16 1)) 16) 16))))
+ (let ((?x115 (* red_5 16)))
+ (<= ?x115 ?x122)))))
+(assert
+ (>= sg_0 1))
+(assert
+ (>= sg_1 1))
+(assert
+ (>= sg_2 1))
+(assert
+ (>= sg_m_cnt 1))
+(assert
+ (<= sg_m_cnt 32))
+(assert
+ (>= sg_n_cnt 1))
+(assert
+ (<= sg_n_cnt 32))
+(assert
+ (let ((?x134 (* sg_m_cnt sg_n_cnt)))
+ (>= ?x134 1)))
+(assert
+ (let ((?x134 (* sg_m_cnt sg_n_cnt)))
+ (<= ?x134 10)))
+(assert
+ (let ((?x134 (* sg_m_cnt sg_n_cnt)))
+ (let ((?x138 (* ?x134 sg_size)))
+ (<= ?x138 1024))))
+(assert
+ (let ((?x144 (+ (* 2 (* (* 1 wg_0) wg_1) (* red_5 16)) (* 2 (* 1 wg_2) (* red_5 16)))))
+ (<= ?x144 65536)))
+(assert
+ (let ((?x134 (* sg_m_cnt sg_n_cnt)))
+ (let ((?x138 (* ?x134 sg_size)))
+ (= wg_size_x ?x138))))
+(assert
+ (= wg_size_y 1))
+(assert
+ (= wg_size_z 1))
+(check-sat)
