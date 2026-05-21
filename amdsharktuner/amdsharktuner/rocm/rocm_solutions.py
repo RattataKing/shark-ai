@@ -219,7 +219,13 @@ def generate_generic_contraction_solutions(
     constraint_payload_list = []
     for idx, mega_constraints in enumerate(mega_constraints_list):
         constraint_smt = mega_constraints.solver.to_smt2()
-        constraint_dump_path = dump_dir / f"tuner_constraint_smt_str_{idx:03d}.txt"
+        dump_idx = idx
+        constraint_dump_path = dump_dir / f"tuner_constraint_smt_str_{dump_idx:03d}.txt"
+        while constraint_dump_path.exists():
+            dump_idx += 1
+            constraint_dump_path = (
+                dump_dir / f"tuner_constraint_smt_str_{dump_idx:03d}.txt"
+            )
         constraint_dump_path.write_text(constraint_smt)
         constraint_payload_list.append(
             constraint_generator.ConstraintPayload(
