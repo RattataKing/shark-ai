@@ -10,6 +10,7 @@ set -euo pipefail
 
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 input="${1:-"$script_dir/dispatch_sample.mlir"}"
+gfx_ver="${gfx_ver:-gfx1201}"
 
 if [[ ! -f "$input" ]]; then
   echo "Input file does not exist: $input" >&2
@@ -60,7 +61,7 @@ compile_pipeline() {
 
   compile_args=(
     --iree-hal-target-device=hip
-    --iree-rocm-target=gfx1201
+    --iree-rocm-target="$gfx_ver"
     --iree-codegen-experimental-verify-pipeline-constraints
     --mlir-print-ir-after=iree-codegen-insert-smt-constraints
     --iree-hal-dump-executable-files-to="$dump_dir"
